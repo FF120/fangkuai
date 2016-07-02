@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>个人信息</title>
+<link rel="stylesheet" href="__PUBLIC__/css/user_header&footer.css">
+<link rel="stylesheet" href="__PUBLIC__/css/header&footer.css">
+<!--头部&底部样式-->
+</head>
+<body>
+	<!-- //右边边 -->
+	<div style="margin-top: 26px;">
+		<div id="position">
+			你当前的位置： <a href="">管理员后台</a><span></span>账户中心<span></span>
+			<a href="#" class="now_ps">修改密码</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div class="north" style="margin-left:50px;margin-top:20px;">
+			<div class="right">
+				<div class="east">
+					<form action="__SELF__" enctype="multipart/form-data" id="ad_form" method="post">
+						<input type="hidden" name="mg_id" value="{$Think.Session.admin_id}"></input>
+						<span style="color:red;font-size:18px;">{$error|default=''}</span>
+						<table>
+							<tr>
+								<td>账号：</td>
+								<td class="text">
+								&nbsp;&nbsp;&nbsp;&nbsp;{$Think.Session.admin_name}
+								</td>
+							</tr>
+							<tr>
+								<td>原密码：</td>
+								<td class="text">
+									<span style="color:red;font-size:19px;">*&nbsp;</span>
+									<input type="password" name="old_pwd"/>
+								</td>
+							</tr>
+							<tr>
+								<td>新密码：</td>
+								<td class="text">
+									<span style="color:red;font-size:19px;">*&nbsp;</span>
+									<input type="password" name="new_pwd"/>
+								</td>
+							</tr>
+							<tr>
+								<td>确认新密码：</td>
+								<td class="text">
+									<span style="color:red;font-size:19px;">*&nbsp;</span>
+									<input type="password" name="new_pwd2"/>
+								</td>
+							</tr>
+							<tr style="height:20px;"></tr>
+							<tr class="secondButton">
+								<td>&nbsp;</td>
+								<td>
+									<center>
+										<a href="#" onclick="form_submit();">提交</a>
+									</center>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- //右边结束 -->
+	<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		function form_submit(){
+			document.getElementById("ad_form").submit();
+		}
+	</script>
+</body>
+</html>

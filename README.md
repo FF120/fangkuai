@@ -1,2 +1,33 @@
-# fangkuai
-è¡Œä¸šç½‘ç«™--é’¢æé¢†åŸŸçš„ç½‘ä¸Šå•†åŸ
+# ·½¿éÍø
+Ò»¸ö¹ØÓÚ¸Ö²ÄĞÅÏ¢µÄ×ÛºÏĞÅÏ¢Õ¹Ê¾ºÍ½»Ò×Æ½Ì¨
+
+# ½á¹¹
+
+- Application		-- Ó¦ÓÃ³ÌĞòÖ÷Ä¿Â¼
+- Public			-- JS£¬CSS£¬IMAGEµÈ×ÊÔ´ÎÄ¼ş
+- ThinkPHP		-- ThinkPHP¿ò¼ÜÔ´Âë
+- html			-- ÍøÕ¾Ç°Ì¨µÄ¾²Ì¬Õ¹Ê¾Ò³Ãæ
+- fangkuai.sql			-- ÍøÕ¾ÔËĞĞĞèÒªµÄÊı¾İ¿âÎÄ¼ş
+
+# ²¿Êğ
+
+1. ÅäÖÃºÃ`Apache`·şÎñÆ÷ºÍ`Mysql`Êı¾İ¿â¡£
+2. ĞÂ½¨Êı¾İ¿â`fangkuai`,½«`fangkuai.sql`µ¼Èë`fangkuai`Êı¾İ¿â
+3. ÔÚ`Common`Ä£¿éÖĞµÄ`Conf`ÏÂµÄ`config.php`ÖĞÅäÖÃÊı¾İ¿âÁ¬½ÓĞÅÏ¢
+```php
+ 'DB_TYPE'   => 'mysql', // Êı¾İ¿âÀàĞÍ
+    'DB_HOST'   => 'localhost', // ·şÎñÆ÷µØÖ·
+    'DB_NAME'   => 'fangkuai', // Êı¾İ¿âÃû
+    'DB_USER'   => 'root', // ÓÃ»§Ãû
+    'DB_PWD'    => '123456', // ÃÜÂë
+    'DB_PORT'   => 3306, // ¶Ë¿Ú
+    'DB_PREFIX' => '', // Êı¾İ¿â±íÇ°×º
+    'DB_CHARSET'=> 'utf8', // ×Ö·û¼¯
+```
+
+5. ·ÃÎÊ¸ùÄ¿Â¼µÄ·şÎñÆ÷µØÖ·£¬×Ô¶¯Ìø×ªµ½Ç°Ì¨Ò³Ãæ
+- Ç°Ì¨µØÖ·£º[http://localhost/fangkuai/index.php/Home/Product/index.html](http://localhost/fangkuai/index.php/Home/Product/index.html)
+- ºóÌ¨µØÖ·£º[http://localhost/fangkuai/index.php/Admin](http://localhost/fangkuai/index.php/Admin)
+- ÑİÊ¾µØÖ·£º[https://ff120.github.io/fangkuai/](https://ff120.github.io/fangkuai/)
+
+

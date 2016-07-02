@@ -1,0 +1,5 @@
+/Application/Runtime/
+!.gitignore
+/.git/
+/.idea/
+/Application/Common/Conf/

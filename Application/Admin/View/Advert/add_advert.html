@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>个人信息</title>
+<link rel="stylesheet" href="__PUBLIC__/css/user_header&footer.css">
+<link rel="stylesheet" href="__PUBLIC__/css/header&footer.css">
+<!--头部&底部样式-->
+</head>
+<body>
+	<!-- //右边边 -->
+	<div style="margin-top: 26px;">
+		<div id="position">
+			你当前的位置： <a href="">管理员后台</a><span></span> <a href="__CONTROLLER__/list_advert">广告位设置</a><span></span>
+			<a href="#" class="now_ps">添加广告</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div class="north" style="margin-left:50px;margin-top:20px;">
+			<div class="right">
+				<div class="east">
+					<form action="__SELF__" enctype="multipart/form-data" id="ad_form" method="post">
+						<table>
+							<tr>
+								<td>广告标题：</td>
+								<td class="text">
+									<span style="color:red;font-size:19px;">*&nbsp;</span><input type="text" name="title" style="width:195px;"/>
+									<span style="color:red;">{$errorInfo[title]}</span>
+								</td>
+							</tr>
+							<tr>
+								<td>所属版位：</td>
+								<td>
+									<span style="color:red;font-size:19px;">*</span>
+									<select name="position" style="width:200px;">
+										<option value="0">首页广告位</option>
+										<option value="1">首页方块公告</option>
+										<option value="2">钢厂广告位</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span style="valign:middle">广告描述：</span></td>
+								<td>&nbsp;&nbsp;
+									<textarea class="textarea" name="desc" style="width:400px;"></textarea>
+									<span style="color:red;">{$errorInfo[desc]}</span>
+								</td>
+							</tr>
+							<tr>
+								<td>上传广告图版：</td>
+								<td>
+									<span style="color:red;font-size:19px;">*&nbsp;</span>
+									<input type="file" name="advert_img"/><em>(注：只允许图片格式！)</em>
+								</td>
+								<td><em style="color:red;">{$fileError|default=""}</em></td>
+							</tr>
+							<tr>
+								<td>是否启用：</td>
+								<td>
+									<span style="color:red;font-size:19px;">*&nbsp;</span>
+									<input type="radio" name="is_used" value="0" checked/>未启用&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="is_used" value="1"/>启用
+								</td>
+							</tr>
+							<tr style="height:20px;"></tr>
+							<tr class="secondButton">
+								<td>&nbsp;</td>
+								<td>
+									<center>
+										<a href="#" onclick="form_submit();">保存</a>
+									</center>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- //右边结束 -->
+	<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		function form_submit(){
+			document.getElementById("ad_form").submit();
+		}
+	</script>
+</body>
+</html>

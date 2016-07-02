@@ -1,0 +1,126 @@
+<include file="Public:header"/>
+	<title></title>
+</head>
+<body>
+<div style="margin-top: 26px;">
+	<div id="position">
+		你当前的位置： <a href="">管理员后台</a><span></span> <a href="__CONTROLLER__/list_article">其他信息设置</a><span></span>
+		<a href="#" class="now_ps">发布帮助信息</a>
+	</div>
+	<div style="margin-left:100px;margin-top:50px;">
+		<form action="__SELF__" method="get">
+			<table>
+				<tr>
+					<td>
+						<label>标题：</label>
+						<input type="text" style="width:150px;" name="title" value="{$_GET['title']}"/>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<label>栏位：</label>
+						<select name="category" style="width:150px;">
+							<option value="">全部</option>
+							<option value="0" <if condition="$category eq 100">selected</if>>首页文章位</option>
+							<option value="1" <if condition="$category eq 101">selected</if>>首页方块文章</option>
+							<option value="2" <if condition="$category eq 102">selected</if>>刚厂文章位</option>
+						</select>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<input type="submit" value="查询" style="width:60px;"></input>
+						<input type="reset" value="重置" style="width:60px;"></input>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<a href="__CONTROLLER__/add_article"><input type="button" value="新增" style="width:60px;"></input></a>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div class="grid" style="margin-top:10px;">
+		<div class="borderTop"></div>
+			<!-- 产品title 开始-->
+			<ul>
+				<li class="tab" style="width:50px;">
+					<span>序号</span>
+				</li>
+				<li class="tab" style="width:150px;">
+					<span>标题</span>
+				</li>
+				<li class="tab" style="width:100px;">
+					<span>类别</span>
+				</li>
+				<li class="tab" style="width:150px;">
+					<span>创建时间</span>
+				</li>
+				<li class="tab" style="width:200px;">
+					<span>内容</span>
+				</li>
+				<li class="tab" style="width:150px;">
+					<span>操作</span>
+				</li>
+			</ul>
+			<!-- 产品title 结束-->
+			<!-- 产品列表 开始-->
+			<volist name="articleInfos" id="articleInfo">
+			<ul>
+				<li class="item">
+					<span style="width:50px;">{$i}</span>
+					<span style="width:150px;">{$articleInfo.title}</span>
+					<span style="width:100px";>
+					<if condition="($articleInfo[category]) eq 0"> 买方
+						<elseif condition="($articleInfo[category]) eq 1"/>卖方
+						<elseif condition="($articleInfo[category]) eq 2"/>账号服务
+						<else />常见问题
+					</if>
+					</span>
+					<span style="width:150px;">{$articleInfo.create_time}</span>
+					<span style="width:200px;">{$articleInfo.content}</span>
+					<span style="width:150px;">
+						<a href="__CONTROLLER__/update_article/article_id/{$articleInfo.id}">修改</a>&nbsp;&nbsp;&nbsp;
+						<a href="#" onclick="delete_article({$articleInfo.id});">删除</a>
+					</span>
+				</li>
+			</ul>
+			</volist>
+			<!-- 产品列表 结束-->
+			<div style="height:25px;line-height:25px; text-align: center;">
+			{$pagelist}
+			</div>
+	</div>
+</div>
+<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	/*
+	* 删除文章
+	*/
+	function delete_article(article_id){
+		if(confirm("确认要删除吗？")){
+			var url = "delete_article";
+			var data = {"article_id":article_id};
+			$.ajax({
+				type: 'POST',
+				url: url,
+				data: data,
+				success: function(result){
+					if(result == 1){
+						location.reload();					
+					}
+				}
+			}); 
+		}
+	}
+</script>
+</body>
+</html>

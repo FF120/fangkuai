@@ -1,0 +1,28 @@
+.classify{ overflow: hidden; margin-top: 20px;}
+	.classify li{ float: left; margin:5px 10px; height: 32px;}
+	.classify li a{ float: left; display: block; width: 110px; height: 30px;border:1px solid #CCC; line-height: 30px; text-align: center; font-size: 14px;}
+	.classify li a:hover,.classify li a.active{border-bottom:2px solid #ff7700; color:#ff7700; text-decoration: none;}
+
+
+	.form_box { margin-top: 20px;}
+	.form_box label{  position: relative;top:-5px\9;}
+	.form_box input{ width: 70px; height: 30px; vertical-align: middle; margin-bottom: 10px;border:1px solid #ccc;line-height: 30px;}
+	#gongsi_name{ width: 170px;}
+	
+	#search{ width: 60px; height: 32px; background-color: #0075c2; position: static; opacity: 1; border-color:#0075c2; color:#FFF; margin-left: 10px; border-radius: 4px; cursor: pointer; background-image: url(../images/sousuo.png);background-image: url(../images/sousuo2.png)\9; background-repeat: no-repeat; background-size: 40%;padding-left: 20px; background-position: 0px 3px;background-position: 5px 8px\9;background-position: 0px 5px\9\0; font-size: 14px;}
+	#upload{ width: 110px; height: 32px; background-color: #f89135; position: static; opacity: 1; border-color:#f89135; color:#FFF; margin-left: 10px; border-radius: 4px; cursor: pointer; background-image: url(../images/shangchuan.png); background-repeat: no-repeat; background-size: 28%;padding-left: 30px; font-size: 14px;}
+
+	#dingdan_title{ border: 1px solid #ccc; margin-top: 20px; background-color: #e8e8e8; overflow: hidden;}
+	#dingdan_title li{ float: left; text-align: center; font-size: 14px; color:#000; line-height: 2.6; cursor: pointer;}
+	.dingdan_list{ border: 1px solid #ccc; border-top: none; overflow: hidden;}
+	.dingdan_list li{ float: left; text-align: center; font-size: 14px; color:#666; line-height: 2.6; cursor: pointer; height: 60px; border-left:1px solid #CCC;overflow: hidden;}
+	.dingdan_list li:hover{ background-color: #f5f5f5;}
+	.dingdan_list li a{ color:#0075c2; +position: relative;}
+	.dingdan_list li a i{ +position: absolute; +top:2px; +left:-18px;padding:0px 9px; background:url(../images/file.png) no-repeat;}
+	.dingdan_list li a:hover{text-decoration: underline;}
+	.dingdan_list li .gs_nm{ display: block; width: 97px;white-space: nowrap; overflow: hidden;text-overflow: ellipsis; color:#0075c2;}
+	.dingdan_bottom li{ border:1px solid #CCC; height:20px; line-height: 20px;margin:14px 10px; padding:5px 10px;}
+	.dingdan_bottom li:hover{ background-color: #f5f5f5;}
+
+	.dingdan_list li.one_check{width:30px; line-height:65px; border-left:none;position: relative;top:20px\9;+top:0px;}
+	.dingdan_bottom li.all_check{width:30px; height:60px; line-height:60px; border:none; margin:0px;padding:0;position: relative;top:20px\9;+top:0px;}

@@ -1,0 +1,138 @@
+<include file="Public:header"/>
+</head>
+<body>
+	<!-- //右边边 -->
+	<div style="margin-top: 26px;">
+		<div id="position">
+			你当前的位置： 管理员后台<span></span>认证审核<span></span>
+			<a href="" class="now_ps">促销信息</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div style="height: 20px;"></div>
+		<div class="north">
+			<div class="right">
+				<div class="weast">
+					<img src="__PUBLIC__/images/head03.png" />
+					<div>促销信息</div>
+				</div>
+				<div class="east">
+					<table class="percent0">
+						<tr>
+							<td>名称：</td>
+							<td class="text">{$promoInfo.product_name}</td>
+						</tr>
+						<tr>
+							<td>规格：</td>
+							<td class="text">{$promoInfo.product_specification}</td>
+						</tr>
+						<tr>
+							<td>材质：</td>
+							<td class="text">{$promoInfo.product_material}</td>
+						</tr>
+						<tr>
+							<td>长度：</td>
+							<td class="text">{$promoInfo.product_length}</td>
+						</tr>
+						<tr>
+							<td>宽度：</td>
+							<td class="text">{$promoInfo.product_width}</td>
+						</tr>
+						<tr>
+							<td>高度：</td>
+							<td class="text">{$promoInfo.product_height}</td>
+						</tr>
+						<tr>
+							<td>制造商：</td>
+							<td class="text">{$promoInfo.manufacturer}</td>							
+						</tr>
+						<tr>
+							<td>区域：</td>
+							<td class="text">{$promoInfo.area}</td>
+						</tr>
+						<tr>
+							<td>库房名称：</td>
+							<td class="text">{$promoInfo.storehouse_name}</td>
+						</tr>
+						<tr>
+							<td>重量：</td>
+							<td class="text">{$promoInfo.weight}</td>
+						</tr>
+						<tr>
+							<td>称重方式：</td>
+							<td class="text">{$promoInfo.weighing_type}</td>
+						</tr>
+						<tr>
+							<td>数量：</td>
+							<td>{$promoInfo.quantity}</td>
+						</tr>
+						<tr>
+							<td>供应商：</td>
+							<td>{$promoInfo.supplier}</td>
+						</tr>
+						<tr>
+							<td>价格：</td>
+							<td>{$promoInfo.price}</td>
+						</tr>
+						<tr>
+							<td>备注：</td>
+							<td>{$promoInfo.remark}</td>
+						</tr>
+						<tr>
+							<td>是否挂牌上市：</td>
+							<td>{$promoInfo.is_listed}</td>
+						</tr>
+						<tr>
+							<td>是否为促销：</td>
+							<td>{$promoInfo.is_promotional}</td>
+						</tr>
+						<tr>
+							<td>用户：</td>
+							<td>{$promoInfo.username}</td>
+						</tr>
+						<tr>
+							<td>创建时间：</td>
+							<td>{$promoInfo.created_at}</td>
+						</tr>
+						<tr>
+							<td>审核情况：</td>
+							<td>
+							<if condition="($promoInfo[promotional_status]) eq 0">
+								<div style="height:25px;line-height:25px; text-align: center;"><a href="#" title="点击审核" onclick="verifyPromo({$promoInfo.sgr_id});"><span style="color:red;font-size:20px;">未审核</span></a></div>
+								<else /><div style="height:25px;line-height:25px; text-align: center;">已审核</div>
+							</if>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //右边结束 -->
+	<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		/*
+		* 审核用户
+		*/
+		function verifyPromo(sgr_id){
+			if(confirm("确认要审核吗？")){
+				var url = "__CONTROLLER__/verify_promo";
+				var data = {"sgr_id":sgr_id};
+				$.ajax({
+					type: 'POST',
+					url: url,
+					data: data,
+					success: function(result){
+						if(result == 1){
+							location.reload();					
+						}
+					}
+				}); 
+			}else{
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<include file="public/top"/>
+<load href="__PUBLIC__/css/header&footer.css" />
+	<div style="width:100%; border-top:1px solid #ccc;"></div>
+	<!-- 搜索开始 -->
+	<div class="search">
+		<a class="fl" style="height:90px;" href="{:U('Product/index')}"><img src="__PUBLIC__/images/logo.jpg" alt=""></a>
+		<form action="" method="get">
+			<input id="searchText" type="text" value="搜索">
+			<input id="subBtn" type="submit" value="">
+			<a href="" class="hot fr"></a>
+			<a href="" class="car fr"></a>
+		</form>
+		<div class="clear"></div>
+	</div>
+	<!-- 搜索结束 -->
+	<!-- 导航开始 -->
+	<div class="nav">
+		<div class="nav_content">
+
+			<!-- 大卖场导航结束 -->
+			<!-- 航向导航开始 -->
+			<ul class="nav_box fl" >
+				<li><a class="link" href="{:U('Index/index')}">首页</a></li>
+				<li><a class="link" href="{:U('Product/shopping')}">现货商城</a></li>
+				<li><a class="link" href="{:U('Product/cai_gou_bao_jia')}">采购报价</a></li>
+				<li><a class="link" href="{:U('Product/cu_xiao')}">促销</a></li>
+				<li><a class="link" href="gang_chang.html">钢厂专区</a></li>
+				<!-- banner上面的登陆框  开始-->
+				<div class="login">
+					<!-- 登陆开始 -->
+					<!-- 登陆结束 -->
+					<if condition="($login_info.is_login neq true) ">
+						<div class="login_head">
+							<img class="fl" src="__PUBLIC__/images/round_logo.jpg" alt="">
+							<p>亲，上午好！<br/>欢迎来到方块网</p>
+							<a href="{:U('User/index')}">登陆</a><a href="{:U('User/register')}">注册</a>
+						</div>
+
+
+						<else />
+						<div class="login_head">
+							<img class="fl" src="__PUBLIC__/images/round_logo.jpg" alt="">
+							<p>亲，上午好！{$login_info.telephone}<br/>欢迎来到方块网</p>
+						</div>
+					</if>
+
+					<!-- 入口开始 -->
+					<div class="login_mid">
+						<ul id="login_mid_tab">
+							<li class="active">账号服务</li>
+							
+						</ul>
+						<ul id="login_mid_content">
+							<li>
+								<!--<a href="">绑定<br/>方块网</a>-->
+								<a href="{:U('Admin/my_safe')}">修改<br/>密码</a>
+								<a href="">找回<br/>密码</a>
+								<div class="clear"></div>
+							</li>
+							<li style="display:none;">
+								<a href="">绑定<br/>方块网</a>
+								<a href="">2修改<br/>密码</a>
+								<a href="">找回<br/>密码</a>
+								<div class="clear"></div>
+							</li>
+							<li style="display:none;">
+								<a href="">绑定<br/>方块网</a>
+								<a href="">3修改<br/>密码</a>
+								<a href="">找回<br/>密码</a>
+								<div class="clear"></div>
+							</li>
+						</ul>
+					</div>
+					<!-- 入口结束 -->
+					<!-- 公告开始 -->
+					<div class="login_bottom">
+						<h1>
+						<span class="fl">方块公告</span>
+						<ul class="fr">
+							<li id="gonggao_tab_prev"> < </li>
+							<li id="gonggao_tab_next"> > </li>
+							<div class="clear"></div>
+						</ul>
+						<div class="clear"></div>
+						</h1>
+						<ul id="gonggao_content">
+							<li class="item_c">
+								<ul>
+									<volist name="news" id="nw">
+									<li>· {$nw.title}<span style="padding-left:20px;">08-22</span></li>
+									</volist>
+								</ul>
+							</li>
+					
+						</ul>
+					</div>
+					<!-- 公告结束 -->
+				</div>
+				<!-- banner上面的登陆框  结束-->
+				<div class="clear"></div>
+			</ul>
+			<!-- 航向导航结束 -->
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- 导航结束 -->
+	<!-- banner开始 -->
+	<div class="banner" id="banner">
+		<!-- banner列表开始 -->
+		<ul id="banner_content">
+			<li><a href=""><img height="100%" src="__PUBLIC__/images/banner1.jpg" alt=""></a></li>
+			<li style="display:none;"><a href=""><img height="100%" src="__PUBLIC__/images/banner2.jpg" alt=""></a></li>
+			<li style="display:none;"><a href=""><img height="100%" src="__PUBLIC__/images/banner3.jpg" alt=""></a></li>
+		</ul>
+		<!-- banner列表结束 -->
+		<!-- banner按钮开始 -->
+		<ul id="banner_tab">
+			<li class="active"><!-- 1 --></li>
+			<li><!-- 2 --></li>
+			<li><!-- 3 --></li>
+		</ul>
+		<!-- banner按钮结束 -->
+		<!-- banner部分滚动列表框开始 -->
+		<div class="banner_show_dingdan ">
+			<div class="borderTop" style="height:0px"></div>
+			<!-- 滚动狂标题 -->
+			<ul>
+				<li class="tab" style="width:115px;">用户</li>
+				<li class="tab" style="width:115px;">采购内容</li>
+				<li class="tab" style="width:115px;">交易状态</li>
+				<li class="tab" style="width:115px;">时间</li>
+				<div class="clear"></div>
+			</ul>
+			<!-- 滚动狂标题 结束-->
+			<div id="banner_dingdan_box">
+				<div id="banner_dingdan_content">
+					<ul id="banner_dingdan_scorll">
+						<li class="item"><span style="width:115px; color:#aaa;">小**</span><span style="color:#1b79b8; width:115px;">三级抗震螺纹…</span>
+						<span style="width:115px;">付款完成</span><span style="width:115px; color:#aaa;">15:09</span></li>
+
+						<li class="item"><span style="width:115px; color:#aaa;">小**</span><span style="color:#1b79b8; width:115px;">三级抗震螺纹…</span>
+						<span style="width:115px;">付款完成</span><span style="width:115px; color:#aaa;">15:09</span></li>
+
+						<li class="item"><span style="width:115px; color:#aaa;">小**</span><span style="color:#1b79b8; width:115px;">三级抗震螺纹…</span>
+						<span style="width:115px;">付款完成</span><span style="width:115px; color:#aaa;">15:09</span></li>
+
+						<li class="item"><span style="width:115px; color:#aaa;">小**</span><span style="color:#1b79b8; width:115px;">三级抗震螺纹…</span>
+						<span style="width:115px;">付款完成</span><span style="width:115px; color:#aaa;">15:09</span></li>
+
+						<li class="item"><span style="width:115px; color:#aaa;">小**</span><span style="color:#1b79b8; width:115px;">三级抗震螺纹…</span>
+						<span style="width:115px;">付款完成</span><span style="width:115px; color:#aaa;">15:09</span></li>
+
+						<li class="item"><span style="width:115px; color:#aaa;">小**</span><span style="color:#1b79b8; width:115px;">三级抗震螺纹…</span>
+						<span style="width:115px;">付款完成</span><span style="width:115px; color:#aaa;">15:09</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- banner部分滚动列表框结束 -->
+	</div>
+	<!-- banner结束 -->
+</div>
+<div class="main">
+	<!-- 代表单的banner 开始 -->
+	<div class="mid_banner" style="position:relative;">
+		<img src="__PUBLIC__/images/mid_banner_1.jpg" alt="">
+		<form id="findForm" action="#" method="post" enctype="multipart/form-data">
+			<textarea name="findText" id="findText">输入产品信息自动查找</textarea>
+
+			<!-- <input id="findText" nane="" value="" type="text"> -->
+			<input id="submit" type="submit">
+
+			<input id="file" name="file" value="上传文件" type="file">
+			<input id="aa" type="text" value="上传文件">
+		</form>
+		<script>
+		document.getElementById('file').onchange = function(){
+
+		document.getElementById('aa').value = document.getElementById('file').value.substr(12) ;
+		}
+		</script>
+	</div>
+	<!-- 代表单的banner 结束 -->
+	<!-- 每个 class="main_item" 为一个钢种-->
+	<div class="main_item">
+		<h1 class="main_item_head">
+			<span>优特钢</span>
+			<a href="">查看更多 >> </a>
+			<div class="clear"></div>
+		</h1>
+		<div class="main_item_content">
+			<!-- 左侧订单展示 开始 -->
+			<div class="show_dingdan ">
+				<div class="borderTop"></div>
+				<!-- 订单头部  开始 -->
+				<ul>
+					<li class="tab" style="width:40px;">用户</li>
+					<li class="tab" style="width:100px;">采购内容</li>
+					<li class="tab" style="width:70px;">交易状态</li>
+					<li class="tab" style="width:40px;">时间</li>
+					<div class="clear"></div>
+				</ul>
+				<!-- 订单头部  结束 -->
+				<!-- 订单列表  开始 -->
+				<div id="dingdan_box_0" class="dingdan_box">
+					<div id="dingdan_content_0" class="dingdan_content">
+						<ul id="dingdan_scorll_0">
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+							
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+							
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+							
+							<li class="item"><span style="width:40px; color:#aaa;">小**</span><span style="color:#1b79b8; width:100px;">三级抗震螺纹…</span>
+							<span style="width:70px;">付款完成</span><span style="width:40px; color:#aaa;">15:09</span></li>
+						</ul>
+					</div>
+				</div>
+				<!-- 订单列表  结束 -->
+			</div>
+			<!-- 左侧订单展示 结束 -->
+			<!-- 右侧产品列表开始 -->
+			<div class="product_list">
+				<div class="borderTop fl"></div>
+				<div class="product_list_item fl">
+					<!-- 产品title 开始-->
+					<ul>
+						<li class="tab" style="width:65px;">
+							<select name="name" id="">
+								<option value="">品名</option>
+								<option value="pin1">品名1</option>
+								<option value="pin2">品名2</option>
+							</select>
+						</li>
+						<li class="tab" style="width:65px;">
+							<select name="name" id="">
+								<option value="">钢厂</option>
+								<option value="pin1">品名1</option>
+								<option value="pin2">品名2</option>
+							</select>
+						</li>
+						<li class="tab" style="width:95px;">
+							<select name="name" id="">
+								<option value="">规格</option>
+								<option value="pin1">品名1</option>
+								<option value="pin2">品名2</option>
+							</select>
+						</li>
+						<li class="tab" style="width:95px;">
+							<select name="name" id="">
+								<option value="">材质</option>
+								<option value="pin1">品名1</option>
+								<option value="pin2">品名2</option>
+							</select>
+						</li>
+						<li class="tab" style="width:74px;">
+							<select style="width:70px;" name="name" id="">
+								<option value="">数量(吨)</option>
+								<option value="pin1">品名1</option>
+								<option value="pin2">品名2</option>
+							</select>
+						</li>
+						<li class="tab" style="width:100px;">
+							<select style="width:90px;" name="name" id="">
+								<option value="">单价(元/吨)</option>
+								<option value="pin1">品名1</option>
+								<option value="pin2">品名2</option>
+							</select>
+						</li>
+						<li class="tab" style="width:60px;">下单</li>
+						<div class="clear"></div>
+					</ul>
+					<!-- 产品title 结束-->
+					<!-- 产品列表 开始-->
+					<ul>
+						
+					    <volist name="products" id="item">
+							<li class="item">
+							<span style="width:65px; color:#aaa;">{$item.product_name}</span>
+							<span style="color:#1b79b8; width:65px;">{$item.manufacturer}</span>
+							<span style="width:95px;">{$item.product_specifications}</span>
+							<span style="width:95px; color:#aaa;">{$item.product_material}</span>
+							<span style="width:74px; color:#aaa;">{$item.quantity}</span>
+							<span style="width:100px; color:#fc5908;">{$item.unit_price}</span>
+							<span class="xiadan"><a href="{:U('Admin/addToCart',array('id'=>$product['sgr_id']))}">下单</a></span></li>
+						</volist>
+					</ul>
+					<!-- 产品列表 结束-->
+				</div>
+				<!-- 每种产品列表右侧的banner 开始-->
+				<div class="item_banner fl">
+					<ul id="item_left_banner_box_0">
+						<li><a href=""><img src="__PUBLIC__/images/item_left_banner1.jpg" alt=""></a></li>
+						<li style="display:none;"><a href=""><img src="__PUBLIC__/images/item_left_banner2.jpg" alt=""></a></li>
+						<li style="display:none;"><a href=""><img src="__PUBLIC__/images/item_left_banner3.jpg" alt=""></a></li>
+					</ul>
+					<ul id="item_left_tab_0" class="item_left_tab">
+						<li class="active"><!-- 1 --></li>
+						<li><!-- 2 --></li>
+						<li><!-- 3 --></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<!-- 每种产品列表右侧的banner 结束-->
+			</div>
+			<!-- 右侧产品列表结束 -->
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+
+	
+</div>
+<include file="public/footer"/>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>	
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/sidebar.js"></script>
+<script  type="text/javascript">
+	
+	tab({//banner切换
+		tabBoxId:'banner_tab',
+		contentBoxId:'banner_content',
+		tabItemTag:'li',
+		contentItemTag:'li',
+		activeClass:'active',
+		autoChange:true
+	});
+	tab({//登录窗口，服务tab切换;
+		tabBoxId:'login_mid_tab',
+		contentBoxId:'login_mid_content',
+		tabItemTag:'li',
+		contentItemTag:'li',
+		activeClass:'active'
+	});
+	//点击前后切换内容
+	clickTab('gonggao_tab_next','gonggao_tab_prev','gonggao_content','.item_c');
+
+	//banner订单scroll
+	dingDanScroll('banner_dingdan_content','banner_dingdan_scorll');
+
+	//item订单scroll
+	(function(){
+		var length = $('.main_item').size();
+		for(var i = 0; i<length;i++){
+			dingDanScroll('dingdan_content_'+i,'dingdan_scorll_'+i);
+		}
+	})();
+	//item_left_banner 
+	(function(){
+		var length = $('.main_item').size();
+		for(var i = 0; i<length;i++){
+			tab({
+				tabBoxId:'item_left_tab_'+i,
+				contentBoxId:'item_left_banner_box_'+i,
+				tabItemTag:'li',
+				contentItemTag:'li',
+				activeClass:'active',
+				autoChange:true
+			});
+		}
+	})()
+
+
+	//我的订单
+	$('#my_dng_btn').on('mouseover',function(){
+		$('#my_dng').show();
+	}).on('mouseout',function(){
+		$('#my_dng').hide();
+	});
+	
+</script>
+</body>
+</html>

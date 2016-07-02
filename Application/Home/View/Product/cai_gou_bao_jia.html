@@ -1,0 +1,280 @@
+<include file="public/top"/>
+<include file="public/header"/>
+	<div class="bj_wrap">
+		<div class="bj_main">
+			<div class="top">
+				<h1>采购报价专区</h1>
+				<a href="">[查看最低成交价]</a>
+				<span>采购截止时间：17:35</span>
+			</div>
+			<div class="frash">
+				<a href="">点击刷新，查看最新采购单</a>
+				<span>（距离上次刷新已过<i>01分59秒</i>）</span>
+			</div>
+			<div class="list_wrap">
+				<volist name="goods" id="item">
+				<div class="list">
+					<div class="title">
+						<h3>本条采购来自{$item.company.company_city}{$item.company.company_name}</h3>
+						<span>流水号:<i>{$item.gtb_id}</i></span>
+					</div>
+					<ul class="content">
+						<li style="width:320px;">
+							<i>{$item.product_name} {$item.product_specifications} {$item.product_material}</i><br>
+							<span>联系人：{$item.linkman} {$item.telephone}</span>
+						</li>
+						<li class="lineH_50" style="width:160px;">
+							<span>{$item.created_at|date="Y-m-d H:i",###}</span><br>
+							<!-- <span>待人工审核</span> -->
+						</li>
+						<li class="lineH_50" style="width:150px">
+							<span class="blue">选标中</span>
+						</li>
+						<li class="lineH_50 btnActive"><a class="bjbt" onclick="boxFadeIn({$item.gtb_id})">报价</a></li>
+					</ul>
+				</div>
+				</volist>
+			</div>
+			<!-- 页码开始 -->
+			<div id="page_ps">
+				{$page}
+			</div>
+			<!-- +页码结束 -->
+		</div>
+		<div class="bj_right">
+			<div class="wrap">
+				<div class="title">
+					<h1>委托找货</h1>
+					<h2>-你的免费找货助手</h2>
+				</div>
+				<form action="" method="">
+					<textarea name="needs" id="needs" cols="25" rows="6">写下您的真实需求，包括规格、材质等，收到后我们会立即给您回电确认，剩下的就交给我们吧。
+					</textarea>
+					<p><a href="">委托找货</a><span>></span>
+					<a href="">选择报价</a><span>></span>
+					<a href="">交易完成</a></p>
+					<input type="submit" value="立即帮我找">
+				</form>
+			</div>
+			<div class="wrap">
+				<div class="title title2">
+					<h1>成功动态展示</h1>
+				</div>
+				<ul>
+					<li>
+						<p><span>16</span>分钟前，<span>林**</span><br>
+						成功以<i>2210</i>元/吨，采购了<span class="blue">6*1800*1800 ccSB 日照 4.746吨</span></p>
+					</li>
+					<li>
+						<p><span>16</span>分钟前，<span>林**</span><br>
+						成功以<i>2210</i>元/吨，采购了<span class="blue">6*1800*1800 ccSB 日照 4.746吨</span></p>
+					</li>
+					<li class="no_border">
+						<p><span>16</span>分钟前，<span>林**</span><br>
+						成功以<i>2210</i>元/吨，采购了<span class="blue">6*1800*1800 ccSB 日照 4.746吨</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+<include file="public/footer"/>
+	
+</div>
+<div id="appendBox">
+	<style>
+	/*报价单样式*/
+	#appendBox{ position: fixed; top:0; left: 0; width: 100%; height: 1000px;z-index: 11; display: none;}
+	#appendBox .mark{ background-color: #000; width: 100%; height: 100%; opacity: 0.7;
+	position: absolute; top:0; left: 0; z-index: 10;}
+	.makeSurePrice { position: relative; top:50px; z-index: 15; background-color: #FFF; width: 503px;
+	padding:20px;left: 50%; margin-left: -263px;}
+
+
+	.makeSurePrice .item0 { overflow: hidden; margin-top: 20px;}
+	.makeSurePrice .item0 ul{ float: left; line-height: 1.6; margin-left:10px;}
+	.makeSurePrice .item0 ul span{ color:#FF5500;}
+	.makeSurePrice .item0 .askPrice{ float: left; background-color: #FF1300; color:#FFF; border-radius:3px; padding:0px 5px; line-height: 1.6em; margin-left: 10px;}
+	.makeSurePrice .item0 .lookUp{ float: right; display: inline-block; width: 140px; height: 40px; background-color: #FF5500; color:#FFF; font-size: 16px; cursor:pointer; line-height: 40px; text-align: center; margin-right: 20px;}
+	.makeSurePrice .item1 {margin-top:60px;}
+	.makeSurePrice .item1 h1 { line-height: 2em; font-size: 16px;}
+	.makeSurePrice .item1 h1 span{ font-size: 12px; color:#999;}
+	.makeSurePrice .item1 ul { overflow: hidden;border:1px solid #CCC;}
+	.makeSurePrice .item1 ul li{ overflow: hidden; float: left; width: 20%; font-size: 14px; text-align: center;}
+	.makeSurePrice .item1 ul.title{border-bottom: none;}
+	.makeSurePrice .item1 ul.title li { line-height: 3em;}
+	.makeSurePrice .item1 ul.content li { line-height: 4em;}
+
+	.makeSurePrice .item2 label { display: inline-block; width: 80px; text-align: right;}
+	.makeSurePrice .item2 label i{ font-style:normal; color:#F00;}
+	.makeSurePrice .item2 h1{ font-size: 14px; line-height: 2.6em; font-weight: bold; border-bottom: 1px dashed #CCC; margin-top: 20px;}
+	.makeSurePrice .item2 p{ line-height: 2.6em;background-color: #ff5500;color: #FFF;font-size: 14px;text-indent: 1rem;}
+	.makeSurePrice .item2 form{ margin-top: 20px;}
+	.makeSurePrice .item2 form input.text{ height: 30px;border:1px solid #ddd; width: 100px;}
+	.makeSurePrice .item2 form input.ocheck{ vertical-align: sub;}
+	.makeSurePrice .item2 form .textarea{ position: relative; top:-3em;}
+	.makeSurePrice .item2 form a{ color: #00f;}
+	.makeSurePrice .item2 form select{ width: 102px; height: 34px; border:1px solid #ddd;}
+	.makeSurePrice .item2 form .money{ color: #F00; font-size: 20px;}
+	.makeSurePrice .item2 form li{ margin-bottom: 10px;}
+	.makeSurePrice .item2 form .subBtn{ width: 110px; height: 32px; background-color: #ff5500; border:1px solid #ff5500; color:#FFF; font-size: 16px;}
+	.makeSurePrice .item2 form .subBtn:hover{background-color: #ff3300;}
+
+	#closeBtn{ width: 32px; height: 32px; position: absolute;top:-15px; right: -15px; z-index: 16; background: url(./images/close-bjd.png) no-repeat; background-color: #FFF; border-radius: 16px;}
+	</style>
+
+	<div class="mark"></div>
+			
+	<div class="makeSurePrice">
+		<div id="closeBtn"></div>	
+		<div class="item2">
+			<p>请在下方填写您的真实报价（价格必填），不合理的报价会被系统自动屏蔽。</p>
+			<form id="form_Quotation_info" action="{:U('Product/getGoodsQuotationInfo')}" method="post">
+				<ul>
+					<li>
+						<input hidden="hidden" id="ipt_gtb_id" name="gtb_id" value=""/>
+						
+						<label for=""><i>*</i>报价：</label>
+						<input class="text" type="text" name="unit_price"> /吨
+						<input class="ocheck" type="radio" checked="checked" name="is_tax_inclusive" value="1"> 含税
+						<input class="ocheck" type="radio" name="is_tax_inclusive" value="0"> 不含税
+					</li>
+					<li>
+						<label for=""><i>*</i>产地/厂家：</label>
+				
+						<select name="" id="">
+							<option value="">--选择</option>
+							<option value="沙钢">沙钢</option>
+							<option value="鞍钢">鞍钢</option>
+						</select>
+					</li>
+					<li>
+						<label for=""><i>*</i>交货地：</label>
+						<input class="text" type="text" name="delivery_place"> （**省-**市）
+					</li>
+					<li>
+						<label for=""><i>*</i>运费：</label>
+						<input id="ipt_shipping_fee" class="text" type="text" name="shipping_fee" value="0">
+						<input id="ipt_shipping_fee_option" class="ocheck" type="checkbox" name="shipping_fee_option" value="1" onclick="shippingFeeOption()"> 不含运费
+					</li>
+					<li>
+						<label for=""><i>*</i>税务发票：</label>
+						<input class="ocheck" type="checkbox" name="invoice_option" value="1">提供增值发票
+					</li>
+					<li>
+						<label for=""><i>*</i>产品总额：</label>
+						<span class="money">￥0.00</span>
+					</li>
+					<li>
+						<label class="textarea" for=""><i>*</i>补充说明：</label>
+						<textarea name="remark" id="" cols="60" rows="5"></textarea>
+					</li>
+					<li>
+						<label for=""></label>
+						<button  class="subBtn" type="submit" text="">立即报价</button>
+					</li>
+				</ul>
+			</form>
+		</div>
+
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+
+    //报价弹框代码
+    function boxFadeIn(gtb_id){
+    	
+    	document.getElementById("ipt_gtb_id").value=gtb_id;
+    	
+    	$('#appendBox').fadeIn('fast');
+    }
+    
+    $('#closeBtn').on('click',function(){
+			$('#appendBox').fadeOut('fast');
+	});
+    
+    function shippingFeeOption(){
+    
+      var checkbox=document.getElementById("ipt_shipping_fee_option");
+      if(checkbox.checked){
+      	document.getElementById("ipt_shipping_fee").value=0;
+      	document.getElementById("ipt_shipping_fee").readOnly=true;
+      }
+      else{
+      	document.getElementById("ipt_shipping_fee").readOnly=false;
+      }
+    }
+    
+    
+    
+    
+	
+</script>
+<script>
+//我的订单
+$('#my_dng_btn').on('mouseover',function(){
+	$('#my_dng').show();
+}).on('mouseout',function(){
+	$('#my_dng').hide();
+});
+//特钢大卖场
+(function(){
+	$('#big_shop').on('mouseover',function(){
+		$('#shopping_list').show();
+	}).on('mouseout',function(){
+		$('#shopping_list').hide();
+	});
+})();
+// 获取焦点样式
+(function(){
+	var tab = $('#dingdan_tab').find('li');
+
+	getActive(tab,'active')
+	function getActive($tabArr,classN){
+		$tabArr.each(function(index){
+			$(this).on('click',function(){
+				$tabArr.removeClass(classN);
+				$(this).addClass(classN);
+			});
+		});
+	}
+})();
+
+$(function(){
+	var $form0 = $('#dingdan_box');
+	var all_checkbox = $form0.find('.all_check').find('input');
+	var item_checkbox= $form0.find('.one_check').find('input');
+	//全选按钮事件
+	all_checkbox.on('click',function(){
+		
+		if($(this).attr('checked')){
+			item_checkbox.attr('checked','true');
+			all_checkbox.attr('checked','true');
+		}else if(!$(this).attr('checked') || $(this).attr('checked') == 'false'){
+			item_checkbox.removeAttr('checked');
+			all_checkbox.removeAttr('checked');
+			
+		}
+	});
+	//全选后，如果又取消了某一项的选着，就取消全选按钮的选中状态
+	item_checkbox.on('click',function(){
+		if(!$(this).attr('checked')){
+			all_checkbox.removeAttr('checked');
+		}
+	});
+	
+	//无选中操作提示
+	$('.dingdan_bottom').find('.alert').on('click',function(){
+		var count = 0;
+		item_checkbox.each(function(){
+			if($(this).attr('checked')){
+				count++;
+			}
+		});
+		if(count<1){alert('你没有选择操作条目！');}
+	});
+});
+</script>
+</body>
+</html>

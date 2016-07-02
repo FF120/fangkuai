@@ -1,0 +1,43 @@
+<include file="public/header_login"/>
+<script type="text/javascript">
+	var appurl = '__APP__';
+	var rooturl = '__ROOT__';
+</script>
+	<div style="width:100%; border-top:1px solid #ccc;"></div>
+	<link rel="stylesheet" href="__PUBLIC__/css/login.css">
+	<div class="login_main">
+		
+		<form action="{:U('User/login')}" method="post">
+			<img style="position:relative; top:-16px;" src="__PUBLIC__/images/login0_title.jpg" alt=""><br/>
+			<label for="telephone">账号：</label>
+			<input id="telephone" name="telephone" type="text"><br/><br/>
+			<label for="password">密码：</label>
+			<input id="password" name="password" type="password"><br/><br/>
+			<input id="auto_login"  name="auto_login" type="checkbox">
+			<label style="font-size:16px;" for="auto_login">下次自动登陆</label>
+			<a href="" style="color:#0069b8;padding-left:115px;">忘记密码？</a><br/><br/>
+
+			<label for=""><span style="padding-left:1em"></label>
+			<button id="subBtn" onclick="javascript:login()">登陆</button>
+
+			<div class="other_login">
+			<a style="top:35px; left:43px;" href=""><!-- 微信登陆 --></a>
+			<a style="top:35px; left:242px;"  href=""><!-- qq登陆 --></a>
+			</div>
+		</form>
+	</div>
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+
+	});
+	//我的订单
+	$('#my_dng_btn').on('mouseover',function(){
+		$('#my_dng').show();
+	}).on('mouseout',function(){
+		$('#my_dng').hide();
+	});
+
+</script>
+</body>
+</html>

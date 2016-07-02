@@ -1,0 +1,45 @@
+<include file="Public:header"/>
+</head>
+<body>
+	<!-- //右边边 -->
+	<div class="dingdan_right">
+		<div id="position">
+			你当前的位置： 管理员后台<span></span>账户中心<span></span>
+			<a href="" class="now_ps">管理员信息</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div style="height: 20px;"></div>
+		<div class="north">
+			<div class="right">
+				<div class="weast">
+					<img src="__PUBLIC__/images/head03.png" />
+				</div>
+				<div class="east">
+					<form>
+						<table class="percent0">
+							<tr>
+								<td>帐号：</td>
+								<td class="text">{$Think.Session.admin_name}</td>
+							</tr>
+							<tr>
+								<td>上次登录时间：</td>
+								<td>{$Think.Session.last_login_time}</td>
+							</tr>
+							<tr>
+								<td><a href="__MODULE__/Manager/update_pwd" style="color:red;">修改密码</a></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- //右边结束 -->
+	<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+</body>
+</html>

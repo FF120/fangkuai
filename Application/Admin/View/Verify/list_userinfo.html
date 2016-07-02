@@ -1,0 +1,123 @@
+<include file="Public:header"/>
+	<title></title>
+</head>
+<body>
+<div style="margin-top: 26px;">
+	<div id="position">
+		你当前的位置：管理员后台<span></span>认证审核<span></span>
+		<a href="#" class="now_ps">会员企业认证</a>
+	</div>
+	<div style="margin-left:100px;margin-top:50px;">
+		<form action="__SELF__" method="get">
+			<table>
+				<tr>
+					<td>
+						<label>账号：</label>
+						<input type="text" style="width:150px;" name="username" value="{$_GET['username']}"/>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<label>名字：</label>
+						<input type="text" style="width:150px;" name="truename" value="{$_GET['truename']}"/>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<label>认证状态：</label>
+						<select name="is_verified" style="width:150px;">
+							<option value="">全部</option>
+							<option value="0" <if condition="$is_verified eq 100">selected</if>>未认证</option>
+							<option value="1" <if condition="$is_verified eq 101">selected</if>>已认证</option>
+							<option value="2" <if condition="$is_verified eq 102">selected</if>>申请审核中</option>
+						</select>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<input type="submit" value="查询" style="width:60px;"></input>
+						<input type="reset" value="重置" style="width:60px;"></input>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div class="grid" style="margin-top:10px;">
+		<div class="borderTop"></div>
+		<!-- 产品title 开始-->
+		<ul>
+			<li class="tab" style="width:50px;">
+				<span>序号</span>
+			</li>
+			<li class="tab" style="width:150px;">
+				<span>账号</span>
+			</li>
+			<li class="tab" style="width:150px;">
+				<span>名字</span>
+			</li>
+			<li class="tab" style="width:150px;">
+				<span>电话</span>
+			</li>
+			<li class="tab" style="width:200px;">
+				<span>邮箱</span>
+			</li>
+			<li class="tab" style="width:60px;">
+				<span>详细信息</span>
+			</li>
+			<li class="tab" style="width:100px;">
+				<span>是否认证</span>
+			</li>
+		</ul>
+		<!-- 产品title 结束-->
+		<!-- 产品列表 开始-->
+		<volist name="userInfos" id="userInfo">
+		<ul>
+			<li class="item">
+				<span style="width:50px;">{$i}</span>
+				<span style="width:150px;">{$userInfo.username}</span>
+				<span style="width:150px;">{$userInfo.truename}</span>
+				<span style="width:150px;">{$userInfo.telephone}</span>
+				<span style="width:200px;">{$userInfo.email}</span>
+				<span class="detail"><a href="__CONTROLLER__/detail_userInfo/userid/{$userInfo.id}" title="点击查看"">查&nbsp;&nbsp;看</a></span>
+				<if condition="($userInfo[is_verified]) eq 2">
+					<div style="height:25px;line-height:25px; text-align: center;"><a href="#" title="点击认证" onclick="verifyUser({$userInfo.id});">申请待审核</a></div>
+					<elseif condition="($userInfo[is_verified]) eq 1"/><div style="height:25px;line-height:25px; text-align: center;">已认证</div>
+					<else /><div style="height:25px;line-height:25px; text-align: center;">未认证</div>
+				</if>
+			</li>
+		</ul>
+		</volist>
+		<!-- 产品列表 结束-->
+		<div style="height:25px;line-height:25px; text-align: center;">
+		{$pagelist}
+		</div>
+	</div>
+</div>
+<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	/*
+	* 审核用户
+	*/
+	function verifyUser(user_id){
+		if(confirm("确认要认证该用户吗？")){
+			var url = "verify_user";
+			var data = {"user_id":user_id};
+			$.ajax({
+				type: 'POST',
+				url: url,
+				data: data,
+				success: function(result){
+					if(result == 1){
+						location.reload();					
+					}
+				}
+			}); 
+		}else{
+		}
+	}
+</script>
+</body>
+</html>

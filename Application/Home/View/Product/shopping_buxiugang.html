@@ -1,0 +1,169 @@
+<include file="public/top"/>
+<include file="public/header"/>
+
+<div class="main">
+	<!-- 钢种切换tab按钮 开始 -->
+	<!--<ul id="tab">-->
+		<!--<li id="youtegang"><a href="{:U('Product/youtegang',array('product_type'=>'1'))}">优特钢</a></li>-->
+		<!--<li id="bandai"><a href="{:U('Product/bandai',array('product_type'=>'2'))}">优特板带</a></li>-->
+		<!--<li id="wufenggang"><a href="{:U('Product/wufengguan',array('product_type'=>'3'))}">无缝钢管</a></li>-->
+		<!--<li id="buxiugang"><a  href="{:U('Product/buxiugang',array('product_type'=>'4'))}">不锈钢</a></li>-->
+		<!--<li id="youxian"><a href="{:U('Product/youxian',array('product_type'=>'5'))}">优线</a></li>-->
+	<!--</ul>-->
+	<!-- 钢种切换tab按钮 结束 -->
+	<div class="content" style="">
+		<div class="content_form">
+			<!-- 搜索框 开始 -->
+			<form action="" method="">
+				<select name="diqu" id="">
+					<option value="北京">北京</option>
+					<option value="天津">天津</option>
+				</select>
+				<label for="pin_ming1">品名</label>
+				<input id="pin_ming1" name="pin_ming1" type="text">
+				<label for="gui_ge1">规格</label>
+				<input id="gui_ge1" name="gui_ge1" type="text">
+				<label for="cai_zi1">材质</label>
+				<input id="cai_zi1" name="cai_zi1" type="text">
+				<label for="gang_chang1">钢厂</label>
+				<input id="gang_chang1" name="gang_chang1" type="text">
+				<label for="cang_ku1">仓库</label>
+				<input id="cang_ku1" name="cang_ku1" type="text">
+				<label for="chang_du01">长度</label>
+				<input id="chang_du01" name="chang_du01" type="text">
+				-
+				<input id="chang_du11" name="chang_du11" type="text">
+				<input class="listSubBtn" type="submit" value="找货">
+			</form>
+			<!-- 搜索框 结束 -->
+
+		</div>
+		<div class="content_item">
+			<!-- 列表title 开始 -->
+			<ul class="content_item_title">
+				<li>钢厂<i class="haveColor"></i></li>
+				<li>品名<i></i></li>
+				<li>材质<i></i></li>
+				<li>规格<i></i></li>
+				<li>仓库<i></i></li>
+				<li>数量<i></i></li>
+				<li>价格<i></i></li>
+				<li class="no-border">操作<i></i></li>
+			</ul>
+			<!-- 列表title 结束 -->
+			<!-- 列表主体 开始 -->
+			<volist name="products" id="product">
+				<ul class="content_item_list">
+					<li>{$product.manufacturer}</li>
+					<li>{$product.product_name}</li>
+					<li>{$product.product_material}</li>
+					<li>{$product.product_specifications}</li>
+					<li>{$product.storehouse_name}</li>
+					<li>{$product.quantity}</li>
+					<li>{$product.unit_price}</li>
+					<!--{:U('Admin/addToCart',array('id'=>$product['sgr_id']))}-->
+					<li class="no-border"><a href="javascript:order({$product['sgr_id']})">下单</a></li>
+				</ul>
+			</volist>
+			<!-- 列表主体 结束 -->
+		</div>
+	</div>
+	<div class="content_form_right">
+		<!-- 锁货列表 开始 -->
+		<ul class="content_form_right_tab">
+			<li>购物列表</li>
+		</ul>
+		<ul class="content_form_right_list" id="c_f_r_list1">
+			<volist name="products" id="product">
+			<li id="{$product['sgr_id']}" style="display: none">
+				<!--<p >{$product.sgr_id}</p>-->
+				<p>
+					<span class="name blod fl">{$product.manufacturer}&nbsp;&nbsp;&nbsp;{$product.product_name}</span>
+					<span class="price blod fr">{$product.unit_price}</span>
+				</p>
+				<p>
+					<span class="size fl">{$product.product_specifications}</span>
+				<input class="fr" type="text" onclick="this.focus();this.select();add_amount({$product['sgr_id']})" value="1">
+				</p>
+				<p>
+					<span class="address color fl">佛山市</span>
+					<span class="fl">/</span><span class="fl">{$product.storehouse_name}</span>
+					<span class="fl">/</span><span class="weight fl">{$product.quantity}吨</span>
+					<span class="dele color fr">删除</span>
+				</p>
+			</li>
+				</volist>
+			<li id="deletAll"><a href="">清空所有货物</a></li>
+
+			<div class="bottom">
+				<p>
+					抬头：<span><尚未认证企业></span>
+					<a class="color" href="{:U('Admin/company_infos')}">去认证</a>
+				</p>
+				<p>
+					<select name="" id="">
+						<option value="123">123</option>
+					</select>
+					<a class="color" href="">新增</a>
+				</p>
+				<p>
+					共计<span class="allNum red blod">0</span>件
+					<span class="allWeight red blod">0</span>吨
+					<span class="allMoney red blod">0</span>元
+				</p>
+				<p><input onclick="javascript:add_cart()" id="blockSub" type="button" value="加入购物车"></p>
+			</div>
+			
+		</ul>
+		<ul class="content_form_right_list" id="c_f_r_list2" style="display:none;">
+			<li>优特钢版2</li>
+			<li>优特钢版2</li>
+			
+		</ul>		
+		<!-- 锁货列表 结束 -->
+	</div>
+	<!-- 页码开始 -->
+	<div id="page_ps">
+		{$page}
+			<div class="clear"></div>
+	</div>
+	<!-- 页码结束 -->
+</div>
+<include file="public/footer"/>
+
+</div>
+<script type="text/javascript">
+	var appurl = '__APP__';
+	var rooturl = '__ROOT__';
+</script>
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script src="__PUBLIC__/js/shoppingMall.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script>
+	    var product_ids = new Array();
+		var amounts = new Array();
+		function order(id){
+			$("#"+id+"").show();
+			if(product_ids.indexOf(id) == -1){
+				product_ids.push(id);
+				amounts.push(1);
+			}
+		}
+		function add_amount(id){
+			$("#"+id).find('input').blur(function(){
+				var a = $("#"+id).find('input').val();
+				var index = product_ids.indexOf(id);
+				amounts[index] = a;
+
+			});
+		}
+	    function add_cart(){
+
+			var url = appurl + "/Home/Product/addToCart_batch";
+			var product_string = product_ids.toString();
+			var amounts_string = amounts.toString();
+			post(url,{ids:product_string,amouts_string:amounts_string});
+		}
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+.classify{ overflow: hidden; margin-top: 20px;}
+	.classify li{ float: left; margin:5px 4px; height: 32px;}
+	.classify li a{ float: left; display: block; width: 115px; height: 30px;border:1px solid #CCC; line-height: 30px; text-align: center; font-size: 14px;}
+	.classify li a:hover,.classify li a.active{border-bottom:2px solid #ff7700; color:#ff7700;}
+
+
+	.form_box { margin:30px auto;padding-left:100px; position: relative;}
+	.form_box input{ width: 70px; height: 30px; vertical-align: middle; margin-bottom: 10px;border:1px solid #ccc;line-height: 30px;}
+	#zyd_btn{position: absolute; top:0; left: 125px; width: 200px; height: 50px; opacity: 0;}
+	.fabu_btn{ margin: 0 25px;}
+
+	
+	
+
+	#dingdan_title,.dingdan_input{ border: 1px solid #ccc; background-color: #e8e8e8; overflow: hidden;}
+	#dingdan_title li,.dingdan_input li{ float: left; text-align: center; font-size: 14px; color:#000; line-height: 2.6; cursor: pointer;}
+	.dingdan_input{ margin-top:0; background-color: #FFF; border-top: none;}
+	.dingdan_input li input{ width: 45px; margin-top: 7px\9;}
+	.dingdan_input li select{ margin-top: 7px\9;}
+
+	.dingdan_list{ border: 1px solid #ccc; border-top: none; overflow: hidden;}
+	.dingdan_list li{ float: left; text-align: center; font-size: 12px; color:#666; line-height: 30px; cursor: pointer; height: 30px; overflow: hidden;}
+	.dingdan_list li:hover{ background-color: #f5f5f5;}
+	.dingdan_list li a{ color:#0075c2; +position: relative;}
+	.dingdan_list li a i{ +position: absolute; +top:2px; +left:-18px;padding:0px 9px; background:url(../images/file.png) no-repeat;}
+	.dingdan_list li a:hover{text-decoration: underline;}
+	
+	.dingdan_bottom li{ border:1px solid #CCC; height:20px; line-height: 20px;margin:14px 10px; padding:5px 10px;}
+	.dingdan_bottom li:hover{ background-color: #f5f5f5;}
+
+	.dingdan_list li.one_check input{ margin-top: 10px;+margin-top: 6px;}
+	.dingdan_bottom li.all_check{margin: 14px 0; padding: 5px; +padding-bottom:15px;border:none; }

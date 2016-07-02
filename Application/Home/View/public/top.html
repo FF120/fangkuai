@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>方块网</title>
+    <load href="__PUBLIC__/css/index.css" />
+
+    <load href="__PUBLIC__/css/user_header&footer.css"/><!--头部&底部样式-->
+
+</head>
+<body>
+<div class="header">
+    <!-- 顶部开始 -->
+    <div class="user">
+        <if condition="($login_info.is_login neq true) ">
+            <p class="fl">亲，欢迎来到方块网！请<a href="{:U('User/index')}">登陆</a>[<a href="{:U('User/register')}">免费注册</a>]</p>
+            <else />
+            <p class="fl">你好，<span>{$login_info.truename}</span>（<span>{$login_info.telephone}</span>）[<a href="{:U('User/logout')}">退出</a>]</p>
+        </if>
+
+
+
+        <ul class="fr">
+            <li><a href="{:U('Admin/fabu_order')}">我的方块网</a>|</li>
+            <li id="my_dng_btn" style="position:relative; ">
+                <ul id="my_dng">
+                    <li><a href="javascript:void(0)">我的订单</a></li>
+                    <li><a href="javascript:void(0)">我的订单</a></li>
+                    <li><a href="javascript:void(0)">我的订单</a></li>
+                    <li><a href="javascript:void(0)">我的订单</a></li>
+                    <li><a href="javascript:void(0)">我的订单</a></li>
+                    <li><a href="javascript:void(0)">我的订单</a></li>
+                </ul>
+                <a href="javascript:void(0)"><span class="fl">我的订单</span><i style="width:10px;height:10px; background-position:-2px -26px;top:10px; left:8px;"></i></a>|</li>
+            <li><a href="javascript:void(0)">积分商城</a>|</li>
+            <li><a href="javascript:void(0)"><i style="width:17px;height:17px; background-position:0px 0px; top:5px; left:-4px;"></i><span class="fl">在线客服</span></a>|</li>
+            <li><a href="javascript:void(0)">工作时间：工作日8:00-16:00</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <!-- 顶部结束 -->

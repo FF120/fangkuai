@@ -1,0 +1,64 @@
+<include file="Public:header" />
+<link href="__PUBLIC__/css/advice_response.css" rel="stylesheet" />
+</head>
+<body>
+	<form action="/Product/suggest/frm_suggest?Post=Post" method="post">        <div class="jytc">
+            <div class="jy_t">
+                <p class="xinxi">页面没有想要的信息？操作还不够人性化？有更好的建议和想法？欢迎您随时提出来。</p>
+                <p class="youhua">我们会不断优化和改善，努力为您带来更好的用户体验，感谢您的支持谢谢！</p>
+
+            </div>
+
+            <div class="jy_m1" style="margin-bottom:20px;">
+
+                <div class="jy_tit">您的建议是关于：</div>
+                <div class="jy_nr">
+                    <input class="rad" data-val="true" data-val-number="字段 建议类型 必须是一个数字。" data-val-required="请选择建议类型" id="stype" name="Stype" type="radio" value="1" /><span class="nr_s">注册登录</span>
+                    <input class="rad" id="stype" name="Stype" type="radio" value="2" /><span class="nr_s">商品选购</span>
+                    <input class="rad" id="stype" name="Stype" type="radio" value="3" /><span class="nr_s">订单支付</span>
+                    <input class="rad" id="stype" name="Stype" type="radio" value="4" /><span class="nr_s">会员中心</span>
+                    <input class="rad" id="stype" name="Stype" type="radio" value="5" /><span class="nr_s">行情资讯</span>
+                    <input class="rad" id="stype" name="Stype" type="radio" value="6" /><span class="nr_s">网站性能</span>
+                    <input class="rad" id="stype" name="Stype" type="radio" value="7" /><span class="nr_s">服务</span>
+                    <input class="rad" id="stype" name="Stype" type="radio" value="8" /><span class="field-validation-valid" data-valmsg-for="Stype" data-valmsg-replace="true"></span><span class="nr_s">其他</span>
+                </div>
+
+            </div>
+
+            
+
+            <div class="jy_m1">
+                <div class="jy_tit">内容：</div>
+                <div class="jy_nr" style="position: relative">
+                    <textarea cols="20" data-val="true" data-val-required="请输入意见" id="Contents" name="Contents" placeholder="亲爱的会员，感谢您给我们提出建议,我们会认真对待并不断优化改善：涉及具体的页面，请附上相关链接，谢谢！" rows="2">
+</textarea> <span class="field-validation-valid" data-valmsg-for="Contents" data-valmsg-replace="true"></span>
+                    <div class="xzz"><span id="num">0</span>/<span>200</span></div>
+                </div>
+            </div>
+
+            <div class="jy_m1" style="padding-bottom:20px;margin-top:20px;">
+                <div class="jy_tit">&nbsp;</div>
+                <div class="jy_nr">
+                    <input type="button" onclick="btnsubmit()" id="btnsub" class="tijiao" value="提&nbsp;交" />
+                </div>
+            </div>
+        </div>
+	</form>
+</body>
+</html>
+<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#Contents").keyup(function () {
+            var num = $("#Contents").val().length;
+            if (num >= 200) {
+                num = 200;
+            }
+            $("#num").html(num);
+            if (num >= 200) {
+                $("#Contents").val($("#Contents").val().substring(0, 200));
+            }
+        });
+
+    });
+</script>

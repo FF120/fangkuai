@@ -1,0 +1,73 @@
+<include file="Public:header"/>
+</head>
+<body>
+	<div class="user_left" style="margin-left:100px;">
+		<h1>管理员后台</h1>
+		<div id="sideNav">
+			<h2 class="bg4">
+				<strong>认证审核</strong><i></i>
+			</h2>
+			<ul>
+				<li><a href="__MODULE__/Verify/list_userinfo" target="right">会员企业认证</a></li>
+				<li><a href="__MODULE__/Verify/list_spotinfo" target="right">审核发布产品</a></li>
+				<li><a href="__MODULE__/Verify/list_goodsbuyinfo" target="right">审核发布求购</a></li>
+				<li><a href="__MODULE__/Verify/list_promotionalinfo" target="right">审核发布促销</a></li>
+			</ul>
+			<h2 class="bg2">
+				<strong>广告位设置</strong><i></i>
+			</h2>
+			<ul>
+				<li><a href="__MODULE__/Advert/list_advert" target="right">广告列表</a></li>
+				<li><a href="__MODULE__/Advert/add_advert" target="right">添加广告</a></li>
+			</ul>
+			<h2 class="bg3">
+				<strong>其他信息设置</strong><i></i>
+			</h2>
+			<ul>
+				<li><a href="__MODULE__/Article/list_article" target="right">发布帮助信息</a></li>
+				<li><a href="#">设置积分规则</a></li>
+				<li><a href="__MODULE__/Index/set_work_time" target="right">设置工作时间</a></li>
+				<li><a href="#">意见反馈</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- //左边结束 -->
+	<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			(function() {//侧边栏sideNave
+				var sideTab = $('#sideNav').find('h2');
+				var sideContent = $('#sideNav').find('ul');
+
+				sideTab.each(function(index) {
+					$(this)
+							.on(
+									'click',
+									function() {
+										sideContent.eq(index).toggle();
+										var pos = $(this).find('i').css(
+												'background-position');
+										if (pos === '0px -16px') {
+											$(this).find('i').css(
+													'background-position',
+													'0px 0px');
+											flag = false;
+										} else {
+											$(this).find('i').css(
+													'background-position',
+													'0px -16px');
+											flag = true;
+										}
+									});
+				});
+			})()
+			//我的订单
+			$('#my_dng_btn').on('mouseover', function() {
+				$('#my_dng').show();
+			}).on('mouseout', function() {
+				$('#my_dng').hide();
+			});
+		})
+	</script>
+</body>
+</html>

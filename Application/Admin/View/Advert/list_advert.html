@@ -1,0 +1,168 @@
+<include file="Public:header"/>
+	<title></title>
+</head>
+<body>
+<div style="margin-top: 26px;">
+	<div id="position">
+		你当前的位置： <a href="">管理员后台</a><span></span> <a href="__CONTROLLER__/list_advert">广告位设置</a><span></span>
+		<a href="#" class="now_ps">广告列表</a>
+	</div>
+	<div style="margin-left:100px;margin-top:50px;">
+		<form action="__SELF__" method="get">
+			<table>
+				<tr>
+					<td>
+						<label>标题：</label>
+						<input type="text" style="width:150px;" name="title" value="{$_GET['title']}"/>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<label>栏位：</label>
+						<select name="position" style="width:150px;">
+							<option value="">全部</option>
+							<option value="0" <if condition="$position eq 100">selected</if>>首页广告位</option>
+							<option value="1" <if condition="$position eq 101">selected</if>>首页方块广告</option>
+							<option value="2" <if condition="$position eq 102">selected</if>>刚厂广告位</option>
+						</select>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<label>栏位：</label>
+						<select name="is_used" style="width:150px;">
+							<option value="">全部</option>
+							<option value="0" <if condition="$is_used eq 100">selected</if>>未启用</option>
+							<option value="1" <if condition="$is_used eq 101">selected</if>>启用</option>
+						</select>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<input type="submit" value="查询" style="width:60px;"></input>
+						<input type="reset" value="重置" style="width:60px;"></input>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div class="grid" style="margin-top:10px;">
+		<div class="borderTop"></div>
+			<!-- 产品title 开始-->
+			<ul>
+				<li class="tab" style="width:50px;">
+					<span>序号</span>
+				</li>
+				<li class="tab" style="width:90px;">
+					<span>标题</span>
+				</li>
+				<li class="tab" style="width:90px;">
+					<span>栏位</span>
+				</li>
+				<li class="tab" style="width:150px;">
+					<span>上传时间</span>
+				</li>
+				<li class="tab" style="width:160px;">
+					<span>描述</span>
+				</li>
+				<li class="tab" style="width:90px;">
+					<span>缩略图</span>
+				</li>
+				<li class="tab" style="width:50px;">
+					<span>大图</span>
+				</li>
+				<li class="tab" style="width:90px;">
+					<span>操作</span>
+				</li>
+				<li class="tab" style="width:90px;">
+					<span>是否启用</span>
+				</li>
+			</ul>
+			<!-- 产品title 结束-->
+			<!-- 产品列表 开始-->
+			<volist name="advertInfos" id="advertInfo">
+			<ul>
+				<li class="item">
+					<span style="width:50px;">{$i}</span>
+					<span style="width:90px;">{$advertInfo.title}</span>
+					<span style="width:90px";>
+					<if condition="($advertInfo[position]) eq 0"> 首页广告位
+						<elseif condition="($advertInfo[position]) eq 1"/>首页方块公告
+						<else />钢厂广告位
+					</if>
+					</span>
+					<span style="width:150px;">{$advertInfo.create_time}</span>
+					<span style="width:160px;word-break:normal;">{$advertInfo.desc}</span>
+					<span style="width:90px";><img src="__ROOT__/{$advertInfo.small_img_path}" width="60px" height="40px"></img></span>
+					<span style="width:50px";><a href="__ROOT__/{$advertInfo.org_img_path}" title="点击查看"">查看</a></span>
+					<span style="width:90px;">
+						<a href="__CONTROLLER__/update_advert/advert_id/{$advertInfo.id}">修改</a>&nbsp;&nbsp;&nbsp;
+						<a href="#" onclick="delete_advert({$advertInfo.id});">删除</a>
+					</span>
+					<span style="width:90px;">
+					<if condition="($advertInfo[is_used]) eq 0">
+						<a href="#" title="点击启用" onclick="deal_is_used({$advertInfo.id}, {$advertInfo.is_used});">未启用</a>
+						<else /><a href="#" title="点击停用" onclick="deal_is_used({$advertInfo.id}, {$advertInfo.is_used});">启用</a>
+					</if>
+					</span>
+				</li>
+			</ul>
+			</volist>
+			<!-- 产品列表 结束-->
+			<div style="height:25px;line-height:25px; text-align: center;">
+			{$pagelist}
+			</div>
+	</div>
+</div>
+<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	/*
+	* 删除广告
+	*/
+	function delete_advert(advert_id){
+		if(confirm("确认要删除吗？")){
+			var url = "delete_advert";
+			var data = {"advert_id":advert_id};
+			$.ajax({
+				type: 'POST',
+				url: url,
+				data: data,
+				success: function(result){
+					if(result == 1){
+						location.reload();					
+					}
+				}
+			}); 
+		}
+	}
+	
+	/*
+	* 处理启用和未启用
+	*/
+	function deal_is_used(id, is_used){
+		var str = "";
+		if(is_used == 0){
+			str = "确认要启用吗？"
+		} else if(is_used == 1){
+			str = "确认要停用吗？"
+		}
+		if(confirm(str)){
+			var url = "deal_is_used";
+			var data = {"id":id, "is_used":is_used};
+			$.ajax({
+				type: 'POST',
+				url: url,
+				data: data,
+				success: function(result){
+					location.reload();					
+				}
+			}); 
+		}
+	}
+</script>
+</body>
+</html>

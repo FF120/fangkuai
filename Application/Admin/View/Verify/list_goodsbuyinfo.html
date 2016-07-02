@@ -1,0 +1,121 @@
+<include file="Public:header"/>
+	<title></title>
+</head>
+<body>
+<div style="margin-top: 26px;">
+	<div id="position">
+		你当前的位置：管理员后台<span></span>认证审核<span></span>
+		<a href="#" class="now_ps">审核发布求购</a>
+	</div>
+	<div style="margin-left:100px;margin-top:50px;">
+		<form action="__SELF__" method="get">
+			<table>
+				<tr>
+					<td>
+						<label>名称：</label>
+						<input type="text" style="width:150px;" name="product_name" value="{$_GET['product_name']}"/>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<label>材质：</label>
+						<input type="text" style="width:150px;" name="product_material" value="{$_GET['product_material']}"/>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<label>审核状态：</label>
+						<select name="approval_status" style="width:150px;">
+							<option value="">全部</option>
+							<option value="0" <if condition="$approval_status eq 100">selected</if>>未审核</option>
+							<option value="1" <if condition="$approval_status eq 101">selected</if>>已审核</option>
+						</select>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<input type="submit" value="查询" style="width:60px;"></input>
+						<input type="reset" value="重置" style="width:60px;"></input>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div class="grid" style="margin-top:10px;">
+		<div class="borderTop"></div>
+		<!-- 产品title 开始-->
+		<ul>
+			<li class="tab" style="width:50px;">
+				<span>序号</span>
+			</li>
+			<li class="tab" style="width:150px;">
+				<span>名称</span>
+			</li>
+			<li class="tab" style="width:150px;">
+				<span>材质</span>
+			</li>
+			<li class="tab" style="width:150px;">
+				<span>价格要求</span>
+			</li>
+			<li class="tab" style="width:200px;">
+				<span>联系人</span>
+			</li>
+			<li class="tab" style="width:60px;">
+				<span>详细信息</span>
+			</li>
+			<li class="tab" style="width:100px;">
+				<span>是否审核</span>
+			</li>
+		</ul>
+		<!-- 产品title 结束-->
+		<!-- 产品列表 开始-->
+		<volist name="goodsBuyInfos" id="goodsBuyInfo">
+		<ul>
+			<li class="item">
+				<span style="width:50px;">{$i}</span>
+				<span style="width:150px;">{$goodsBuyInfo.product_name}</span>
+				<span style="width:150px;">{$goodsBuyInfo.product_material}</span>
+				<span style="width:150px;">{$goodsBuyInfo.price_conditions}</span>
+				<span style="width:200px;">{$goodsBuyInfo.linkman}</span>
+				<span class="detail"><a href="__CONTROLLER__/detail_goodsBuyInfo/gtb_id/{$goodsBuyInfo.gtb_id}" title="点击查看"">查&nbsp;&nbsp;看</a></span>
+				<if condition="($goodsBuyInfo[approval_status]) eq 0">
+					<div style="height:25px;line-height:25px; text-align: center;"><a href="#" title="点击审核" onclick="verifyGoodsBuy({$goodsBuyInfo.gtb_id});">未审核</a></div>
+					<else /><div style="height:25px;line-height:25px; text-align: center;">已审核</div>
+				</if>
+			</li>
+		</ul>
+		</volist>
+		<!-- 产品列表 结束-->
+		<div style="height:25px;line-height:25px; text-align: center;">
+		{$pagelist}
+		</div>
+	</div>
+</div>
+<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	/*
+	* 审核
+	*/
+	function verifyGoodsBuy(gtb_id){
+		if(confirm("确认要审核吗？")){
+			var url = "verify_goods_buy";
+			var data = {"gtb_id":gtb_id};
+			$.ajax({
+				type: 'POST',
+				url: url,
+				data: data,
+				success: function(result){
+					if(result == 1){
+						location.reload();					
+					}
+				}
+			}); 
+		}else{
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-svtixk');
+	src:url('../fonts/icomoon.eot?#iefix-svtixk') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?-svtixk') format('truetype'),
+		url('../fonts/icomoon.woff?-svtixk') format('woff'),
+		url('../fonts/icomoon.svg?-svtixk#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-iconfont-duihao2:before {
+	content: "\e61d";
+}
+.icon-iconfont-shouji:before {
+	content: "\e61c";
+}
+.icon-iconfont-xinjian2:before {
+	content: "\e61b";
+}
+.icon-iconfont-xinjian:before {
+	content: "\e61a";
+}
+.icon-iconfont-iconfont14:before {
+	content: "\e619";
+}
+.icon-iconfont-bianji:before {
+	content: "\e618";
+}
+.icon-iconfont-aixin:before {
+	content: "\e617";
+}
+.icon-iconfont-xiaolian:before {
+	content: "\e616";
+}
+.icon-iconfont-icon22:before {
+	content: "\e614";
+}
+.icon-iconfont-xiaoxi:before {
+	content: "\e615";
+}
+.icon-iconfont-fangdajing:before {
+	content: "\e612";
+}
+.icon-iconfont-duihao:before {
+	content: "\e611";
+}
+.icon-heart:before {
+	content: "\e610";
+}
+.icon-iconfont-jiantouyou:before {
+	content: "\e60f";
+}
+.icon-1:before {
+	content: "\e601";
+}
+.icon-2:before {
+	content: "\e602";
+}
+.icon-3:before {
+	content: "\e603";
+}
+.icon-4:before {
+	content: "\e604";
+}
+.icon-chevron-small-right:before {
+	content: "\e60d";
+}
+.icon-chevron-small-up:before {
+	content: "\e60e";
+}
+.icon-chevron-thin-down:before {
+	content: "\e60a";
+}
+.icon-chevron-thin-left:before {
+	content: "\e608";
+}
+.icon-chevron-thin-right:before {
+	content: "\e609";
+}
+.icon-chevron-with-circle-left:before {
+	content: "\e613";
+}
+.icon-controller-record:before {
+	content: "\e60c";
+}
+.icon-check:before {
+	content: "\e60b";
+}
+.icon-home:before {
+	content: "\e605";
+}
+.icon-location:before {
+	content: "\e600";
+}
+.icon-circle-right:before {
+	content: "\e606";
+}
+.icon-checkbox-checked:before {
+	content: "\e607";
+}

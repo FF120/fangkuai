@@ -1,0 +1,75 @@
+.grid {
+	float: left;
+	height: 400px;
+	border-top: none;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	margin-left: 100px;
+	margin-top: 60px;
+	overflow: hidden;
+}
+
+.grid li.tab {
+	float: left;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 8px;
+}
+
+.grid li.tab select {
+	width: 50px;
+}
+
+.grid_item {
+	width: 100%;
+	height: 360px;
+	overflow: hidden;
+}
+
+.grid li.item {
+	width: 100%;
+	height: 31px;
+	overflow: hidden;
+}
+
+.grid li.item:hover {
+	background-color: #f0f0f0;
+}
+
+.grid li.item .detail {
+	width: 60px;
+	height: 24px;
+	line-height: 26px;
+	color: #3a83e8;
+	border: 1px solid #CCC;
+	margin-top: 2px;
+	cursor: pointer;
+}
+
+.grid li.item:hover .detail {
+	background-color: #ff3c00;
+	border-color: #ff3c00;
+	color: #FFF;
+}
+
+.grid li.item span {
+	display: block;
+	float: left;
+	height: 31px;
+	line-height: 31px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.borderTop {
+	width: 100%;
+	height: 2px;
+	background-color: #2888d7;
+	border: 1px solid #2888d7;
+	position: relative;
+	left: -1px;
+}

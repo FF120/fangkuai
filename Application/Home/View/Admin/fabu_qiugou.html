@@ -1,0 +1,90 @@
+<include file="public/top"/>
+<include file="public/header_admin"/>
+<div class="main">
+	<div class="xunjiadan">
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/user_gouwuche.css">
+		<!-- 局部样式 结束 -->
+		<h1>发布求购</h1>
+		<div class="xunjia-main">
+			<div class="tip">发布自己想要购买的商品</div>
+			<h2>求购产品</h2>
+			<form id="form_qiugou_info" action="{:U('Admin/getGoodsInfo')}" method="post">
+				<div class="wrap"  id="chuxiao_list">
+					<ul class="title">
+						<li>品名</li>
+						<li>材质</li>
+						<li>规格</li>
+						<li>采购量(吨)</li>
+						<li>地产/厂家</li>
+						<li>收货地</li>
+						<li>报价要求</li>
+					</ul>
+					<section>
+						<div>
+							<input type="text" name="product_name">
+						</div>
+						<div>
+							<input type="text" name="material">
+						</div>
+						<div>
+							<input type="text" name="specifications">		
+						</div>
+						<div>
+							<input type="number" name="quantity">
+						</div>
+						<div>
+							<input type="text" name="factory_name" >
+						</div>
+						<div>
+							<input type="text" name="shipping_address" >
+						</div>
+						<div>
+							<input type="text" name="price_conditions"><a class="de_input"></a>
+						</div>
+					</section>
+				</div>
+				<label for="">你的姓名：</label>
+				<input type="text" class="name" name="linkman">
+				<input type="radio" checked="checked" name="title" value="先生">先生
+				<input type="radio" name="title" value="女士">女士<br>
+				<label for="">手机号码：</label>
+				<input type="number" class="tel" name="telephone">
+				<button type="button" onclick="submit_qiugou_info()"  class="lowPrice">发布</button>
+			</form>
+		</div>
+
+	</div>
+</div>
+<include file="public/footer"/>
+
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<!--<script type="text/javascript" src="js/dayPicer/laydate.dev.js"></script>
+<script>
+laydate({
+    elem: '#end_time'
+});
+</script>-->
+<script type="text/javascript">
+
+    function submit_qiugou_info(){
+    	
+		var ipt_info=$("#form_qiugou_info").find("input");
+		var bo=true;
+		ipt_info.each(function(){
+			if($(this).attr('value')==""){
+				alert("输入信息不完整！");
+				bo=false;
+				return false;
+			}
+		});
+		if(bo==true){
+			document.getElementById("form_qiugou_info").submit();	
+		}
+	}
+	
+</script>
+
+
+</body>
+</html>

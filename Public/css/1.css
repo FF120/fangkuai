@@ -1,0 +1,69 @@
+*{margin:0;padding:0;}
+a:hover{ text-decoration: underline;}
+.east a{text-decoration:none;font-size:13px;}
+.east input,.east select,.east .textarea{padding: 5px 0;color: #333333;outline-color: #F68344;}
+.positionRelative{position:relative;}
+.positionAbsolute{position:absolute;}
+/* CSS Document */
+.north{width:100%}
+.north .icon-chevron-thin-right{vertical-align:middle;color:#F96115;}
+.north .activity{color:#F96115;}
+.weast{float:left;margin: 0 15px;}
+.weast img{width:100px;height:100px;border-radius: 0.5rem;}
+.east{}
+.east tr{line-height:38px;}
+.east .textarea{width: 246px;height: 100px;}
+.east .righta{float:right;}
+.east .achange{margin-left: 13px;}
+.east .subButton a{padding: 4px 69px;background: #30AFFE;float: left;border-radius: 9px;font-size: 19px;color: white;margin: 40px 0;margin-bottom: 68px;}
+.sourth{width:100%;float: left;border-top: 1px solid #CCCCCC;padding: 12px 0;}
+.sourth .icon-iconfont-shouji{font-size: 100px;color:#31AEFE;float:left;}
+.sourth .right{float:left;}
+.sourth li{list-style-type: none;line-height: 29px;}
+.sourth .bold{font-weight:bold;}
+.sourth ul{margin-top: 6px;}
+.sourth .icon-iconfont-duihao2{font-size: 22px;vertical-align: sub;color: #329A00;}
+.card img{width:50px;}
+.card ul li{list-style-type: none;float: left;padding: 19px 50px;border: 1px solid #C8C8C8;margin-right: 29px;margin-left: 15px;position:relative;}
+.card ul {float:left;}
+.card .imgb{position: absolute;bottom: -38px;}
+.percent0 input{width: 100%;}
+
+/*个人信息2专用 */
+.permit{padding-top: 39px;font-size: 12px;color: #656565;}
+.permit .gantan{width: 18px;vertical-align: sub;}
+.QQchat{border: 1px solid #C7C7C7;padding: 2px 5px;}
+.QQchat img{width: 12px;vertical-align: sub;margin-right: 5px;}
+.secondButton a{background: #FF6501;padding: 5px 27px;border-radius: 5px;font-size: 18px;color: white;font-weight: bold;}
+.border{height: 35px;line-height: 0 !important;padding-top: 25px;}
+.border hr{border-top: none;border-left: none;border-right: none;border-color: #CCCCCC;}
+
+/*个人信息3*/
+
+.threeFloatLeft{float:left;}
+.threeWidth100{width:100%;}
+.jifen{line-height: 28px;padding-top: 15px;padding-left: 15px;}
+.jifen .num{font-size:20px;color:#FF5501;}
+.jifen .jieshao{font-size:12px;color:#ccc;}
+.duihuan{float: right;padding: 43px 5px;right:0;}
+.duihuan a{background: #30AFFE;padding: 15px 45px;border-radius: 8px;color: white;font-weight: bold;text-decoration: none;}
+.jifenDetail{width: 100%;border:1px solid #D8D8D8;}
+.jifenDetail .th{background:#F2F2F2;}
+.jifenDetail .th p{border-right: 1px solid #D8D8D8;}
+.jifenDetail td{padding: 15px 0;text-align: center;min-width: 45px;border-bottom: 1px solid #d8d8d8;}
+.jifenDetail change{color:red;}
+.threeSourth{border-top:none;padding:45px 0;}
+
+/*个人信息4*/
+.fours{}
+.four{height:38px;background:#F0F0F0;width:94.5%;margin:0;border:1px solid #F0F0F0;padding: 27px 21px;padding-bottom: 53px;}
+.security{float: left;width: 269px;height: 12px;background: #F0F0F0;border-radius: 8px;margin: 3px 0;border: 1px solid #d8d8d8;}
+.security div{height:100%;width:80%;border-radius:8px;background:#329900;}
+.secirotu_leval {float: left;}
+.advantage{width: 100%;float: left;margin-top: 23px;}
+.fours .title{border-bottom: 1px solid red;padding-bottom: 11px;}
+.fours table{width:100%;}
+.fours table img{width: 21px;vertical-align: sub;color: #329A00;margin-right: 3px;}
+.fours table tr td{padding: 15px 0;min-width: 106px;}
+.fours .buttons{background: #30AFFE;padding: 6px 35px;color: white;text-decoration: none;font-weight: bold;font-size: 15px;}
+.fours .button{padding: 6px 10px;border: 1px solid #d8d8d8;}

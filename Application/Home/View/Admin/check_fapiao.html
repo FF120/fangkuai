@@ -1,0 +1,216 @@
+<include file="public/top"/>
+<include file="public/header_admin"/>
+<div class="main">
+	<include file="public/left"/>
+	
+	<div class="dingdan_right">
+		<div id="position">
+			你当前的位置：
+			<a href="">会员中心</a><span></span>
+			<a href="">我的交易</a><span></span>
+			<a href="" class="now_ps">发票查询</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/user_fapiao.css"><!--头部&底部样式-->
+		
+		<!-- 发票查询开始 -->
+		<div class="form_box">
+			<form action="" method="post">
+				<label for="dingdan"><i style="color:#FFF">空</i>订单号：</label>
+				<input id="dingdan" name="dingdan" type="text">
+				<label for="dd_status"><i style="color:#FFF">空</i>订单状态：</label>
+				<select name="dd_status" id="dd_status">
+					<option value="未选择">选择订单状态--</option>
+					<option value="未付款">未付款</option>
+					<option value="已经付款">已经付款</option>
+				</select><br>
+
+				<label for="dd_time_m">下单日期：</label>
+				<input id="dd_time_m" name="dd_time_m" value="--月--" type="text">
+				<input id="dd_time_d" name="dd_time_d" value="--号--" type="text">
+				
+				<input id="subBtn" type="submit" value="搜索">
+			</form>
+		</div>
+			<!-- 发票查询结束 -->
+		<div class="dingdan_box">
+			
+			<ul class="dingdan_title">
+				<li class="first">订单号</li>
+				<li>下单时间</li>
+				<li>开票抬头</li>
+				<li>开票金额</li>
+				<li id="mySelectTab" style="position:relative; cursor:pointer;">发票状态
+				<i></i>
+				<div id="mySelect">
+					<div>未开发票</div>
+					<div>已开发票</div>
+				</div>
+				</li>
+				<li>申请时间</li>
+				<div style="clear:both;"></div>				
+			</ul>
+			<!-- 列表头部结束  -->
+			<ul class="dingdan_title dingdan_list">
+				<li class="first">4779249</li>
+				<li>2015-10-04</li>
+				<li>开票抬头</li>
+				<li>￥5000</li>
+				<li>未开发票</li>
+				<li>2015-10-05</li>
+				<div style="clear:both;"></div>				
+			</ul>
+			<ul class="dingdan_title dingdan_list">
+				<li class="first">4779249</li>
+				<li>2015-10-04</li>
+				<li>开票抬头</li>
+				<li>￥5000</li>
+				<li>未开发票</li>
+				<li>2015-10-05</li>
+				<div style="clear:both;"></div>				
+			</ul>
+			<ul class="dingdan_title dingdan_list">
+				<li class="first">4779249</li>
+				<li>2015-10-04</li>
+				<li>开票抬头</li>
+				<li>￥5000</li>
+				<li>未开发票</li>
+				<li>2015-10-05</li>
+				<div style="clear:both;"></div>				
+			</ul>
+		</div>
+		<!-- 页码开始 -->
+		<div id="page_ps">
+			<ul>
+				<li><a href="">上一页</a></li>
+				<li><a href="" class="active">1</a></li>
+				<li><a href="">2</a></li>
+				<li><a href="">3</a></li>
+				<li><a href="">4</a></li>
+				<li>……</li>
+				<li><a href="">5</a></li>
+				<li><a href="">6</a></li>
+				<li><a href="">7</a></li>
+				<li><a href="">8</a></li>
+				<li><a href="">下一页</a></li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+		<!-- 页码结束 -->
+	</div>
+</div>
+<!-- footer开始 -->
+<include file="public/footer"/>
+<!-- footer结束 -->
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	$(function(){
+		var $form0 = $('#form0');
+		var all_checkbox = $form0.find('.all_checkbox');
+		var item_checkbox= $form0.find('.item_checkbox');
+		//全选按钮事件
+		all_checkbox.on('click',function(){
+			
+			if($(this).attr('checked')){
+				item_checkbox.attr('checked','true');
+				all_checkbox.attr('checked','true');
+			}else if(!$(this).attr('checked') || $(this).attr('checked') == 'false'){
+				//item_checkbox.removeAttr('checked');
+				all_checkbox.removeAttr('checked');
+				
+			}
+		});
+		//全选后，如果又取消了某一项的选着，就取消全选按钮的选中状态
+		item_checkbox.on('click',function(){
+			if(!$(this).attr('checked')){
+				all_checkbox.removeAttr('checked');
+			}
+		});
+		//单项删除事件
+		$('#form0').find('.lajitong').on('click',function(){
+			$(this).parents('.dingdan_list').remove();
+			hasDingdan();//无订单时，无订单页面显示，有订单时，无订单页面隐藏；
+		});
+		//批量选中删除事件
+		$('#dingdan_tab').find('.lajitong').on('click',function(){
+			// var item_checkbox= $form0.find('.item_checkbox');
+			// var all_checkbox = $form0.find('.all_checkbox');
+			item_checkbox.each(function(){
+				if($(this).attr('checked')){
+					$(this).parents('.dingdan_list').remove();
+					all_checkbox.removeAttr('checked');
+				}
+			});
+
+			hasDingdan();//无订单时，无订单页面显示，有订单时，无订单页面隐藏；
+
+		});
+		function hasDingdan(){//无订单时，无订单页面显示，有订单时，无订单页面隐藏；
+			var item_checkbox= $form0.find('.item_checkbox');
+			if(item_checkbox.length<1){
+				$('#no_dingdan').css('display','block');
+			}
+		}
+		//订单状态下拉框
+		(function(){
+			var flag = true;
+			$('#mySelectTab').on('click',function(){
+				
+				$('#mySelect').toggle();
+				if(flag){
+					$(this).find('i').css('background-position','0px -8px');
+					flag = false;
+				}else{
+					$(this).find('i').css('background-position','0px 0px');
+					flag = true;
+				}
+				
+			});
+		})();
+		(function(){//侧边栏sideNave
+			var sideTab = $('#sideNav').find('h2');
+			var sideContent = $('#sideNav').find('ul');
+			var flag = true;
+
+			sideTab.each(function(index){
+				$(this).on('click',function(){
+					sideContent.eq(index).toggle();
+					if(flag){
+						$(this).find('i').css('background-position','0px -16px');
+						flag = false;
+					}else{
+						$(this).find('i').css('background-position','0px 0px');
+						flag = true;
+					}
+				});
+			});
+		})()
+		getActive($('#dingdan_tab').find('li.it'),'active')
+		function getActive($tabArr,classN){
+			$tabArr.each(function(index){
+				$(this).on('click',function(){
+					$tabArr.removeClass(classN);
+					$(this).addClass(classN);
+				});
+			});
+		}
+		//无选中操作提示
+		$('.dingdan_bottom').find('.alert').on('click',function(){
+			var count = 0;
+			item_checkbox.each(function(){
+				if($(this).attr('checked')){
+					count++;
+				}
+			});
+			if(count<1){alert('你没有选择操作条目！');}
+		});
+		//我的订单
+		$('#my_dng_btn').on('mouseover',function(){
+			$('#my_dng').show();
+		}).on('mouseout',function(){
+			$('#my_dng').hide();
+		});
+	});
+</script>
+</body>
+</html>

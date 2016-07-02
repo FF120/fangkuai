@@ -1,0 +1,110 @@
+<include file="Public:header"/>
+</head>
+<body>
+	<!-- //右边边 -->
+	<div style="margin-top: 26px;">
+		<div id="position">
+			你当前的位置：管理员后台<span></span>认证审核<span></span>
+			<a href="" class="now_ps">求购信息</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div style="height: 20px;"></div>
+		<div class="north">
+			<div class="right">
+				<div class="weast">
+					<img src="__PUBLIC__/images/head03.png" />
+					<div>个人信息</div>
+				</div>
+				<div class="east">
+					<table class="percent0">
+						<tr>
+							<td>名称：</td>
+							<td class="text">{$goodsBuyInfo.product_name}</td>
+						</tr>
+						<tr>
+							<td>规格：</td>
+							<td class="text">{$goodsBuyInfo.product_specification}</td>
+						</tr>
+						<tr>
+							<td>材质：</td>
+							<td class="text">{$goodsBuyInfo.product_material}</td>
+						</tr>
+						<tr>
+							<td>工厂名称：</td>
+							<td class="text">{$goodsBuyInfo.storehouse_name}</td>
+						</tr>
+						<tr>
+							<td>数量：</td>
+							<td>{$goodsBuyInfo.quantity}</td>
+						</tr>
+						<tr>
+							<td>交货地：</td>
+							<td>{$goodsBuyInfo.delivery_place}</td>
+						</tr>
+						<tr>
+							<td>价格要求：</td>
+							<td>{$goodsBuyInfo.price_conditions}</td>
+						</tr>
+						<tr>
+							<td>联系人：</td>
+							<td>{$goodsBuyInfo.linkman}</td>
+						</tr>
+						<tr>
+							<td>手机：</td>
+							<td>{$goodsBuyInfo.telephone}</td>
+						</tr>
+						<tr>
+							<td>标题：</td>
+							<td>{$goodsBuyInfo.title}</td>
+						</tr>
+						<tr>
+							<td>用户：</td>
+							<td>{$goodsBuyInfo.username}</td>
+						</tr>
+						<tr>
+							<td>创建时间：</td>
+							<td>{$goodsBuyInfo.created_at}</td>
+						</tr>
+						<tr>
+							<td>审核状态：</td>
+							<td>
+							<if condition="($goodsBuyInfo[approval_status]) eq 0">
+								<div style="height:25px;line-height:25px; text-align: center;"><a href="#" title="点击审核" onclick="verifyGoodsBuy({$goodsBuyInfo.gtb_id});"><span style="color:red;font-size:20px;">未审核</span></a></div>
+								<else /><div style="height:25px;line-height:25px; text-align: center;">已审核</div>
+							</if>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //右边结束 -->
+	<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		/*
+		* 审核
+		*/
+		function verifyGoodsBuy(gtb_id){
+			if(confirm("确认要审核吗？")){
+				var url = "__CONTROLLER__/verify_goods_buy";
+				var data = {"gtb_id":gtb_id};
+				$.ajax({
+					type: 'POST',
+					url: url,
+					data: data,
+					success: function(result){
+						if(result == 1){
+							location.reload();					
+						}
+					}
+				}); 
+			}else{
+			}
+		}
+	</script>
+</body>
+</html>

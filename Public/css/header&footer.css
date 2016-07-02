@@ -1,0 +1,78 @@
+/*方块网*/
+/*2015.08.26,BY-LiangPengFei*/
+*{ font-size: 12px; font-family: "微软雅黑";}
+p,ul,li,body,h1,h2,h3,h4,h5,h6,form{ padding: 0; margin:0px; font-weight: normal; }
+ul,li{ list-style: none;}
+a{ text-decoration: none; color:#666;}
+a:hover{ text-decoration: none;}
+
+img{ border: 0;}		
+input,button,select,textarea{ outline:none;}
+textarea{resize:none;}
+a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+
+.clear{ clear:both; font-size: 0px;display: none;}
+.fl{ float: left;} .fr{ float: right;} 
+.no-margin-cow{ margin:0px auto!important;}
+.no-margin-row{ margin:auto 0px!important;}
+.no-margin-both{ margin:0px!important;}
+.no-border{border:none!important;}
+
+.header{ width: 100%; }
+.header .user{ width: 1000px; height: 28px; margin:0 auto; line-height: 28px; color:#666666;}
+.header .user p a{ color:#fc6215;}
+.header .user li{ float: left;}
+.header .user li a{ float: left; display: block; padding: 0 10px;}
+.header .user li i{ float: left; display: block; background: url(../images/head_icon.jpg) no-repeat; position: relative;}
+
+/*我的订单*/
+#my_dng{position:absolute; width:76px; top:0px; left:0; z-index:20; background-color:#FFF;border:1px solid #CCC; display: none;}
+#my_dng li{ width: 100%;}
+#my_dng li:hover{background-color:#CCC; }
+
+
+.search{ width:1000px; height: 90px;margin:0 auto;}
+.search form{ float: right; width: 468px; height: 45px; background: url(../images/search_box.jpg); position: relative; margin-top: 20px;}
+.search form a{ display: block; width: 50px; height: 35px;position: relative;top:8px; right:10px; margin-left: 8px;}
+#searchText{ width: 240px; height: 22px; position: absolute; top:12px; left:5px; border:none; padding-left: 5px; border-color:#FFF; line-height: 22px; }
+#subBtn{ width: 85px; height: 35px; position: absolute; top:8px; left:255px; opacity: 0; filter:alpha(opacity:0); cursor: pointer;}
+
+.nav{ width: 100%; height: 40px; background-color: #2888d7; position: relative;z-index: 10;}
+.nav_content{ width: 1000px; height: 40px; margin: 0 auto;}
+
+.nav .big_shop{ width:180px; height: 40px; position: relative;z-index: 1000; }
+.nav .big_shop h1{ width:180px; height: 40px; text-align: center; line-height: 40px; color:#FFF; font-size: 16px; background-color: #0075c2; cursor: pointer;}
+.nav .big_shop i.srow{ position: absolute; right:10px; top:15px; display: block; width: 12px; height: 8px; background: url(../images/head_icon.jpg) 0px -62px no-repeat;}
+
+.nav .big_shop li{ float: left; width: 180px; height: 67px;border-bottom: 1px solid #CCC; color:#333; background-color: #FFF; }
+.nav .big_shop li:hover{ -moz-box-shadow: 0 0 8px 1px #999; -o-box-shadow: 0 0 8px 1px #999; -webkit-box-shadow: 0 0 8px 1px #999; position: relative; z-index: 1500; -ms-box-shadow: 0 0 8px 1px #999; box-shadow: 0 0 8px 1px #999;}
+
+.nav .big_shop li i{ display: block; float: left; width: 37px; height: 66px; background: url(../images/mai_chang_icon.jpg) no-repeat;}
+.nav .big_shop li h1{ background-color:#FFF; color:#000; text-align: left; width: 143px; position: relative;}
+.nav .big_shop li h1 a{ font-size: 16px; color:#000;}
+.nav .big_shop li a:hover{ color:#ff5500;}
+.nav .big_shop li h1 span{ display: block; width: 15px; height: 10px; background: url(../images/head_icon.jpg) 0px -43px no-repeat; position: absolute; top:14px; right:20px; }
+
+.nav .big_shop li p{ position: relative; top:-5px; width: 143px;}
+.nav .big_shop li p a{ padding-right:5px; font-size: 12px; }
+
+#shopping_list{ overflow: hidden; display: none; box-shadow: 0px 0px 8px 1px #CCC;}
+
+
+
+.nav .nav_box{ position: relative;z-index: 10;} 
+.nav .nav_box li{ float: left; }
+.nav .nav_box li a.link{ display: block; line-height: 40px; padding: 0px 38px; line-height: 40px;color: #FFF; font-size: 16px;}
+.nav .nav_box li a.link:hover{ background-color: #fc6215;}
+
+
+
+.footer{ width: 1000px; padding:40px 0; margin:0px auto; overflow: hidden;}
+.footer_item{ float: left; width: 198px; height: 160px; border-left: 1px solid #CCC; color:#999;}
+.footer_item .icon{  float: left; width: 34px; height: 34px; background: url(../images/footer_icon.jpg) no-repeat; margin:0px 20px 0px 15px; }
+.footer_item li.title a{ display:block; color:#333; font-size: 16px;margin-bottom: 5px;}
+.footer_item li.item a{ display:block;margin-bottom: 10px; font-size: 14px;}
+.footer_item li.item a:hover{ color:#333; text-decoration: underline;}
+
+
+

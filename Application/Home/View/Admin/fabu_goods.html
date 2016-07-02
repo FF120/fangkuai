@@ -1,0 +1,372 @@
+<include file="public/top"/>
+	<div style="width:100%; border-top:1px solid #ccc;"></div>
+	<include file="public/header_admin"/>
+</div>
+<div class="main">
+<!-- 左侧开始 -->
+	<include file="public/left"/>
+	<!-- 右侧开始 -->
+	<div class="dingdan_right">
+		<div id="position">
+			你当前的位置：
+			<a href="">会员中心</a><span></span>
+			<a href="">我的发布</a><span></span>
+			<a href="" class="now_ps">现货管理</a>
+		</div>
+		<!-- d-->
+		<link rel="stylesheet" href="__PUBLIC__/css/user_xianhuo.css">
+		<!-- 分类开始 -->
+		<ul class="classify">
+			<li>
+			<a class="active" href="{:U('Admin/fabu_goods')}">全部（<span>{$total_num}</span>）</a></li>
+			<li><a href="{:U('Admin/fabu_goods',array('is_listed'=>'1'))}">已挂牌（<span>{$listed_num}</span>）</a></li>
+			<li><a href="{:U('Admin/fabu_goods',array('is_listed'=>'0'))}">已摘牌（<span>{$not_listed_num}</span>）</a></li>
+			<li><a href="{:U('Admin/fabu_goods',array('appr_stat'=>'0'))}">审核未通过（<span>{$not_approvaled_num}</span>）</a></li>
+		
+			<div class="clear"></div>
+		</ul>
+		<!-- 分类结束 -->
+		<!-- 上传资源&下载按钮 开始-->
+		<form action="">
+			<div class="form_box">
+				<!--<input id="zyd_btn" type="file" />-->
+				<a href="javascript:void(0)"><img class="fabu_btn"  id="upload" src="__PUBLIC__/images/upload_zyd.jpg" alt=""></a>	
+				<a href="{:U('Admin/download_goods_xls')}"><img class="fabu_btn" src="__PUBLIC__/images/down_load_bg.jpg" alt=""></a>
+			</div>
+		</form>
+		<!-- 上传资源&下载按钮 结束-->
+		<form id="form_new_good" action="{:U('Admin/getSpotGoodsInfo')}" method="post">
+			<div class="dingdan_box" id="dingdan_box">
+				<!-- 列表头部 开始-->
+				<ul id="dingdan_title">
+					<li class="all_check" style="width:30px;"><span style="color:#e8e8e8;">1</span></li>
+					<li style="width:50px;">品名</li>
+					<li style="width:50px;">材质</li>
+					<li style="width:50px;">规格</li>
+					<li style="width:45px;">宽</li>
+					<li style="width:45px;">长</li>
+					<li style="width:50px;">厂家</li>
+					<li style="width:50px;">地区</li>
+					<li style="width:50px;">仓库</li>
+					<li style="width:60px;">计重方式</li>
+					<li style="width:50px;">价格</li>
+					<li style="width:45px;">重量</li>
+					<li style="width:45px;">备注</li>
+					<li style="width:45px;">状态</li>
+					<li style="width:89px;">操作</li>
+					<div style="clear:both;"></div>
+				</ul>
+				<!-- 列表头部结束 -->
+				
+				<!-- 列表输入部分开始 -->
+				<ul id="ul_new_goods_info" class="dingdan_input">
+					<li style="width:50px;margin-left:25px;position:relative;+left:-25px;"><input name="product_name" type="text"></li>
+					<li style="width:50px;"><input name="product_material" type="text"></li>
+					<li style="width:50px;"><input name="product_specifications" type="text"></li>
+					<li style="width:50px;"><input name="product_width" type="text"></li>
+					<li style="width:50px;"><input name="product_length" type="text"></li>
+					<li style="width:50px;"><input name="manufacturer" type="text"></li>
+					<li style="width:50px;"><input name="delivery_place" type="text"></li>
+					<li style="width:50px;"><input name="storehouse_name" type="text"></li>
+					<li style="width:50px;">
+						<select name="weighing_type" id="">
+							<option value="理计">理计</option>
+							<option value="出厂标签">出厂标签</option>
+							<option value="过磅">过磅</option>
+						</select>
+					</li>
+					<li style="width:50px;"><input name="unit_price" type="text"></li>
+					<li style="width:50px;"><input name="weight" type="text"></li>
+					<li style="width:50px;"><input name="remark" type="text"></li>
+					<li style="width:40px;">-</li>
+					<li style="width:89px;"><button type="button" onclick="addNewGood()" >添加</button></li>
+					<div style="clear:both;"></div>
+				</ul>
+				
+				
+				<form >
+				<!-- 列表输入部分 结束 -->
+				<volist name="products" id="item">
+				<ul class="dingdan_list" id="{$item['sgr_id']}">
+					<li  class="one_check" style="width:30px;border-left:none;">
+					<input  type="checkbox" name="items_selected[]" value="{$item.sgr_id}">
+					</li>
+					<li style="width:50px;"><input name="edit1224[]" type="text" disabled="true" value="{$item.product_name}"></li>
+					<li style="width:50px;"><input  name="edit1224[]" type="text" disabled="true" value="{$item.product_material}"></li>
+					<li style="width:50px;"><input  name="edit1224[]" type="text" disabled="true" value="{$item.product_specifications}"></li>
+					<li style="width:45px;"><input  name="edit1224[]" type="number" disabled="true" value="{$item.product_width}"></li>
+					<li style="width:45px;"><input  name="edit1224[]" type="number" disabled="true" value="{$item.product_length}"></li>
+					<li style="width:50px;"><input  name="edit1224[]" type="text" disabled="true" value="{$item.manufacturer}"></li>
+					<li style="width:50px;"><input  name="edit1224[]" type="text" disabled="true" value="{$item.delivery_place}"></li>
+					<li style="width:50px;"><input  name="edit1224[]" type="text" disabled="true" value="{$item.storehouse_name}"></li>
+					<li style="width:60px;"><input  name="edit1224[]" type="text" disabled="true" value="{$item.weighing_type}"></li>
+					<li style="width:50px;"><input  name="edit1224[]" type="number" disabled="true" value="{$item.unit_price}"></li>
+					<li style="width:45px;"><input  name="edit1224[]" type="text" disabled="true" value="{$item.weight}"></li>
+					<li style="width:45px;"><input  name="edit1224[]" type="text" disabled="true" value="{$item.remark}"></li>
+					<li style="width:45px;"><input  name="edit1224[]" type="text" disabled="true" value="{$item.is_listed|listed_status_to_show}"></li>
+					<li style="width:89px;">
+					<a class = "editS" href="javascript:change_item({$item.sgr_id})">修改</a>
+					<a href="{:U('Admin/delSpotGoodsRecord',array('id'=>$item['sgr_id']))}">删除</a></li>
+					<div style="clear:both;"></div>
+				</ul>
+				</volist>
+				<!-- 列表为空显示 开始 -->
+				<div id="no_dingdan">
+					<p>暂无资源单，赶紧去商城挑选吧！<br><a href="">商城首页>></a></p>
+				</div>
+		
+				<ul class="dingdan_list dingdan_bottom" style="overflow:hidden;">
+					<li class="all_check">
+					<input type="checkbox" name="item0">
+					</li>
+					<li class="alert" id="batch_refresh">批量刷新</li>
+					<li class="alert" id="one_delet">批量删除</li>
+					<li class="alert" id="batchSetListed">批量挂牌</li>
+					<li class="alert" id="setAllListed"><a href="{:U('Admin/setAllGoodsListed_batch')}">全部挂牌</a></li>
+					<li class="alert" id="batchSetNotListed">批量摘牌</li>
+					<li id="all_delet">全部删除</li>
+					<li id="" onclick="javascript:change_price()">批量调价</li>
+					<input id="piliangtiaojia" type="text" style="width:50px;"/>
+				</ul>
+				<!-- 列表底部 结束 -->
+			  </form>
+			</div>
+		</form>
+		<!-- 页码开始 -->
+		<div id="page_ps">
+			<ul>
+				{$page}
+			</ul>
+		</div>
+		<!-- 页码结束 -->
+	</div>
+</div>
+<!-- footer开始 -->
+<include file="public/footer"/>
+<script type="text/javascript">
+	var appurl = '__APP__';
+	var rooturl = '__ROOT__';
+</script>
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script src="__PUBLIC__/js/jquery-alertWidgist.js"></script>
+<script>
+$(function(){
+	$('#upload').alertWidgist(appurl+'/Home/Admin/upLoad_ziyuandan.html');
+
+});
+function addNewGood(){
+	var ul=$("#ul_new_goods_info");
+	var ipt_info=ul.find("input");
+	var bo=true;
+	ipt_info.each(function(){
+		if($(this).attr('value')==""){
+			alert("输入信息不完整！");
+			bo=false;
+			return false;
+		}
+	});
+	if(bo==true){
+		document.getElementById("form_new_good").submit();	
+	}
+
+}
+
+</script>
+<script>
+	function change_price(){
+		var price = $('#piliangtiaojia').val();
+		alert(price);
+	}
+	function change_item(id){
+		//将disable设为false,按钮改成完成，监听事件设为另一方法
+		$("#"+id).find('input').attr('disabled',false);
+		if($("#"+id).find('a').first().html()=="修改"){
+			$("#"+id).find('a').first().html("完成");
+		}
+
+		$("#"+id).find('a').first().click(function(){
+			//单击完成，获取信息，提交到后台
+			var valArr = new Array();
+			$("#"+id).find("input[name='edit1224[]']").each(function(i){
+				valArr[i] = $(this).val();
+			});
+			var priv = valArr.join(',');
+			alert(priv);//这里就是提交到后台的修改过的信息,用post提交过去就行
+
+		});
+
+	}
+	$(function(){
+		var $form0 = $('#dingdan_box');
+		var all_checkbox = $form0.find('.all_check').find('input');
+		var item_checkbox= $form0.find('.one_check').find('input');
+		//全选按钮事件
+		all_checkbox.on('click',function(){
+			
+			if($(this).attr('checked')){
+				item_checkbox.attr('checked','true');
+				all_checkbox.attr('checked','true');
+			}else if(!$(this).attr('checked') || $(this).attr('checked') == 'false'){
+				//item_checkbox.removeAttr('checked');
+				all_checkbox.removeAttr('checked');	
+			}
+		});
+		//全选后，如果又取消了某一项的选着，就取消全选按钮的选中状态
+		item_checkbox.on('click',function(){
+			if(!$(this).attr('checked')){
+				all_checkbox.removeAttr('checked');
+			}
+		});
+		//选中删除事件
+		
+		//批量刷新 
+		$('#batch_refresh').on('click',function(){    
+			var count = 0;
+			item_checkbox.each(function(){
+				if($(this).attr('checked')){
+					count++;
+				}
+			});
+			if(count==0){
+				alert('你没有选择操作条目！');
+				return ;
+			}
+			window.location.reload();
+			hasDingdan();//无订单时，无订单页面显示，有订单时，无订单页面隐藏；
+		});
+	
+		//批量挂牌	
+		$('#batchSetListed').on('click',function(){
+			var temp = document.createElement("form");
+			temp.style.display = "none";
+		    temp.action = "{:U('Admin/setGoodsListed_batch')}";        
+		    temp.method = "post";        
+			var count = 0;
+			item_checkbox.each(function(){
+				if($(this).attr('checked')){
+					count++;
+					var opt = document.createElement("input");        
+				    opt.name = "items_selected[]";        
+				    opt.value = $(this).attr("value");;                
+				    temp.appendChild(opt);	
+				}
+			});
+			document.body.appendChild(temp);
+			if(count==0){
+				alert('你没有选择操作条目！');
+				return ;
+			}
+		
+			temp.submit();
+			hasDingdan();//无订单时，无订单页面显示，有订单时，无订单页面隐藏；
+		});
+
+		
+		
+		 //批量摘牌
+	   $('#batchSetNotListed').on('click',function(){
+			var temp = document.createElement("form");
+			temp.style.display = "none";
+		    temp.action = "{:U('Admin/setGoodsNotListed_batch')}";        
+		    temp.method = "post";        
+			var count = 0;
+			item_checkbox.each(function(){
+				if($(this).attr('checked')){
+					count++;
+					var opt = document.createElement("input");        
+				    opt.name = "items_selected[]";        
+				    opt.value = $(this).attr("value");;                
+				    temp.appendChild(opt);
+					
+				}
+			});
+			document.body.appendChild(temp);
+			if(count==0){
+				alert('你没有选择操作条目！');
+				return ;
+			}
+		
+			temp.submit();
+			hasDingdan();//无订单时，无订单页面显示，有订单时，无订单页面隐藏；
+		});
+	
+	   
+
+		//批量删除
+		$('#one_delet').on('click',function(){
+			var temp = document.createElement("form");
+			temp.style.display = "none";
+		    temp.action = "{:U('Admin/deletSpotGoods_batch')}";        
+		    temp.method = "post";        
+			var count = 0;
+			item_checkbox.each(function(){
+				if($(this).attr('checked')){
+					count++;
+					
+					var opt = document.createElement("input");        
+				    opt.name = "items_selected[]";        
+				    opt.value = $(this).attr("value");;                
+				    temp.appendChild(opt);
+					
+				}
+			});
+			document.body.appendChild(temp);
+			if(count==0){
+				alert('你没有选择操作条目！');
+				return ;
+			}
+		
+			temp.submit();
+			hasDingdan();//无订单时，无订单页面显示，有订单时，无订单页面隐藏；
+		});
+		
+		
+		function hasDingdan(){
+		//无订单时，无订单页面显示，有订单时，无订单页面隐藏；
+			var item_checkbox= $form0.find('.one_check').find('input');
+			if(item_checkbox.size()<1){
+				$('#no_dingdan').css('display','block');
+			}
+		}
+		
+		(function(){
+		//侧边栏sideNave
+			var sideTab = $('#sideNav').find('h2');
+			var sideContent = $('#sideNav').find('ul');
+             			
+
+			sideTab.each(function(index){
+				$(this).on('click',function(){
+					sideContent.eq(index).toggle();
+					var pos = $(this).find('i').css('background-position');
+					if(pos === '0px -16px'){
+						$(this).find('i').css('background-position','0px 0px');
+						flag = false;
+					}else{
+						$(this).find('i').css('background-position','0px -16px');
+						flag = true;
+					}
+				});
+			});
+		})()
+		//导航点击后获得焦点样式
+		getActive($('.classify').find('a'),'active')
+		function getActive($tabArr,classN){
+			$tabArr.each(function(index){
+				$(this).on('click',function(){
+					$tabArr.removeClass(classN);
+					$(this).addClass(classN);
+				});
+			});
+		}
+	
+
+		$('#my_dng_btn').on('mouseover',function(){
+			$('#my_dng').show();
+		}).on('mouseout',function(){
+			$('#my_dng').hide();
+		});
+	});
+</script>
+</body>
+</html>

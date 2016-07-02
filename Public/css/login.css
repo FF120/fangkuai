@@ -1,0 +1,38 @@
+p,ul,li,body,h1,h2,h3,h4,h5,h6{ padding: 0; margin:0px; font-weight: normal; }
+	ul,li{ list-style: none;}
+	a{ text-decoration: none; color:#666;}
+
+	img{ border: 0;}		
+	input,button,select,textarea{ outline:none;}
+	textarea{resize:none;}
+	a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+
+	.clear{ clear:both; font-size: 0px;display: none;}
+	.fl{ float: left;} .fr{ float: right;} 
+	.no-margin-cow{ margin:0px auto;}
+	.no-margin-row{ margin:auto 0px;}
+	.no-margin-both{ margin:0px;}
+
+	.header{ width: 100%; font-size: 12px;}
+	.header .user{ width: 1000px; height: 28px; margin:0 auto; line-height: 28px; color:#666666;}
+	.header .user p a{ color:#fc6215;}
+	.header .user li{ float: left;}
+	.header .user li a{ float: left; display: block; padding: 0 10px;}
+	.header .user li i{ float: left; display: block; background: url(../images/head_icon.jpg) no-repeat; position: relative;}
+
+	#my_dng{position:absolute; width:76px; top:0px; left:0; z-index:20; background-color:#FFF;border:1px solid #CCC; display: none;}
+	#my_dng li{ width: 100%;}
+	#my_dng li:hover{background-color:#CCC; }
+
+	.search{ width:1000px; height: 90px;margin:0 auto;}
+
+	.login_main{ width: 1000px; margin:0 auto; overflow: hidden; font-family: "微软雅黑"}
+	.login_main .title{ width: 1000px; height: 40px; margin: 20px auto 85px; background: url(../images/login_2_title_bg.jpg) no-repeat;}
+	
+	form{ width: 600px; padding-left: 632px; height:400px;font-size: 16px; background: url(../images/login_big_bg.jpg) -20px 0 no-repeat; margin-top: 50px;}
+	form input{ height:30px; width: 280px; font-size: 16px; border:1px solid #FFF; border-bottom-color:#CCC;}
+	label{ font-size: 20px;}
+	#subBtn{color:#FFF; width: 300px; height:50px; background-color: #e72626; border:1px solid #ff5500; border-radius: 4px; font-size: 20px; font-family: "微软雅黑"; letter-spacing: 5px; cursor: pointer;  margin: 10px 0 30px 0;}
+	#auto_login{ width: 20px; height: 20px; position: relative; top:5px;}
+	.other_login{ width: 340px; height: 116px; position:relative; background: url(../images/other_login.jpg) no-repeat;}
+	.other_login a{ display: block; width: 55px; height: 80px; position: absolute; }

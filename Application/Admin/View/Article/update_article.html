@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>个人信息</title>
+<link rel="stylesheet" href="__PUBLIC__/css/user_header&footer.css">
+<link rel="stylesheet" href="__PUBLIC__/css/header&footer.css">
+<!--头部&底部样式-->
+</head>
+<body>
+	<!-- //右边边 -->
+	<div style="margin-top: 26px;">
+		<div id="position">
+			你当前的位置： <a href="">管理员后台</a><span></span> <a href="__CONTROLLER__/list_article">文章位设置</a><span></span>
+			<a href="#" class="now_ps">修改文章</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div class="north" style="margin-left:50px;margin-top:20px;">
+			<div class="right">
+				<div class="east">
+					<form action="__SELF__" enctype="multipart/form-data" id="ad_form" method="post">
+						<input type="hidden" name="id" value="{$articleInfo.id}"></input>
+						<table>
+							<tr>
+								<td>文章标题：</td>
+								<td class="text">
+									<span style="color:red;font-size:19px;">*&nbsp;</span>
+									<input type="text" name="title" style="width:195px;" value="{$articleInfo.title}"/>
+								</td>
+							</tr>
+							<tr>
+								<td>所属版位：</td>
+								<td>
+									<span style="color:red;font-size:19px;">*</span>
+									<select name="position" style="width:200px;">
+										<option value="0" <if condition="($articleInfo[position]) eq 0"> selected</if> >首页文章位</option>
+										<option value="1" <if condition="($articleInfo[position]) eq 1"> selected</if> >首页方块公告</option>
+										<option value="2" <if condition="($articleInfo[position]) eq 2"> selected</if> >钢厂文章位</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span style="valign:middle">文章内容：</span></td>
+								<td>&nbsp;&nbsp;
+									<textarea class="textarea" name="content" style="width:400px;">{$articleInfo.content}</textarea>
+								</td>
+							</tr>
+							<tr style="height:20px;"></tr>
+							<tr class="secondButton">
+								<td>&nbsp;</td>
+								<td>
+									<center>
+										<a href="#" onclick="form_submit();">保存</a>
+										<a href="#" onclick="history.go(-1);">返回</a>
+									</center>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- //右边结束 -->
+	<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		function form_submit(){
+			document.getElementById("ad_form").submit();
+		}
+	</script>
+</body>
+</html>

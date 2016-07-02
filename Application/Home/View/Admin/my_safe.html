@@ -1,0 +1,91 @@
+<include file="public/top"/>
+<include file="public/header_admin"/>
+<div class="main">
+	<include file="public/left"/>
+	
+	<!-- //右边边 -->
+	<div class="dingdan_right">
+		<div id="position">
+			你当前的位置：
+			<a href="">会员中心</a><span></span>
+			<a href="">账户中心</a><span></span>
+			<a href="" class="now_ps">我的安全</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div style="height:20px;"></div>
+		<div class="north fours">
+    	<div class="weast four">
+    		<p class="threeFloatLeft">您的帐户 安全等级为：</p>
+           	<div class="security"> <div></div></div> <span class="secirotu_leval">中</span>
+            <p class="advantage">建议根据帐户安全进行操作</p>
+    	</div>
+
+    	<div class="sourth">
+         		<p class="title">帐户安全</p>
+              <table cellpadding="0">
+              	<tr>
+                  	<td><img src="__PUBLIC__/images/gantan.svg" />未开启</td>
+                     
+                      <td>邮箱验证</td>
+                      <td>未验证邮箱</td>
+                      <td><a href="#" class="buttons">验证</a></td>
+                  </tr>
+                  <tr>
+                   <td><span class="icon-iconfont-duihao2"></span>建议修改</td>
+                    <td>修改密码</td>
+                      <td>为确保帐户安全，请经常修改密码</td>
+                      <td><a href="#" class="buttons">修改</a></td>
+                  </tr>
+                  <tr>
+                   <td><span class="icon-iconfont-duihao2"></span>建议修改</td>
+                    <td>验证手机</td>
+                      <td>验证通过</td>
+                      <td><span class="button">修改手机号</span></td>
+                  </tr>
+              </table>
+    	</div>
+    </div>
+		
+		
+	</div>
+	<!-- //右边结束 -->
+</div>
+<!-- footer开始 -->
+<include filep="public/footer"/>
+<!-- footer结束 -->
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+$(function(){
+	(function(){//侧边栏sideNave
+		var sideTab = $('#sideNav').find('h2');
+		var sideContent = $('#sideNav').find('ul');
+		
+
+		sideTab.each(function(index){
+			$(this).on('click',function(){
+				sideContent.eq(index).toggle();
+				var pos = $(this).find('i').css('background-position');
+				if(pos === '0px -16px'){
+					$(this).find('i').css('background-position','0px 0px');
+					flag = false;
+				}else{
+					$(this).find('i').css('background-position','0px -16px');
+					flag = true;
+				}
+			});
+		});
+	})()
+	//我的订单
+	$('#my_dng_btn').on('mouseover',function(){
+		$('#my_dng').show();
+	}).on('mouseout',function(){
+		$('#my_dng').hide();
+	});
+})
+	
+</script>
+</body>
+</html>

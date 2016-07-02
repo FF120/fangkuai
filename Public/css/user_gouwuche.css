@@ -1,0 +1,173 @@
+	#position{ font-size:18px; font-weight:bold; letter-spacing: 4px;}
+	.dingdan_right{position: relative;}
+	#shoppingBar{ position: absolute; right: 0px; top:0px;}
+	#shoppingBar li{ float: left; text-align: center;}
+	#shoppingBar li span{ position: relative; display: block; width: 90px; height: 3px; background-color: #ccc;}
+	#shoppingBar li span i{display: block; width: 20px; height: 20px; border-radius: 10px; background-color: #ccc; position: absolute; left:35px; top:-8px; color: #FFF; text-align: center; line-height: 20px; font-style: normal;}
+	#shoppingBar li span.active{background-color: #FF5500;}
+	#shoppingBar li span.active i{background-color: #FF5500;}
+	#shoppingBar li span.activeHad{background-color: #FFB765;}
+	#shoppingBar li span.activeHad i{background-color: #FFB765;}
+	#shoppingBar li a{ line-height: 3;}
+
+	#dingdan_tab{ border-bottom: 2px solid #ccc; margin-top: 20px; zoom:1;}
+	#dingdan_tab li{ float: left; margin-left: 5px;margin-bottom: -2px; font-size: 14px; color:#666; line-height: 2.6; padding:0 7px; cursor: pointer;}
+	#dingdan_tab li.active{color:#fc6215; border-bottom: 3px solid #fc6215;}
+	#dingdan_tab li.it:hover{color:#fc6215; border-bottom: 3px solid #fc6215;}
+	#dingdan_tab span{ color:#fc6215;}
+	#dingdan_tab .border_r{ float: left; display: block; font-size: 14px; line-height: 2.6; color:#999;margin-left: 5px;}
+	#dingdan_tab li.lajitong{ padding: 0; position: relative;}
+	#dingdan_tab li.lajitong i{ background: url(../images/lajitong.png) no-repeat;background: url(../images/lajitong2.png) no-repeat\9; background-size: 80%;  padding:4px 14px;background-position: 0px -33px; background-position: 0px -23px\9; background-position: 0px -33px\9\0;font-size: 7px; position: relative; top:-3px\9; +position: absolute; +display: block; +width: 20px; +top:10px; +left:-20px;}
+	#dingdan_tab li.lajitong:hover{color:#e68a1f;}
+	#dingdan_tab li.lajitong:hover i{  background-position: 0px 0px;}
+
+	#dingdan_title{ width: 754px; height: 36px; border:1px solid #ccc; margin-top: 20px;background-color: #f5f5f5;}
+	#dingdan_title li{ float: left; color: #666; width: 84px;text-align: center; line-height: 36px; border-left:1px solid #CCC;}
+	#dingdan_title li.first{width:159px;border-left:none;}
+
+	#dingdan_title #mySelect{z-index:1;display: none; position: absolute; top:36px; left:-1px; width: 100px; text-align: center; border:1px solid #CCC; border-bottom:none; background-color: #f9f9f9;}
+	#dingdan_title #mySelect div{ border-bottom: 1px solid #CCC;}
+	#mySelectTab i{ padding:4px 8px;+padding:3px 8px; background: url(../images/select_arrow.png) no-repeat;background: url(../images/select_arrow3.png) no-repeat\9; background-size: 50%; position: absolute; right: 0px; top:15px;background-position: 0px 0px;+font-size: 0px;}
+
+	.allTop{ line-height: 4;}
+	#all_button{ width: 90px; height: 24px;}
+
+
+	#dingdan_title #mySelect div:hover { background-color: #fc6215; color:#FFF;}
+	.dingdan_list {width: 754px;}
+	#form0 input{ +vertical-align: middle;}
+	.dingdan_list li{ border:1px solid #CCC; }
+	.dingdan_list h3{position: relative;}
+	.dingdan_list .lajitong{top:22px; background: url(../images/lajitong.png) no-repeat;background: url(../images/lajitong2.png) no-repeat\9; background-size: 80%; padding:4px 14px;background-position: 0px -33px; background-position: 0px -23px\9;background-position: 0px -33px\9\0;font-size: 7px; position: relative; top:-3px\9; cursor: pointer; +position: absolute; +top:3px; +display: block; +width: 20px;}
+
+	.dingdan_list .lajitong:hover{background-position: 0px 0px;}
+	.dingdan_list_title{ background-color: #f5f5f5; width: 754px; line-height: 36px; margin-top: 20px;}
+	.dingdan_list_title .content{ border-top:1px solid #CCC; background-color: #FFF;}
+	.dingdan_list_title h3 span{ padding:0 20px 0 0;}
+
+	.dingdan_list .content_first{ height: 80px; width: 134px; text-align:left; line-height: 2; padding-left: 25px;}
+	.dingdan_list .content_second{ height: 80px; width: 84px; text-align: center; border-left:1px solid #CCC;}
+	.dingdan_list .content_first:hover,.dingdan_list .content_second:hover{ background-color: #eee;}
+	.dingdan_list .content_second .single_line{ line-height: 80px;}
+	.dingdan_list .content_second .numBtn{ display: inline-block; height: 20px; text-align: center; line-height: 20px; margin-top: 30px;}
+	.dingdan_list .content_second .addBtn,.dingdan_list .content_second .delBtn{ border:1px solid #CCC; width:20px; background-color: #f0f0f0; position: relative; cursor: pointer;}
+	.dingdan_list .content_second .addBtn:hover,.dingdan_list .content_second .delBtn:hover{ background-color: #ff8800; color:#FFF;}
+	.dingdan_list .content_second .addBtn{left:-3px;}
+	.dingdan_list .content_second .delBtn{ right: -4px;}
+	.dingdan_list .content_second .numBtn_n{ width: 30px; border-top: 1px solid #CCC;border-bottom: 1px solid #CCC;}
+	.dingdan_list .more_line{ line-height: 2;}
+	.dingdan_list .active_button{ display: block; width: 70px; height: 30px; background-color: #fc6215; line-height: 30px; color:#FFF; margin:25px 7px; cursor: pointer; border-radius: 4px;}
+	.dingdan_list .blur_button{display: block; width: 70px; height: 30px; background-color: #cccccc; line-height: 30px; color:#FFF; margin:25px 7px; cursor: pointer; border-radius: 4px;}
+	.dingdan_bottom{ border:1px solid #CCC; border-top: none; background-color: #e5e5e5;}
+	.Cf41313{color:#f41313;}
+	.sarmeryBox{ display: inline-block; float: right; line-height: 3.5;}
+	.sarmeryBox *{ font-size: 14px;}
+	.sarmeryBox a{ display: inline-block; width: 80px; height: 40px; line-height: 40px; text-align: center;  background-color: #ff7700; color:#FFF; letter-spacing: 5px; font-size: 15px;}
+	strong{ color:#F00;} 
+
+/*付款流程-1 填写核对局部信息样式*/
+.makeSureInfo h1{ font-size: 15px; font-weight: bold; color:#000; line-height: 3;}
+.makeSureInfo h1 a{ color:#3080E6;}
+.makeSureInfo h1 a.none{ display: none;}
+.makeSureInfo ul{width: 694px; border:1px solid #ddd; padding: 10px 30px;}
+.makeSureInfo .payMethod{ width: 724px; padding:10px 15px;}
+.makeSureInfo li{line-height: 2;}
+.makeSureInfo li i{color:#FC9300;}
+.makeSureInfo li input{vertical-align: sub;}
+.makeSureInfo li a{color:#3080E6;}
+.makeSureInfo li .oSubBtn{ margin-left: 14em; margin-top: 1em; border:1px solid #FC9300; background-color: #FC9300; color:#FFF; height: 2em; cursor:pointer;}
+.makeSureInfo li p{display: inline-block; color:#aaa;}
+.makeSureInfo .orderInfo{ padding:0; width: 754px;}
+.makeSureInfo .orderInfo li{ overflow: hidden;}
+.makeSureInfo .orderInfo .title{ border-bottom: 2px solid #FDB043;}
+.makeSureInfo .orderInfo .title span{float: left; width: 15%;}
+.makeSureInfo .orderInfo .title span.first{float: left; width: 55%; text-indent: 2em;}
+.makeSureInfo .orderInfo .item div{float: left; width: 15%; padding:10px 0;line-height: 2.8;}
+.makeSureInfo .orderInfo .item div.info{float: left; width: 55%; }
+.makeSureInfo .orderInfo .item div.info span{text-indent: 2em; display: block; line-height: 1.4;}
+.makeSureInfo .orderInfo .sarmery{ background-color: #F2F6FF;}
+.makeSureInfo .orderInfo .sarmery div{float: right; margin-right:6em;}
+.makeSureInfo .orderInfo .borderTop{ border-top: 1px solid #eee;}
+.makeSureInfo .orderInfo .money div{ float: right; width: 18%; text-align: right;padding-right: 20px;}
+.makeSureInfo .orderInfo .money div.allMoney{ font-size: 16px; color:#F00; line-height: 24px; }
+.makeSureInfo .orderInfo .money div.sure{ width: 25%; border:1px solid #FDB043; padding-right:1em; margin: 10px 20px;}
+.makeSureInfo .orderInfo .money div.none{ display: none;}
+.makeSureInfo .orderInfo .money div .sureBtn{ width: 10em; height: 2em; border:1px solid #FDB043; background-color: #FDB043; margin-bottom: 10px; color:#FFF; cursor:pointer;}
+.makeSureInfo .orderInfo .money div .disable{border:1px solid #E4E4E4; background-color: #E4E4E4; color:#BDBCC2;}
+.makeSureInfo .no-border{ width: 756px; padding-top:10px; border:none; border-bottom: 1px solid #eee; margin-bottom: 50px;}
+
+/*付款流程-2 填写核对局部信息样式*/
+.payInfo .orderInfo .title span.first{ width:40%;}
+.payInfo .orderInfo .title span{ width: 12%;}
+.payInfo .orderInfo .item div.info{ width:40%;}
+.payInfo .orderInfo .item div{ width: 12%;}
+.payInfo .lastInfo{ border:none; width: 756px;}
+.payInfo .payLast{ width: 550px; border:2px solid #FDB043; padding:30px 0 30px 202px;}
+.payInfo .payLast a{ color:#A4A2A3;}
+.payInfo .payLast .payPassWord{ background-color: #FAFFBD; border:1px solid #CCC;}
+.payInfo .payLast .getIdentify{ background-color: #FF4400; color:#FFF; cursor:pointer; text-decoration: none; display: inline-block;margin:0 10px; line-height: 1.4em; }
+.payInfo .payLast .tel{ color:#000; font-weight: bold; }
+.payInfo .payLast .identify{ width: 5em; }
+.payInfo .payLast li{ line-height: 3;}
+.payInfo .payLast label{ font-weight: bold;}
+.payInfo .payLast .payLastBtn{ height: 2em; width: 8em; color:#FFF; background-color: #ff4400; border:1px solid #ff4400;}
+.payInfo .remark{ color: #F00; margin-top: 40px; font-size: 16px; border-bottom: 1px solid #eee; line-height: 1.8;}
+
+/*询价单样式*/
+.xunjiadan{ width: 100%; background-color: #f5f5f5;}
+.xunjiadan h1{ width: 100%; line-height: 3em; text-align: center; font-size: 20px; font-weight: bold; background-color: #FFF;}
+.xunjiadan .xunjia-main{ width: 940px; margin:30px 0 0 30px; padding-bottom: 30px;}
+.xunjiadan .xunjia-main .tip{ padding:10px; background-color: #fffbdd; border:1px solid #ddd; color: #666;}
+.xunjiadan .xunjia-main h2{ line-height: 2.6em; font-size: 18px;}
+.xunjiadan .xunjia-main .wrap{ width: 938px; overflow: hidden; border:1px solid #ccc;}
+.xunjiadan .xunjia-main .title{ float: left;overflow: hidden; width: 100%; border-bottom:1px solid #ccc; }
+.xunjiadan .xunjia-main .title li{ float: left; width: 14%; line-height: 3; font-size: 14px; text-indent: 1em;}
+.xunjiadan .xunjia-main .chuxiao .title li{width: 12.5%;}
+.xunjiadan .xunjia-main .wrap div{float: left; width: 14%; padding:10px 0;}
+.xunjiadan .xunjia-main .chuxiao div{width: 12.5%;}
+.xunjiadan .xunjia-main form div input{ width: 70%; margin-left: 10%; height: 2.4em; vertical-align: middle;}
+.xunjiadan .xunjia-main form div select{ width: 70%; margin-left: 10%; height: 3em;}
+.xunjiadan .xunjia-main form .addProduct{margin-bottom: 20px; width: 8em;}
+.xunjiadan .xunjia-main form .addProduct *:hover{color: #FF5500;}
+.xunjiadan .xunjia-main form .addProduct *{  font-size: 16px; font-style: normal; color:#000; text-decoration: none; cursor: pointer; line-height: 3em;}
+.xunjiadan .xunjia-main form label{  font-size: 16px;  }
+.xunjiadan .xunjia-main form .name,.xunjiadan .xunjia-main form .tel{ height: 2.3em; margin-bottom: 1em;}
+.xunjiadan .xunjia-main form .lowPrice{ width: 140px; height: 38px; color:#FFF; font-size: 16px; border:1px solid #f70; background-color: #ff8903; display: block; margin:0 auto;}
+.xunjiadan .xunjia-main form .lowPrice:hover{ background-color:#f70; cursor:pointer;}
+
+.xunjiadan .xunjia-main form .de_input{ display: inline-block; width: 15px; height: 20px; margin-left: 3px; position:relative; top:8px; background: url(../images/iconfont-shanchu.png) 0 50% no-repeat; background-size: contain; opacity: 0;}
+
+/*报价单样式*/
+.makeSurePrice .item0 { overflow: hidden; margin-top: 20px;}
+.makeSurePrice .item0 ul{ float: left; line-height: 1.6; margin-left:10px;}
+.makeSurePrice .item0 ul span{ color:#FF5500;}
+.makeSurePrice .item0 .askPrice{ float: left; background-color: #FF1300; color:#FFF; border-radius:3px; padding:0px 5px; line-height: 1.6em; margin-left: 10px;}
+.makeSurePrice .item0 .lookUp{ float: right; display: inline-block; width: 140px; height: 40px; background-color: #FF5500; color:#FFF; font-size: 16px; cursor:pointer; line-height: 40px; text-align: center; margin-right: 20px;}
+.makeSurePrice .item1 {margin-top:60px;}
+.makeSurePrice .item1 h1 { line-height: 2em; font-size: 16px;}
+.makeSurePrice .item1 h1 span{ font-size: 12px; color:#999;}
+.makeSurePrice .item1 ul { overflow: hidden;border:1px solid #CCC;}
+.makeSurePrice .item1 ul li{ overflow: hidden; float: left; width: 20%; font-size: 14px; text-align: center;}
+.makeSurePrice .item1 ul.title{border-bottom: none;}
+.makeSurePrice .item1 ul.title li { line-height: 3em;}
+.makeSurePrice .item1 ul.content li { line-height: 4em;}
+
+.makeSurePrice .item2 label { display: inline-block; width: 80px; text-align: right;}
+.makeSurePrice .item2 label i{ font-style:normal; color:#F00;}
+.makeSurePrice .item2 h1{ font-size: 14px; line-height: 2.6em; font-weight: bold; border-bottom: 1px dashed #CCC; margin-top: 20px;}
+.makeSurePrice .item2 p{ line-height: 2.6em;}
+.makeSurePrice .item2 form{ margin-top: 20px;}
+.makeSurePrice .item2 form input.text{ height: 30px;border:1px solid #ddd; width: 100px;}
+.makeSurePrice .item2 form input.ocheck{ vertical-align: sub;}
+.makeSurePrice .item2 form .textarea{ position: relative; top:-3em;}
+.makeSurePrice .item2 form a{ color: #00f;}
+.makeSurePrice .item2 form select{ width: 102px; height: 34px; border:1px solid #ddd;}
+.makeSurePrice .item2 form .money{ color: #F00; font-size: 20px;}
+.makeSurePrice .item2 form li{ margin-bottom: 10px;}
+.makeSurePrice .item2 form .subBtn{ width: 110px; height: 32px; background-color: #ff5500; border:1px solid #ff5500; color:#FFF; font-size: 16px;}
+.makeSurePrice .item2 form .subBtn:hover{background-color: #ff3300;}
+
+
+
+
+

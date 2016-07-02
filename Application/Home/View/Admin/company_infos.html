@@ -1,0 +1,149 @@
+<include file="public/top"/>
+<include file="public/header_admin"/>
+<div class="main">
+	<include file="public/left"/>
+	
+	<!-- //右边边 -->
+	<div class="dingdan_right">
+		<div id="position">
+			你当前的位置：
+			<a href="">会员中心</a><span></span>
+			<a href="">账户中心</a><span></span>
+			<a href="" class="now_ps">企业信息</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div style="height:20px;"></div>
+		<div class="north">
+			<div class="right">
+			<div class="east">
+				<form>
+					<table>
+						<tr>
+							<td>公司名称：</td>
+							<td class="text">1234567890123</td>
+						</tr>
+						<tr>
+							<td>公司简称：</td>
+							<td><input  /></td>
+						</tr>
+						<tr>
+							<td>公司描述：</td>
+							<td><textarea class="textarea"></textarea></td>
+						</tr>
+						<tr>
+							<td>所在区域：</td>
+							<td><select>
+									<option>北京</option>
+								</select>
+								<select>
+									<option>丰台</option>
+								</select></td>
+						</tr>
+						<tr>
+							<td>详细地址：</td>
+							<td><input  /></td>
+						</tr>
+						<tr>
+							<td>公司电话：</td>
+							<td><input  /></td>
+						</tr>
+						<tr>
+							<td>公司传真：</td>
+							<td><input  /></td>
+							 
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;联系人：</td>
+							<td><input  /></td>
+						</tr>
+						<tr>
+							<td>手机号码：</td>
+							<td><input  /></td>
+						</tr>
+		                <tr>
+		                	<td colspan="2" class="border"><hr />
+		                    </td>
+		                </tr>
+						<tr>
+							<td>公司证件</td>
+							<td class="card">
+								<ul>
+									<li>
+										<img src="__PUBLIC__/images/jiahao.svg" />
+		                                <span class="imgb">添加图片</span>
+									</li>
+		                           
+									<li>
+										<img src="__PUBLIC__/images/jiahao.svg" />
+		                                 <span class="imgb">添加图片</span>
+		                              
+									</li>
+									<li>
+										<img src="__PUBLIC__/images/jiahao.svg" />
+		                                 <span class="imgb">添加图片</span>
+									</li>
+								</ul>
+							</td>
+		                 <tr>
+		                    <td>&nbsp;</td>
+		                    <td class="permit"><center><img class="gantan" src="__PUBLIC__/images/gantan.svg" />您已通过企业身份认证，如需变更证件信息，请直接拨打热线：400-700-8506.<span class="QQchat"><img src="__PUBLIC__/images/QQ.png" />和我联系</span></center></td>
+		                 </tr>
+		                 <tr>
+		                	<td colspan="2" class="border"><hr />
+		                    </td>
+		                </tr>
+						<tr class="secondButton">
+		                	<td>&nbsp;</td>
+		                    <td>
+		                   		 <center><a href="javascripe:void(0)">提交</a></center>
+		                    </td>
+		                </tr>
+					</table>
+				</form>
+			</div>
+			</div>
+			
+		</div>
+		
+		
+	</div>
+	<!-- //右边结束 -->
+</div>
+<!-- footer开始 -->
+<include file="public/footer"/>
+<!-- footer结束 -->
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+$(function(){
+	(function(){//侧边栏sideNave
+		var sideTab = $('#sideNav').find('h2');
+		var sideContent = $('#sideNav').find('ul');
+		
+
+		sideTab.each(function(index){
+			$(this).on('click',function(){
+				sideContent.eq(index).toggle();
+				var pos = $(this).find('i').css('background-position');
+				if(pos === '0px -16px'){
+					$(this).find('i').css('background-position','0px 0px');
+					flag = false;
+				}else{
+					$(this).find('i').css('background-position','0px -16px');
+					flag = true;
+				}
+			});
+		});
+	})()
+	//我的订单
+	$('#my_dng_btn').on('mouseover',function(){
+		$('#my_dng').show();
+	}).on('mouseout',function(){
+		$('#my_dng').hide();
+	});
+})
+	
+</body>
+</html>

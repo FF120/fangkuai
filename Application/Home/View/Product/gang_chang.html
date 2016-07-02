@@ -1,0 +1,99 @@
+<include file="public/top" />
+	<div style="width:100%; border-top:1px solid #ccc;"></div>
+	
+	<include file="public/header" />
+	<div id="cuxiao_banner">
+		<img src="__PUBLIC__/images/chuxiao_banner.jpg" alt="">
+	</div>
+	<!-- 主体部分 开始 -->
+	<div class="cx_main" id="cx_main">
+		<ul class="title">
+			<li class="first">方块网推荐</li>
+			
+
+		</ul>
+		<div id="window">
+			<div class="wrap" style="left:0px;">
+				<div class="right_bigPic">
+					<img src="__PUBLIC__/images/right_bigPic.jpg" alt="">
+				</div>
+				<ul class="about">
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+					<li><a href=""><img src="__PUBLIC__/images/about.jpg" alt=""></a></li>
+				</ul>	
+			</div>
+			
+		</div>
+		
+	</div>
+	<!-- 主体部分 结束 -->
+<include file="public/footer"/>
+
+	
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+//我的订单
+$('#my_dng_btn').on('mouseover',function(){
+	$('#my_dng').show();
+}).on('mouseout',function(){
+	$('#my_dng').hide();
+});
+//特钢大卖场
+(function(){
+	$('#big_shop').on('mouseover',function(){
+		$('#shopping_list').show();
+	}).on('mouseout',function(){
+		$('#shopping_list').hide();
+	});
+})();
+// 获取焦点样式
+(function(){
+	var tab = $('#cx_main .title').find('a');
+	var list = $('#cx_main').find('.wrap');
+
+	tabChange(tab,list,'active')
+
+	function tabChange($tabArr,$content,classN){
+		var oldIndex = 0;
+		$tabArr.each(function(index){
+			$(this).on('mouseover',function(){
+				if(index === oldIndex){ return;}
+				$tabArr.removeClass(classN);
+				$(this).addClass(classN);
+				$('#bg').animate({left:(200+92*index)+'px'},100);
+
+				$content.eq(oldIndex).css({'z-index':'-1'});
+				if(index > oldIndex){
+					$content.eq(index).css({'left':'1000px','z-index':'10'});
+				}else if(index < oldIndex){
+
+					$content.eq(index).css({'left':'-1000px','z-index':'10'})
+				}
+
+				$content.eq(index).stop(true).animate({left:'0px'},400,function(){
+					$content.eq(oldIndex).css({'left':'1000px'});
+					oldIndex = index;
+				});
+			});
+		});
+	}
+
+})();
+</script>
+</body>
+</html>

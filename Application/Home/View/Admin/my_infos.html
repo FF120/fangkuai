@@ -1,0 +1,117 @@
+<include file="public/top"/>
+<include file="public/header_admin"/>
+<div class="main">
+	<include file="public/left"/>
+	
+	<!-- //右边边 -->
+	<div class="dingdan_right">
+		<div id="position">
+			你当前的位置：
+			<a href="">会员中心</a><span></span>
+			<a href="">账户中心</a><span></span>
+			<a href="" class="now_ps">个人信息</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div style="height:20px;"></div>
+		<div class="north">
+			<div class="right">
+				<div class="weast">
+					<img src="__PUBLIC__/images/head03.png" />
+				</div>
+				<div class="east">
+					<form>
+						<table class="percent0">
+							<tr>
+								<td>帐号：</td>
+								<td class="text">{$user_info.username}</td>
+							</tr>
+							<tr>
+								<td>公司：</td>
+								<td class="text"><input name="company_name" type="text" value="{$user_info.company_name}"/> </td>
+							</tr>
+							<tr>
+								<td>邮箱：</td>
+								<td>{$user_info.email}<a href="{:U('Admin/my_safe')}" class="achange">修改邮箱&nbsp;&nbsp;</a></td>
+							</tr>
+							<tr>
+								<td>手机：</td>
+								<td class="text">{$user_info.telephone}<a href="{:U('Admin/my_safe')}" class="righta">修改手机号</a></td>
+								 
+							</tr>
+							<tr>
+								<td>固话：</td>
+								<td><input name="company_name" type="text" value="{$user_info.fix_phone}"/></td>
+							</tr>
+							<tr>
+								<td>地址：</td>
+								<td><input name="company_name" type="text" value="{$user_info.address}"/></td>
+							</tr>
+							<tr>
+								<td>Q&nbsp;&nbsp;Q：</td>
+								<td>{$user_info.qq}</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td  class="subButton">
+								
+										<a href="javascript:void(0)">保存</a>
+								
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class="sourth">
+				<span class="icon-iconfont-shouji"></span>
+				<ul>
+					<li class="bold">手机认证</li>
+					<li><span class="icon-iconfont-duihao2"></span>已认证</li>
+					<li>您的手机已通过认证</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+	</div>
+	<!-- //右边结束 -->
+</div>
+<!-- footer开始 -->
+<include file="public/footer"/>
+
+<!-- footer结束 -->
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+$(function(){
+	(function(){//侧边栏sideNave
+		var sideTab = $('#sideNav').find('h2');
+		var sideContent = $('#sideNav').find('ul');
+		
+
+		sideTab.each(function(index){
+			$(this).on('click',function(){
+				sideContent.eq(index).toggle();
+				var pos = $(this).find('i').css('background-position');
+				if(pos === '0px -16px'){
+					$(this).find('i').css('background-position','0px 0px');
+					flag = false;
+				}else{
+					$(this).find('i').css('background-position','0px -16px');
+					flag = true;
+				}
+			});
+		});
+	})()
+	//我的订单
+	$('#my_dng_btn').on('mouseover',function(){
+		$('#my_dng').show();
+	}).on('mouseout',function(){
+		$('#my_dng').hide();
+	});
+})
+	
+</body>
+</html>

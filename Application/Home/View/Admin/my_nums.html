@@ -1,0 +1,101 @@
+<include file="public/top"/>
+<include file="public/header_admin"/>
+<div class="main">
+	<include file="public/left"/>
+	
+	<!-- //右边边 -->
+	<div class="dingdan_right">
+		<div id="position">
+			你当前的位置：
+			<a href="">会员中心</a><span></span>
+			<a href="">账户中心</a><span></span>
+			<a href="" class="now_ps">我的积分</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div style="height:20px;"></div>
+		<div class="north positionRelative">
+        	<div class="weast threeWidth100">
+        		<img src="__PUBLIC__/images/head03.png" class="threeFloatLeft">
+                <div class="jifen threeFloatLeft">
+                	<p>我的积分<span class="num">24</span>分</p>
+                    <p class="jieshao">10积分等于1元</p>
+                </div>
+                <div class="duihuan positionAbsolute">
+             		<a href="#">去商场兑换</a>
+                </div>
+        	</div>
+        </div>
+        <div class="sourth threeSourth">
+        	<table class="jifenDetail" cellspacing=0>
+            	<tr class="th">
+                	<td><p>来源</p></td>
+                   <td><p>变化</p></td>
+                  <td><p>时间</p></td>
+                   <td><p>备注</p></td>
+               </tr>
+            	<tr>
+                	<td>来源</td>
+                    <td><change>+3</change></td>
+                    <td>2014-05-05 11:11:11</td>
+                    <td>CRM创建积分帐户任务推送</td>
+                    
+                </tr>
+                <tr>
+                	<td>来源</td>
+                    <td><change>+3</change></td>
+                    <td>2014-05-05 11:11:11</td>
+                    <td>CRM创建积分帐户任务推送</td>
+                    
+                </tr>
+                <tr>
+                	<td>来源</td>
+                    <td><change>+3</change></td>
+                    <td>2014-05-05 11:11:11</td>
+                    <td>CRM创建积分帐户任务推送</td>
+                    
+                </tr>
+            </table>
+        </div>
+		
+		
+	</div>
+	<!-- //右边结束 -->
+</div>
+<!-- footer开始 -->
+<include file="public/footer"/>
+<!-- footer结束 -->
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+$(function(){
+	(function(){//侧边栏sideNave
+		var sideTab = $('#sideNav').find('h2');
+		var sideContent = $('#sideNav').find('ul');
+		
+
+		sideTab.each(function(index){
+			$(this).on('click',function(){
+				sideContent.eq(index).toggle();
+				var pos = $(this).find('i').css('background-position');
+				if(pos === '0px -16px'){
+					$(this).find('i').css('background-position','0px 0px');
+					flag = false;
+				}else{
+					$(this).find('i').css('background-position','0px -16px');
+					flag = true;
+				}
+			});
+		});
+	})()
+	//我的订单
+	$('#my_dng_btn').on('mouseover',function(){
+		$('#my_dng').show();
+	}).on('mouseout',function(){
+		$('#my_dng').hide();
+	});
+})
+	
+</body>
+</html>

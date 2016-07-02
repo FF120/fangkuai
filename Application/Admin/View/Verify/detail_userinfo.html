@@ -1,0 +1,182 @@
+<include file="Public:header"/>
+</head>
+<body>
+	<!-- //右边边 -->
+	<div style="margin-top: 26px;">
+		<div id="position">
+			你当前的位置：管理员后台<span></span>认证审核<span></span>
+			<a href="#" class="now_ps">会员详细信息</a>
+		</div>
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="__PUBLIC__/css/1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/font-style.css" />
+		<!-- 局部样式结束 -->
+		<div style="height: 20px;"></div>
+		<div class="north">
+			<div class="right">
+				<div class="weast">
+					<img src="__PUBLIC__/images/head03.png" />
+					<div>个人信息</div>
+				</div>
+				<div class="east">
+					<table class="percent0">
+						<tr>
+							<td>帐号：</td>
+							<td class="text">{$userInfo.username}</td>
+						</tr>
+						<tr>
+							<td>真实姓名：</td>
+							<td class="text">{$userInfo.truename}</td>
+						</tr>
+						<tr>
+							<td>公司：</td>
+							<td class="text">{$userInfo.company_name}</td>
+						</tr>
+						<tr>
+							<td>固话：</td>
+							<td class="text">{$userInfo.fix_phone}</td>
+						</tr>
+						<tr>
+							<td>邮箱：</td>
+							<td class="text">{$userInfo.email}</td>							
+						</tr>
+						<tr>
+							<td>手机：</td>
+							<td class="text">{$userInfo.telephone}</td>
+						</tr>
+						<tr>
+							<td>地址：</td>
+							<td>{$userInfo.address}</td>
+						</tr>
+						<tr>
+							<td>Q&nbsp;&nbsp;Q：</td>
+							<td>{$userInfo.qq}</td>
+						</tr>
+						<tr>
+							<td>年龄：</td>
+							<td>{$userInfo.age}</td>
+						</tr>
+						<tr>
+							<td>性别：</td>
+							<td>{$userInfo.sex}</td>
+						</tr>
+						<tr>
+							<td>积分：</td>
+							<td>{$userInfo.score}</td>
+						</tr>
+						<tr>
+							<td>创建于：</td>
+							<td>{$userInfo.created_at}</td>
+						</tr>
+						<tr>
+							<td>上次登录时间：</td>
+							<td>{$userInfo.last_time}</td>
+						</tr>
+						<tr>
+							<td>认证情况：</td>
+							<td>
+							<if condition="($userInfo[is_verified]) eq 2">
+								<div style="height:25px;line-height:25px; text-align: center;"><a href="#" title="点击认证" onclick="verifyUser({$userInfo.id});">申请待审核</a></div>
+								<elseif condition="($userInfo[is_verified]) eq 1"/><div style="height:25px;line-height:25px; text-align: center;">已认证</div>
+								<else /><div style="height:25px;line-height:25px; text-align: center;">未认证</div>
+							</if>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<hr style="border:3 double #987cb9" width="80%" color=#987cb9 size=3; align=center"/>
+				<br/><br/>
+				<div class="weast">
+					<img src="__PUBLIC__/images/head03.png" />
+					<div>公司信息</div>
+				</div>
+				<div class="east">
+					<table class="percent0">
+						<tr>
+							<td>公司名称：</td>
+							<td class="text">{$userCompanyInfo.company_name}</td>
+						</tr>
+						<tr>
+							<td>公司简介：</td>
+							<td class="text">{$userCompanyInfo.company_profile}</td>
+						</tr>
+						<tr>
+							<td>描述：</td>
+							<td class="text">{$userCompanyInfo.company_description}</td>
+						</tr>
+						<tr>
+							<td>所在城市：</td>
+							<td class="text">{$userCompanyInfo.company_city}</td>							
+						</tr>
+						<tr>
+							<td>所在地区：</td>
+							<td class="text">{$userCompanyInfo.company_zone}</td>
+						</tr>
+						<tr>
+							<td>详细地址：</td>
+							<td class="text">{$userCompanyInfo.company_details_address}</td>
+						</tr>
+						<tr>
+							<td>公司电话：</td>
+							<td>{$userCompanyInfo.company_phone}</td>
+						</tr>
+						<tr>
+							<td>公司传真：</td>
+							<td>{$userCompanyInfo.company_fax}</td>
+						</tr>
+						<tr>
+							<td>公司负责人：</td>
+							<td>{$userCompanyInfo.company_person}</td>
+						</tr>
+						<tr>
+							<td>负责人电话：</td>
+							<td>{$userCompanyInfo.company_person_phone}</td>
+						</tr>
+						<tr>
+							<td>证书快照：</td>
+							<td><img src="__ROOT__/{$advertInfo.small_img_path}" width="60px" height="40px"></img></td>
+							<td><img src="__ROOT__/{$advertInfo.small_img_path}" width="60px" height="40px"></img></td>
+							<td><img src="__ROOT__/{$advertInfo.small_img_path}" width="60px" height="40px"></img></td>
+							<td><img src="__ROOT__/{$advertInfo.small_img_path}" width="60px" height="40px"></img></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="sourth">
+				<span class="icon-iconfont-shouji"></span>
+				<ul>
+					<li class="bold">手机认证</li>
+					<li><span class="icon-iconfont-duihao2"></span>已认证</li>
+					<li>您的手机已通过认证</li>
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- //右边结束 -->
+	<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		/*
+		* 审核用户
+		*/
+		function verifyUser(user_id){
+			if(confirm("确认要认证该用户吗？")){
+				var url = "__CONTROLLER__/verify_user";
+				var data = {"user_id":user_id};
+				$.ajax({
+					type: 'POST',
+					url: url,
+					data: data,
+					success: function(result){
+						if(result == 1){
+							location.reload();					
+						}
+					}
+				}); 
+			}else{
+			}
+		}
+	</script>
+</body>
+</html>

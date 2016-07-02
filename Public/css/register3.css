@@ -1,0 +1,37 @@
+p,ul,li,body,h1,h2,h3,h4,h5,h6{ padding: 0; margin:0px; font-weight: normal; }
+	ul,li{ list-style: none;}
+	a{ text-decoration: none; color:#666;}
+
+	img{ border: 0;}		
+	input,button,select,textarea{ outline:none;}
+	textarea{resize:none;}
+	a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+
+	.clear{ clear:both; font-size: 0px;display: none;}
+	.fl{ float: left;} .fr{ float: right;} 
+	.no-margin-cow{ margin:0px auto;}
+	.no-margin-row{ margin:auto 0px;}
+	.no-margin-both{ margin:0px;}
+
+	.header{ width: 100%; font-size: 12px;}
+	.header .user{ width: 1000px; height: 28px; margin:0 auto; line-height: 28px; color:#666666;}
+	.header .user p a{ color:#fc6215;}
+	.header .user li{ float: left;}
+	.header .user li a{ float: left; display: block; padding: 0 10px;}
+	.header .user li i{ float: left; display: block; background: url(../images/head_icon.jpg) no-repeat; position: relative;}
+
+	#my_dng{position:absolute; width:76px; top:0px; left:0; z-index:20; background-color:#FFF;border:1px solid #CCC; display: none;}
+	#my_dng li{ width: 100%;}
+	#my_dng li:hover{background-color:#CCC; }
+	
+	.search{ width:1000px; height: 90px;margin:0 auto;}
+
+	.login_main{ width: 1000px; margin:0 auto; overflow: hidden; font-family: "微软雅黑"}
+	.login_main .title{ width: 1000px; height: 40px; margin: 20px auto 85px; background: url(images/login_3_title_bg.jpg) no-repeat;}
+	
+	.login_main .success{ margin:120px 0px 0px 300px;}
+	.login_main .success h1{ line-height: 2em;}
+	.login_main .success div{ margin-left: 20px;}
+	.login_main .success p{ font-size: 16px; margin-bottom: 40px;}
+	.login_main .success a{ color:#30affe; font-size:16px;}
+	.login_main .success a:hover{ text-decoration: underline;}
