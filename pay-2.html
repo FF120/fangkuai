@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>方块网</title>
+	<link rel="stylesheet" href="css/user_header&footer.css"><!--头部&底部样式-->
+</head>
+<body onselectstart="return false">
+
+<div class="header">
+	<!-- 顶部开始 -->
+	<div class="user">
+		<p class="fl">你好，<span>胡江塞</span>（<span>15643237856</span>）[<a href="#">退出</a>]</p>
+		<ul class="fr">
+			<li><a href="javascript:void(0)">我的方块网</a>|</li>
+			<li id="my_dng_btn" style="position:relative; ">
+			<ul id="my_dng">
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+			</ul>
+			<a href="javascript:void(0)"><span class="fl">我的订单</span><i style="width:10px;height:10px; background-position:-2px -26px;top:10px; left:8px;"></i></a>|</li>
+			<li><a href="javascript:void(0)">积分商城</a>|</li>
+			<li><a href="javascript:void(0)"><i style="width:17px;height:17px; background-position:0px 0px; top:5px; left:-4px;"></i><span class="fl">在线客服</span></a>|</li>
+			<li><a href="javascript:void(0)">工作时间：工作日8:00-16:00</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<!-- 顶部结束 -->
+	<div style="width:100%; border-top:1px solid #ccc;"></div>
+	<!-- 导航开始 -->
+	<div class="nav">
+		<div class="nav_contain">
+			<img style="float:left; margin-top:14px;" src="images/logo.png" alt="">
+			<h1><a href="">我的会员中心 </a></h1><span style="float:left; color:#FFF; font-size:20px; line-height:72px;">|</span>
+			<ul>
+				<li><a href="">方块首页</a></li>
+				<li><a href="">现货商城</a></li>
+				<li><a href="">完善采购信息</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 导航结束 -->
+</div>
+<div class="main">
+	<!-- 左侧开始 -->
+	<div class="user_left">
+		<h1>会员中心</h1>
+		<div id="sideNav">
+			<h2 class="bg1"><strong>我的交易</strong> <i></i></h2>
+			<ul>
+				<li><a href="">采购的订单</a></li>
+				<li><a href="">销售的订单</a></li>
+				<li><a href="">发票查询</a></li>
+				<li><a href="">我的购物车</a></li>
+			</ul>
+			<h2 class="bg2"><strong>我的资源</strong><i></i></h2>
+			<ul>
+				<li><a href="">我的资源单</a></li>
+				<li><a href="">我的关注</a></li>
+			</ul>
+			<h2 class="bg3"><strong>账户中心</strong><i></i></h2>
+			<ul>
+				<li><a href="">个人信息</a></li>
+				<li><a href="">企业信息</a></li>
+				<li><a href="">我的积分</a></li>
+				<li><a href="">账户安全</a></li>
+			</ul>
+			<h2 class="bg4"><strong>我的发布</strong><i></i></h2>
+			<ul>
+				<li><a href="">发布求购</a></li>
+				<li><a href="">发布现货</a></li>
+				<li><a href="">发布促销</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 左侧结束 -->
+	<div class="dingdan_right">
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="css/user_gouwuche.css">
+		<!-- 局部样式 结束 -->
+		<!-- 购物状态条 开始 -->
+		<ul id="shoppingBar">
+			<li>
+				<span class="activeHad"><i>1</i></span>
+				<a>下订单</a>
+			</li>
+			<li>
+				<span class="active"><i>2</i></span>
+				<a>订单付款</a>
+			</li>
+			<li>
+				<span><i>3</i></span>
+				<a>提货</a>
+			</li>
+			<li>
+				<span><i>4</i></span>
+				<a>订单结算</a>
+			</li>
+		</ul>
+		<!-- 购物状态条 结束 -->
+		<div id="position" style="">付款</div>
+		<div class="payInfo makeSureInfo">
+			<h1>订单信息</h1>
+			<form action="" method="post">
+				<ul class="orderInfo">
+					<li class="title">
+						<span class="first">货物信息</span>
+						<span>交货地</span>
+						<span>单价</span>
+						<span>重量</span>
+						<span>状态</span>
+						<span>金额合计</span>
+					</li>
+					<li class="item">
+						<div class="info">
+							<span>铝材</span>
+							<span>规格：1000牌号：产地/品牌：测试</span>
+						</div>
+						<div>郑州</div>
+						<div>1</div>
+						<div>1吨</div>
+						<div>等待付款</div>
+						<div>￥1.00</div>
+					</li>
+					<li class="sarmery">
+						<div>实际付款：<span>￥2.00</span></div>
+					</li>
+				</ul>
+				<ul class="lastInfo">
+					<li>订单编号：20140924133420319</li>
+					<li>卖家：网站测试</li>
+					<li>发票信息：</li>
+					<li>收货信息：河南 郑州 金水区 金水区花园北路55号，测试，13285079598</li>
+					<li>下单日期：2014/9/24 13:34:20</li>
+				</ul>
+			</form>
+			<form action="" method="">
+				<ul class="payLast">
+					<li>
+						<label for="">支付密码：</label>
+						<input type="text" class="payPassWord" name="payPassWord">
+						<a href="">忘记密码？</a>
+					</li>
+					<li>
+						<label for="">手机号码：</label>
+						<span class="tel">134****2345</span>
+						<a class="getIdentify">发送验证码</a>
+						<a href="">更换号码？</a>
+					</li>
+					<li>
+						<label for=""><i style="opacity:0">空</i>校验码：</label>
+						<input type="text" class="identify">
+						<a href="">没有收到校验码？</a>
+					</li>
+					<li>
+						<label for=""><i style="opacity:0">提交确定：</i></label>
+						<input type="submit" class="payLastBtn" value="确定">
+					</li>
+				</ul>
+			</form>
+			<p class="remark">备注：订单提交后请两小时内完成付款，否则订单将会自动取消。</p>
+		</div>
+		
+
+		
+	</div>
+</div>
+<!-- footer开始 -->
+<div class="footer">
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px 0px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">买方</a></li>
+			<li class="item"><a href="">下订单</a></li>
+			<li class="item"><a href="">找货</a></li>
+			<li class="item"><a href="">采购流程</a></li>
+			<li class="item"><a href="">采购招标</a></li>
+			<li class="item"><a href="">如何支付</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px -40px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">卖方</a></li>
+			<li class="item"><a href="">发布现货</a></li>
+			<li class="item"><a href="">交易流程</a></li>
+			<li class="item"><a href="">如何给买家报价</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px -80px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">账号服务</a></li>
+			<li class="item"><a href="">用户注册</a></li>
+			<li class="item"><a href="">找回密码</a></li>
+			<li class="item"><a href="">账户确认</a></li>
+			<li class="item"><a href="">多用户登录</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px -120px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">常见问题</a></li>
+			<li class="item"><a href="">无法注册</a></li>
+			<li class="item"><a href="">什么是担保交易</a></li>
+			<li class="item"><a href="">交易纠纷处理</a></li>
+			<li class="item"><a href="">联系客服</a></li>
+			<li class="item"><a href="">进入帮助中心</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item" style="width:156px; padding-left:45px; line-height:2em;">
+		<a href=""><img src="images/buy_gangcai.jpg" alt=""></a>
+		<h1 style="font-size:14px; color:#666;">服务热线：100-100-520</h1>
+		<img style="margin-left:16px;" src="images/erweima.jpg" alt="">
+		<div><a href="">加方块网为微信好友</a></div>
+	</div>
+	<div class="clear"></div>
+</div>
+<!-- footer结束 -->
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	$(function(){
+		(function(){//侧边栏sideNave
+			var sideTab = $('#sideNav').find('h2');
+			var sideContent = $('#sideNav').find('ul');
+			
+
+			sideTab.each(function(index){
+				var flag = true;
+				$(this).on('click',function(){
+					sideContent.eq(index).toggle();
+					if(flag){
+						$(this).find('i').css('background-position','0px -16px');
+						flag = false;
+					}else{
+						$(this).find('i').css('background-position','0px 0px');
+						flag = true;
+					}
+				});
+			});
+		})()
+		
+		//我的订单
+		$('#my_dng_btn').on('mouseover',function(){
+			$('#my_dng').show();
+		}).on('mouseout',function(){
+			$('#my_dng').hide();
+		});
+		
+	});
+</script>
+</body>
+</html>

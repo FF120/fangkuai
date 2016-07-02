@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>方块网</title>
+</head>
+<body class="header">
+	<div class="user">
+		<p class="fl">亲，欢迎来到方块网！请<a href="#">登陆</a>[<a href="#">免费注册</a>]</p>
+		<ul class="fr">
+			<li><a href="javascript:void(0)">我的方块网</a>|</li>
+			<li id="my_dng_btn" style="position:relative; ">
+			<ul id="my_dng">
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+			</ul>
+			<a href="javascript:void(0)"><span class="fl">我的订单</span><i style="width:10px;height:10px; background-position:-2px -26px;top:10px; left:8px;"></i></a>|</li>
+			<li><a href="javascript:void(0)">积分商城</a>|</li>
+			<li><a href="javascript:void(0)"><i style="width:17px;height:17px; background-position:0px 0px; top:5px; left:-4px;"></i><span class="fl">在线客服</span></a>|</li>
+			<li><a href="javascript:void(0)">工作时间：工作日8:00-16:00</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div style="width:100%; border-top:1px solid #ebebeb;"></div>
+	<div class="search">
+		<a class="fl" style="height:90px;" href="/"><img src="images/logo.jpg" alt=""></a>
+		<div class="clear"></div>
+	</div>
+	<!-- 以上部分 每个登陆、注册 页面都一样，可重复利用-->
+
+
+	<div style="width:100%; border-top:1px solid #ccc;"></div>
+	<link rel="stylesheet" href="css/login.css">
+	<div class="login_main">
+		
+		<form action="#" method="post">
+			<img style="position:relative; top:-16px;" src="images/login0_title.jpg" alt=""><br/>
+			<label for="">账号：</label>
+			<input id="psw" name="zhanghao" type="text"><br/><br/>
+
+			<label for="psw">密码：</label>
+			<input id="psw" name="psw" type="text"><br/><br/>
+
+			<input id="auto_login"  name="auto_login" type="checkbox">
+			<label style="font-size:16px;" for="auto_login">下次自动登陆</label>
+			<a href="" style="color:#0069b8;padding-left:115px;">忘记密码？</a><br/><br/>
+
+			<label for=""><span style="padding-left:1em"></label>
+			<input id="subBtn"  type="submit" value="登陆">	
+
+			<div class="other_login">
+			<a style="top:35px; left:43px;" href=""><!-- 微信登陆 --></a>
+			<a style="top:35px; left:242px;"  href=""><!-- qq登陆 --></a>
+			</div>
+		</form>	
+	</div>
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	//我的订单
+	$('#my_dng_btn').on('mouseover',function(){
+		$('#my_dng').show();
+	}).on('mouseout',function(){
+		$('#my_dng').hide();
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>方块网</title>
+	
+</head>
+<body class="header">
+
+	<div class="user">
+		<p class="fl">亲，欢迎来到方块网！请<a href="#">登陆</a>[<a href="#">免费注册</a>]</p>
+		<ul class="fr">
+			<li><a href="javascript:void(0)">我的方块网</a>|</li>
+			<li id="my_dng_btn" style="position:relative; ">
+			<ul id="my_dng">
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+			</ul>
+			<a href="javascript:void(0)"><span class="fl">我的订单</span><i style="width:10px;height:10px; background-position:-2px -26px;top:10px; left:8px;"></i></a>|</li>
+			<li><a href="javascript:void(0)">积分商城</a>|</li>
+			<li><a href="javascript:void(0)"><i style="width:17px;height:17px; background-position:0px 0px; top:5px; left:-4px;"></i><span class="fl">在线客服</span></a>|</li>
+			<li><a href="javascript:void(0)">工作时间：工作日8:00-16:00</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div style="width:100%; border-top:1px solid #ebebeb;"></div>
+	<div class="search">
+		<a class="fl" style="height:90px;" href="/"><img src="images/logo.jpg" alt=""></a>
+		<div class="clear"></div>
+	</div>
+	<!-- 以上部分 每个登陆、注册 页面都一样，可重复利用-->
+
+
+	<div style="width:100%; border-top:1px solid #ccc;"></div>
+	<link rel="stylesheet" href="css/register1.css">
+	<div class="login_main">
+		<div class="title fl"></div>
+		<form class="fl" action="#" method="post">
+			<label for="tel">手机号：</label>
+			<input id="tel" name="telephone" type="text"><br/><br/>
+			<div style="position: relative;top: -6px;">
+			<label for="sure">验证码：</label>
+			<input id="sure" name="yanzhengma" type="text">
+			<img style="position:relative; top:16px;" src="images/yanzhengma.jpg" alt="">
+			<a href="">看不清？<span style="color:#30affe">换一张</span></a><br/><br/>
+			</div>
+			<label for="message">短信验证码：</label>
+			<input id="message" name="message" type="text">
+			<a href="" style="background-color:#30affe; color:#FFF; padding:11px; position:relative;top:2px;">获取短信验证码</a>
+		</form>
+		<div class="other fl">
+			<h1 style="font-size:18px;">已有方块网账号？</h1>
+			<p style="color:#333;">成为会员，方块网将人工免费帮您找最便宜的钢材！并且可以免费发布，下载资源单！</p><br/>
+			<div class="butarr">
+				<a href="" style="background-color:#30affe; color:#FFF; padding:8px 30px; font-size:16px;">登陆</a> 或 
+				<a href="" style="background:url(images/qq.jpg) no-repeat; color:#FFF; padding:2px 40px; font-size:16px;"></a>
+			</div>
+			<p style="font-size:18px; margin-bottom:10px;">有任何问题请联系客服！</p>
+			<p>电话：<span style="font-size:18px; color:#ff0000; padding-right:20px;">010-58746548</span> <a href="" style="background:url(images/qq_kefu.jpg) no-repeat; color:#FFF; padding:2px 40px; font-size:16px;"><!-- QQbtn --></a></p>
+		</div>
+	</div>
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	//我的订单
+	$('#my_dng_btn').on('mouseover',function(){
+		$('#my_dng').show();
+	}).on('mouseout',function(){
+		$('#my_dng').hide();
+	});
+</script>
+</body>
+</html>

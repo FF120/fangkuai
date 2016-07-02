@@ -1,0 +1,96 @@
+/*方块网*/
+/*2015.08.26,BY-LiangPengFei*/
+*{ font-size: 12px; font-family: "微软雅黑";}
+p,ul,li,body,h1,h2,h3,h4,h5,h6,form{ padding: 0; margin:0px; font-weight: normal; }
+ul,li{ list-style: none;}
+a{ text-decoration: none; color:#666;}
+a:hover{ text-decoration: none;}
+
+img{ border: 0;}		
+input,button,select,textarea{ outline:none;}
+textarea{resize:none;}
+a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+
+.clear{ clear:both; font-size: 0px;display: none;}
+.fl{ float: left;} .fr{ float: right;} 
+.no-margin-cow{ margin:0px auto;}
+.no-margin-row{ margin:auto 0px;}
+.no-margin-both{ margin:0px !important;}
+
+/*用户中心头部公共样式开始*/
+.header{ width: 100%;}
+.header .user{ width: 1000px; height: 28px; margin:0 auto; line-height: 28px; color:#666666;}
+.header .user p a{ color:#fc6215;}
+.header .user li{ float: left;}
+.header .user li a{ float: left; display: block; padding: 0 10px;}
+.header .user li i{ float: left; display: block; background: url(../images/head_icon.jpg) no-repeat; position: relative;}
+
+/*我的订单*/
+#my_dng{position:absolute; width:76px; top:0px; left:0; z-index:20; background-color:#FFF;border:1px solid #CCC; display: none;}
+#my_dng li{ width: 100%;}
+#my_dng li:hover{background-color:#CCC; }
+
+.nav{ width: 100%; height: 72px; background: #227dc8;} 
+.nav_contain{ width: 1000px; height: 72px; margin:0 auto;}
+.nav_contain a{ color:#FFF; font-size: 18px; padding:10px 5px; text-decoration: none;}
+.nav_contain a:hover{ background-color: #fc7b3b;}
+.nav_contain h1{ float: left; line-height: 72px; margin:0px 30px 0px 62px;}
+.nav_contain ul{ overflow: hidden;}
+.nav_contain ul li{ float: left; line-height: 72px; margin:0 15px;}
+.nav_contain ul li a{ font-size: 16px;}
+.main{ width: 1000px; margin:0 auto;}
+/*用户中心头部公共样式结束*/
+
+/*页面左侧导航公共样式开始*/
+.user_left{ float: left; width: 204px;}
+.user_left h1{ width: 100%; text-align: center; line-height: 50px; font-size: 22px; text-align: center; color:#fc6215; font-weight: normal; border-bottom: 2px solid #fc6215;}
+
+#sideNav { border:1px solid #eee; border-top: none;}
+#sideNav h2{height: 50px; line-height:50px; font-size: 20px; border-bottom: 1px solid #ccc; text-align: center;background-image: url(../images/left_bar_icon.png); background-repeat: no-repeat; cursor: pointer; position: relative;}
+#sideNav h2 strong{ font-size: 17px; color:#333;}
+
+#sideNav h2 i{ padding:8px 16px; background: url(../images/select_arrow.png) no-repeat;background: url(../images/select_arrow2.png) no-repeat\9; background-size: 50%; position: absolute; right: 0px; top:18px;background-position: 0px 0px; font-size: 0px\9;}
+
+#sideNav h2.bg1{background-position: 18px 0;}
+#sideNav h2.bg2{background-position: 18px -50px;}
+#sideNav h2.bg3{background-position: 18px -100px;}
+#sideNav h2.bg4{background-position: 18px -150px;}
+#sideNav ul{ margin-top: 20px; border-bottom: 1px solid #ccc;}
+#sideNav li{ margin-bottom: 20px; text-align: center;}
+#sideNav li a{ color:#333; font-size: 15px;}
+#sideNav li a:hover{ color:#fc6215;}
+/*页面左侧导航公共样式结束*/
+
+/*面包屑导航公共样式开始*/
+.dingdan_right{ float: left; margin-left: 10px; width: 756px; margin-top: 42px;}
+#position{ border-bottom: 2px solid #CCC; font-size: 15px; line-height: 2;}
+#position a{ font-size: 15px;}
+#position a.now_ps{ color:#fc6215;}
+#position span{background: url(../images/jiantou.png) 50% 50% no-repeat;background: url(../images/jiantou2.png) 50% 50% no-repeat\9; background-size: 60%; padding:8px; vertical-align: center;}
+/*面包屑导航公共样式结束*/
+
+/*无订单等公共样式开始*/
+#no_dingdan{ width: 754px; height: 220px; background-color: #f2f2f2; background-image:url(../images/no_dingdan.jpg); background-repeat: no-repeat; background-position: 170px 45px; position: relative; display: none;border:1px solid #ccc;border-top:none;}
+#no_dingdan p{ position: absolute; top:116px; left: 352px; font-size: 15px;}
+#no_dingdan p a{ color:#277fbf; font-size: 15px;}
+#no_dingdan p a:hover{ text-decoration: underline;}
+/*无订单等公共样式结束*/
+
+/*页码公共样式开始*/
+#page_ps{ margin:30px 0px 100px 100px; }
+#page_ps li{ float: left; margin-right: 10px; line-height: 31px;height:31px;}
+#page_ps li a{ padding:4px 10px; border:1px solid #CCC; font-size: 15px;}
+#page_ps li a:hover{ background-color: #aaa;}
+#page_ps li a.active{ background-color: #317ee7; color:#FFF;}
+/*页码公共样式结束*/
+
+/*页面底部公共样式开始*/
+.footer{ width: 1000px; padding:40px 0; margin:0px auto; overflow: hidden;}
+.footer_item{ float: left; width: 198px; height: 160px; border-left: 1px solid #CCC; color:#999;}
+.footer_item .icon{  float: left; width: 34px; height: 34px; background: url(../images/footer_icon.jpg) no-repeat; margin:0px 20px 0px 15px; }
+.footer_item li.title a{ display:block; color:#333; font-size: 16px;margin-bottom: 5px;}
+.footer_item li.item a{ display:block;margin-bottom: 10px; font-size: 14px;}
+.footer_item li.item a:hover{ color:#333; text-decoration: underline;}
+
+
+

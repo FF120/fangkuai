@@ -1,0 +1,706 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>方块网</title>
+	<link rel="stylesheet" href="css/header&footer.css"><!--头部&底部样式-->
+	<link rel="stylesheet" href="css/item_shop.css">
+</head>
+<body onselectstart="return false">
+<!-- 头部开始 -->
+<div class="header">
+	<div class="user">
+		<p class="fl">亲，欢迎来到方块网！请<a href="#">登陆</a>[<a href="#">免费注册</a>]</p>
+		<ul class="fr">
+			<li><a href="javascript:void(0)">我的方块网</a>|</li>
+			<li id="my_dng_btn" style="position:relative; ">
+			<ul id="my_dng">
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+			</ul>
+			<a href="javascript:void(0)"><span class="fl">我的订单</span><i style="width:10px;height:10px; background-position:-2px -26px;top:10px; left:8px;"></i></a>|</li>
+			<li><a href="javascript:void(0)">积分商城</a>|</li>
+			<li><a href="javascript:void(0)"><i style="width:17px;height:17px; background-position:0px 0px; top:5px; left:-4px;"></i><span class="fl">在线客服</span></a>|</li>
+			<li><a href="javascript:void(0)">工作时间：工作日8:00-16:00</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div style="width:100%; border-top:1px solid #ccc;"></div>
+	<div class="search">
+		<a class="fl" style="height:90px;" href="/"><img src="images/logo.jpg" alt=""></a>
+		<form action="" method="get">
+			<input id="searchText" type="text" value="搜索">
+			<input id="subBtn" type="submit" value="">
+			<a href="" class="hot fr"></a>
+			<a href="" class="car fr"></a>
+		</form>
+		<div class="clear"></div>
+	</div>
+	<div class="nav">
+		<div class="nav_content">
+			<div id="big_shop" class="big_shop fl">
+				<i class="srow"></i>
+				<h1 id="shopping">特钢大卖场 </h1>
+				<ul id="shopping_list" style="background-color:#FFF;">
+					<li>
+						<i></i>
+						<h1 class="fl"><a href="">我的关注</a><span class="fr"></span></h1>
+						<p class="fl"><a href="">金虹</a><a href="">华伟</a><a href=""> 宝航</a></p>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<i style="background-position:0px -68px;"></i>
+						<h1 class="fl"><a href="">优特钢</a><span class="fr"></span></h1>
+						<p class="fl"><a href="">昨日成交<span style="color:#fc6215">42635.024</span>吨</a></p>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<i style="background-position:0px -136px;"></i>
+						<h1 class="fl"><a href="">优特板带</a><span class="fr"></span></h1>
+						<p class="fl"><a href="">昨日成交<span style="color:#fc6215">42635.024</span>吨</a></p>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<i style="background-position:0px -204px;"></i>
+						<h1 class="fl"><a href="">无缝管</a><span class="fr"></span></h1>
+						<p class="fl"><a href="">昨日成交<span style="color:#fc6215">42635.024</span>吨</a></p>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<i style="background-position:0px -272px;"></i>
+						<h1 class="fl"><a href="">不锈钢</a><span class="fr"></span></h1>
+						<p class="fl"><a href="">昨日成交<span style="color:#fc6215">42635.024</span>吨</a></p>
+						<div class="clear"></div>
+					</li>
+					<li style="border-bottom:1px solid #FFF;">
+						<i style="background-position:0px -340px;"></i>
+						<h1 class="fl"><a href="">优线</a><span class="fr"></span></h1>
+						<p class="fl"><a href="">黄海</a><a href="">西王</a><a href="">华伟</a><a href="">鑫典</a></p>
+						<div class="clear"></div>
+					</li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+			
+			<ul class="nav_box fl" ><!-- style="display:none;" -->
+				<li><a class="link" href="">首页</a></li>
+				<li><a class="link" href="shopping_buxiugang.html">现货商城</a></li>
+				<li><a class="link" href="cai_gou_bao_jia.html">采购报价</a></li>
+				<li><a class="link" href="zhi_yuan_dan.html">资源单</a></li>
+				<li><a class="link" href="chu_xiao.html">促销</a></li>
+				<li><a class="link" href="gang_chang.html">钢厂专区</a></li>
+				<div class="clear"></div>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+<!-- 头部结束 -->
+<div class="main">
+	<!-- 钢种切换tab按钮 开始 -->
+	<ul id="tab">
+		<li><a href="shopping_youtegang.html">优特钢</a></li>
+		<li><a href="shopping_bandai.html">优特板带</a></li>
+		<li><a class="active" href="shopping_wufengguan.html">无缝钢管</a></li>
+		<li><a href="shopping_buxiugang.html">不锈钢</a></li>
+		<li><a href="shopping_youxian.html">优线</a></li>
+	</ul>
+	<!-- 钢种切换tab按钮 结束 -->
+	<div class="content">
+		<div class="content_form">
+			<!-- 搜索框 开始 -->
+			<form action="" method="">
+				<select name="diqu" id="">
+					<option value="北京">北京</option>
+					<option value="天津">天津</option>
+				</select>
+				<label for="pin_ming">品名</label>
+				<input id="pin_ming" name="pin_ming" type="text">
+				<label for="gui_ge">规格</label>
+				<input id="gui_ge" name="gui_ge" type="text">
+				<label for="cai_zi">材质</label>
+				<input id="cai_zi" name="cai_zi" type="text">
+				<label for="gang_chang">钢厂</label>
+				<input id="gang_chang" name="gang_chang" type="text">
+				<label for="cang_ku">仓库</label>
+				<input id="cang_ku" name="cang_ku" type="text">
+				
+				<label for="chang_du0">长度</label>
+				<input id="chang_du0" name="chang_du0" type="text">
+				-
+				<input id="chang_du1" name="chang_du1" type="text">
+				<input class="listSubBtn" type="submit" value="找货">
+			</form>
+			<!-- 搜索框 结束 -->
+
+		</div>
+		<div class="content_item">
+			<!-- 列表title 开始 -->
+			<ul class="content_item_title">
+				<li>钢厂<i class="haveColor"></i></li>
+				<li>品名<i></i></li>
+				<li>材质<i></i></li>
+				<li>规格<i></i></li>
+				<li>仓库<i></i></li>
+				<li>数量<i></i></li>
+				<li>价格<i></i></li>
+				<li class="no-border">操作<i></i></li>
+			</ul>
+			<!-- 列表title 结束 -->
+			<!-- 列表主体 开始 -->
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<!-- 列表主体 结束 -->
+		</div>
+	</div>
+	<div class="content" style="display:none;">
+		<div class="content_form">
+			<!-- 搜索框 开始 -->
+			<form action="" method="">
+				<select name="diqu" id="">
+					<option value="北京">北京</option>
+					<option value="天津">天津</option>
+				</select>
+				<label for="pin_ming1">品名</label>
+				<input id="pin_ming1" name="pin_ming1" type="text">
+				<label for="gui_ge1">规格</label>
+				<input id="gui_ge1" name="gui_ge1" type="text">
+				<label for="cai_zi1">材质</label>
+				<input id="cai_zi1" name="cai_zi1" type="text">
+				<label for="gang_chang1">钢厂</label>
+				<input id="gang_chang1" name="gang_chang1" type="text">
+				<label for="cang_ku1">仓库</label>
+				<input id="cang_ku1" name="cang_ku1" type="text">
+				<label for="hou_du01">厚度</label>
+				<input id="hou_du01" name="hou_du01" type="text">
+				-
+				<input id="hou_du11" name="hou_du11" type="text">
+				<label for="kuan_du01">宽度</label>
+				<input id="kuan_du01" name="kuan_du01" type="text">
+				-
+				<input id="kuan_du11" name="kuan_du11" type="text">
+				<label for="chang_du01">长度</label>
+				<input id="chang_du01" name="chang_du01" type="text">
+				-
+				<input id="chang_du11" name="chang_du11" type="text">
+				<input class="listSubBtn" type="submit" value="找货">
+			</form>
+			<!-- 搜索框 结束 -->
+
+		</div>
+		<div class="content_item">
+			<!-- 列表title 开始 -->
+			<ul class="content_item_title">
+				<li>钢厂<i class="haveColor"></i></li>
+				<li>品名<i></i></li>
+				<li>材质<i></i></li>
+				<li>规格<i></i></li>
+				<li>仓库<i></i></li>
+				<li>数量<i></i></li>
+				<li>价格<i></i></li>
+				<li class="no-border">操作<i></i></li>
+			</ul>
+			<!-- 列表title 结束 -->
+			<!-- 列表主体 开始 -->
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<!-- 列表主体 结束 -->
+		</div>
+	</div>
+	<div class="content" style="display:none;">
+		<div class="content_form">
+			<!-- 搜索框 开始 -->
+			<form action="" method="">
+				<select name="diqu" id="">
+					<option value="北京">北京</option>
+					<option value="天津">天津</option>
+				</select>
+				<label for="pin_ming1">品名</label>
+				<input id="pin_ming1" name="pin_ming1" type="text">
+				<label for="gui_ge1">规格</label>
+				<input id="gui_ge1" name="gui_ge1" type="text">
+				<label for="cai_zi1">材质</label>
+				<input id="cai_zi1" name="cai_zi1" type="text">
+				<label for="gang_chang1">钢厂</label>
+				<input id="gang_chang1" name="gang_chang1" type="text">
+				<label for="cang_ku1">仓库</label>
+				<input id="cang_ku1" name="cang_ku1" type="text">
+				
+				<label for="chang_du01">长度</label>
+				<input id="chang_du01" name="chang_du01" type="text">
+				-
+				<input id="chang_du11" name="chang_du11" type="text">
+				<input class="listSubBtn" type="submit" value="找货">
+			</form>
+			<!-- 搜索框 结束 -->
+
+		</div>
+		<div class="content_item">
+			<!-- 列表title 开始 -->
+			<ul class="content_item_title">
+				<li>钢厂<i class="haveColor"></i></li>
+				<li>品名<i></i></li>
+				<li>材质<i></i></li>
+				<li>规格<i></i></li>
+				<li>仓库<i></i></li>
+				<li>数量<i></i></li>
+				<li>价格<i></i></li>
+				<li class="no-border">操作<i></i></li>
+			</ul>
+			<!-- 列表title 结束 -->
+			<!-- 列表主体 开始 -->
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<!-- 列表主体 结束 -->
+		</div>
+	</div>
+	<div class="content" style="display:none;">
+		<div class="content_form">
+			<!-- 搜索框 开始 -->
+			<form action="" method="">
+				<select name="diqu" id="">
+					<option value="北京">北京</option>
+					<option value="天津">天津</option>
+				</select>
+				<label for="pin_ming1">品名</label>
+				<input id="pin_ming1" name="pin_ming1" type="text">
+				<label for="gui_ge1">规格</label>
+				<input id="gui_ge1" name="gui_ge1" type="text">
+				<label for="cai_zi1">材质</label>
+				<input id="cai_zi1" name="cai_zi1" type="text">
+				<label for="gang_chang1">钢厂</label>
+				<input id="gang_chang1" name="gang_chang1" type="text">
+				<label for="cang_ku1">仓库</label>
+				<input id="cang_ku1" name="cang_ku1" type="text">
+				<label for="hou_du01">厚度</label>
+				<input id="hou_du01" name="hou_du01" type="text">
+				-
+				<input id="hou_du11" name="hou_du11" type="text">
+				<label for="kuan_du01">宽度</label>
+				<input id="kuan_du01" name="kuan_du01" type="text">
+				-
+				<input id="kuan_du11" name="kuan_du11" type="text">
+				<label for="chang_du01">长度</label>
+				<input id="chang_du01" name="chang_du01" type="text">
+				-
+				<input id="chang_du11" name="chang_du11" type="text">
+				<input class="listSubBtn" type="submit" value="找货">
+			</form>
+			<!-- 搜索框 结束 -->
+
+		</div>
+		<div class="content_item">
+			<!-- 列表title 开始 -->
+			<ul class="content_item_title">
+				<li>钢厂<i class="haveColor"></i></li>
+				<li>品名<i></i></li>
+				<li>材质<i></i></li>
+				<li>规格<i></i></li>
+				<li>仓库<i></i></li>
+				<li>数量<i></i></li>
+				<li>价格<i></i></li>
+				<li class="no-border">操作<i></i></li>
+			</ul>
+			<!-- 列表title 结束 -->
+			<!-- 列表主体 开始 -->
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<!-- 列表主体 结束 -->
+		</div>
+	</div>
+	<div class="content" style="display:none;">
+		<div class="content_form">
+			<!-- 搜索框 开始 -->
+			<form action="" method="">
+				<select name="diqu" id="">
+					<option value="北京">北京</option>
+					<option value="天津">天津</option>
+				</select>
+				<label for="pin_ming1">品名</label>
+				<input id="pin_ming1" name="pin_ming1" type="text">
+				<label for="gui_ge1">规格</label>
+				<input id="gui_ge1" name="gui_ge1" type="text">
+				<label for="cai_zi1">材质</label>
+				<input id="cai_zi1" name="cai_zi1" type="text">
+				<label for="gang_chang1">钢厂</label>
+				<input id="gang_chang1" name="gang_chang1" type="text">
+				<label for="cang_ku1">仓库</label>
+				<input id="cang_ku1" name="cang_ku1" type="text">
+				<label for="hou_du01">厚度</label>
+				<input id="hou_du01" name="hou_du01" type="text">
+				-
+				<input id="hou_du11" name="hou_du11" type="text">
+				<label for="kuan_du01">宽度</label>
+				<input id="kuan_du01" name="kuan_du01" type="text">
+				-
+				<input id="kuan_du11" name="kuan_du11" type="text">
+				<label for="chang_du01">长度</label>
+				<input id="chang_du01" name="chang_du01" type="text">
+				-
+				<input id="chang_du11" name="chang_du11" type="text">
+				<input class="listSubBtn" type="submit" value="找货">
+			</form>
+			<!-- 搜索框 结束 -->
+
+		</div>
+		<div class="content_item">
+			<!-- 列表title 开始 -->
+			<ul class="content_item_title">
+				<li>钢厂<i class="haveColor"></i></li>
+				<li>品名<i></i></li>
+				<li>材质<i></i></li>
+				<li>规格<i></i></li>
+				<li>仓库<i></i></li>
+				<li>数量<i></i></li>
+				<li>价格<i></i></li>
+				<li class="no-border">操作<i></i></li>
+			</ul>
+			<!-- 列表title 结束 -->
+			<!-- 列表主体 开始 -->
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<ul class="content_item_list">
+				<li>安陵</li>
+				<li>花纹卷</li>
+				<li>HQ235B</li>
+				<li>4.75*1500*C</li>
+				<li>聚方库</li>
+				<li>2</li>
+				<li>2150</li>
+				<li class="no-border"><a href="">下单</a href=""></li>
+			</ul>
+			<!-- 列表主体 结束 -->
+		</div>
+	</div>
+	<div class="content_form_right">
+		<!-- 锁货列表 开始 -->
+		<ul class="content_form_right_tab">
+			<li class="active">锁货列表</li>
+			<li>待处理</li>
+		</ul>
+		<ul class="content_form_right_list" id="c_f_r_list1">
+			<li>
+				<p>
+					<span class="name blod fl">承钢 低合金卷</span>
+					<span class="price blod fr">2070</span>
+				</p>
+				<p>
+					<span class="size fl">CG475V-1 4.5*1500*C</span>
+				<input class="fr" type="text" onclick="this.focus();this.select()" value="2">
+				</p>
+				<p>
+					<span class="address color fl">佛山市</span>
+					<span class="fl">/</span><span class="fl">业勤仓</span>
+					<span class="fl">/</span><span class="weight fl">28.46吨</span>
+					<span class="dele color fr">删除</span>
+				</p>
+			</li>
+			<li>
+				<p>
+					<span class="name blod fl">承钢 低合金卷</span>
+					<span class="price blod fr">2070</span>
+				</p>
+				<p>
+					<span class="size fl">CG475V-1 4.5*1500*C</span>
+				<input class="fr" type="text" onclick="this.focus();this.select()" value="2">
+				</p>
+				<p>
+					<span class="address color fl">佛山市</span>
+					<span class="fl">/</span><span class="fl">业勤仓</span>
+					<span class="fl">/</span><span class="weight fl">28.46吨</span>
+					<span class="dele color fr">删除</span>
+				</p>
+			</li>
+			<li id="deletAll"><a href="">清空所有货物</a></li>
+			<div class="bottom">
+				<p>
+					抬头：<span><尚未认证企业></span>
+					<a class="color" href="">去认证</a>
+				</p>
+				<p>
+					<select name="" id="">
+						<option value="123">123</option>
+					</select>
+					<a class="color" href="">新增</a>
+				</p>
+				<p>
+					共计<span class="allNum red blod">3</span>件
+					<span class="allWeight red blod">6,345</span>吨
+					<span class="allMoney red blod">83840.234</span>元
+				</p>
+				<p><input id="blockSub" type="submit" value="立即锁货"></p>
+			</div>
+			
+		</ul>
+		<ul class="content_form_right_list" id="c_f_r_list2" style="display:none;">
+			<li>优特钢版2</li>
+			<li>优特钢版2</li>
+			
+		</ul>		
+		<!-- 锁货列表 结束 -->
+	</div>
+	<!-- 页码开始 -->
+	<div id="page_ps">
+		<ul>
+			<li><a href="">上一页</a></li>
+			<li><a href="" class="active">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">4</a></li>
+			<li>……</li>
+			<li><a href="">5</a></li>
+			<li><a href="">6</a></li>
+			<li><a href="">7</a></li>
+			<li><a href="">8</a></li>
+			<li><a href="">下一页</a></li>
+			<div class="clear"></div>
+		</ul>
+	</div>
+	<!-- 页码结束 -->
+</div>
+<!-- footer 开始 -->
+<div class="footer">
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px 0px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">买方</a></li>
+			<li class="item"><a href="">下订单</a></li>
+			<li class="item"><a href="">找货</a></li>
+			<li class="item"><a href="">采购流程</a></li>
+			<li class="item"><a href="">采购招标</a></li>
+			<li class="item"><a href="">如何支付</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px -40px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">卖方</a></li>
+			<li class="item"><a href="">发布现货</a></li>
+			<li class="item"><a href="">交易流程</a></li>
+			<li class="item"><a href="">如何给买家报价</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px -80px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">账号服务</a></li>
+			<li class="item"><a href="">用户注册</a></li>
+			<li class="item"><a href="">找回密码</a></li>
+			<li class="item"><a href="">账户确认</a></li>
+			<li class="item"><a href="">多用户登录</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px -120px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">常见问题</a></li>
+			<li class="item"><a href="">无法注册</a></li>
+			<li class="item"><a href="">什么是担保交易</a></li>
+			<li class="item"><a href="">交易纠纷处理</a></li>
+			<li class="item"><a href="">联系客服</a></li>
+			<li class="item"><a href="">进入帮助中心</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item" style="width:156px; padding-left:45px; line-height:2em;">
+		<a href=""><img src="images/buy_gangcai.jpg" alt=""></a>
+		<h1 style="font-size:14px; color:#666;">服务热线：100-100-520</h1>
+		<img style="margin-left:16px;" src="images/erweima.jpg" alt="">
+		<div><a href="">加方块网为微信好友</a></div>
+	</div>
+	<div class="clear"></div>
+</div>
+<!-- footer 结束 -->
+	
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script src="js/shoppingMall.js"></script>
+</body>
+</html>

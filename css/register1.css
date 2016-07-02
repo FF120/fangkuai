@@ -1,0 +1,40 @@
+p,ul,li,body,h1,h2,h3,h4,h5,h6{ padding: 0; margin:0px; font-weight: normal; }
+	ul,li{ list-style: none;}
+	a{ text-decoration: none; color:#666;}
+
+	img{ border: 0;}		
+	input,button,select,textarea{ outline:none;}
+	textarea{resize:none;}
+	a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+
+	.clear{ clear:both; font-size: 0px;display: none;}
+	.fl{ float: left;} .fr{ float: right;} 
+	.no-margin-cow{ margin:0px auto;}
+	.no-margin-row{ margin:auto 0px;}
+	.no-margin-both{ margin:0px;}
+
+	.header{ width: 100%; font-size: 12px;}
+	.header .user{ width: 1000px; height: 28px; margin:0 auto; line-height: 28px; color:#666666;}
+	.header .user p a{ color:#fc6215;}
+	.header .user li{ float: left;}
+	.header .user li a{ float: left; display: block; padding: 0 10px;}
+	.header .user li i{ float: left; display: block; background: url(../images/head_icon.jpg) no-repeat; position: relative;}
+
+	#my_dng{position:absolute; width:76px; top:0px; left:0; z-index:20; background-color:#FFF;border:1px solid #CCC; display: none;}
+	#my_dng li{ width: 100%;}
+	#my_dng li:hover{background-color:#CCC; }
+
+	.search{ width:1000px; height: 90px;margin:0 auto;}
+
+	.login_main{ width: 1000px; margin:0 auto; overflow: hidden; font-family: "微软雅黑"}
+	.login_main .title{ width: 1000px; height: 40px; margin: 20px auto 85px; background: url(../images/login_1_title_bg.jpg) no-repeat;}
+	.login_main form{ margin-left: 115px; font-size: 14px;}
+	.login_main form label{font-size: 16px;}
+	.login_main form input#tel{ width: 300px; height: 36px;}
+	.login_main form input#sure{ width: 100px; height: 36px;}
+	.login_main form input#message{ width: 100px; height: 36px;}
+
+	.login_main .other{ width: 370px; height: 300px; padding-left: 30px; border-left: 1px solid #CCC; margin-left: 100px; font-size: 14px;}
+
+	.login_main .other h1{ margin:5px 0 10px;}
+	.login_main .butarr{ margin-left: 90px; width: 200px; height: 50px; border-bottom: 1px solid #CCC; padding: 0px 20px; margin-bottom: 20px;}

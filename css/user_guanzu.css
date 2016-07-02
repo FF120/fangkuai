@@ -1,0 +1,26 @@
+.classify{ overflow: hidden; margin-top: 20px;}
+	.classify li{ float: left; margin:5px 10px; height: 32px;}
+	.classify li a{ float: left; display: block; width: 110px; height: 30px;border:1px solid #CCC; line-height: 30px; text-align: center; font-size: 14px;}
+	.classify li a:hover,.classify li a.active{border-bottom:2px solid #ff7700; color:#ff7700;}
+	
+	.classify li.right_form{ float: right;}
+	.dingdan_list li.right_form{ float: right;}
+	#gz_search{position:relative; +width:290px;top:10px; +top:-30px; left:16px;+left:58px;}
+	#canpin_name{ width:220px; height: 32px; position: relative;left: 3px; top:-1px;top:-9px\9;+top:0px; top:-2px\9\0;}
+	#classify_subBtn{ width: 60px; height: 38px; background-color: #ff5500; border:1px solid #ff5500; color:#FFF; font-size: 16px; letter-spacing: 2px; cursor: pointer; border:none; +line-height: 38px;}
+
+	#dingdan_title{ border: 1px solid #ccc; margin-top: 5px; background-color: #e8e8e8;}
+	#dingdan_title li{ float: left; text-align: center; font-size: 14px; color:#000; line-height: 2.6; cursor: pointer;}
+	.dingdan_list{ border: 1px solid #ccc; border-top: none;overflow: hidden; position: relative;}
+	.dingdan_list li{ float: left; text-align: center; font-size: 14px; color:#666; line-height: 32px; cursor: pointer; height: 32px; overflow: hidden;}
+	.dingdan_list li:hover{ background-color: #f5f5f5;}
+	.dingdan_list li.no_hover:hover{ background-color: #FFF;}
+	.dingdan_list li a{ color:#0075c2;}
+	.dingdan_list li select{ margin-top: 5px\9;+margin-top: 0px;}
+	.dingdan_list li a:hover{text-decoration: underline;}
+	.dingdan_list li.gs_name{white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
+	.dingdan_bottom li{ border:1px solid #CCC; height:20px; line-height: 20px;margin:14px 6px; padding:5px 10px;}
+	.dingdan_bottom li:hover{ background-color: #f5f5f5;}
+
+	.dingdan_list li.one_check{width:30px; line-height:40px; position: relative;top:10px\9;+top:0px;}
+	.dingdan_bottom li.all_check{width:30px; height:60px; line-height:60px; position: relative;top:22px\9;+top:0px; border:none; margin:0px;padding:0;}

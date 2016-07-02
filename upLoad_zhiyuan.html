@@ -1,0 +1,41 @@
+<style>
+	#upLoad_zy{ width: 444px; height: 210px; background-color: #FFF;}
+	#upLoad_zy *{ font-size: 15px;}
+	#hasUpLoadTip{ display: none;}
+	#upLoad_zy .title{ overflow: hidden; border-bottom:1px solid #CCC; line-height: 40px;}
+	#upLoad_zy .title h1{ float: left; padding-left: 10px;}
+	#upLoad_zy form{ padding:10px;}
+	#upLoad_zy form p { line-height: 30px;}
+	#upLoad_zy form a{ color:#0075c2;}
+	#upLoad_zy form i{ color:#ff5500;}
+	#upLoad_zy form p span{ padding:5px 20px; border:1px solid #ff5500; border-radius: 4px; color:#ff5500; cursor:pointer;}
+	#upLoad_zy form em{ font-style: normal;}
+	#upLoad_zy form em:hover span{ background-color: #ff5500; color:#FFF;}
+	#upLoadFile { width:90px; margin-left: -90px;opacity: 0; filter:alpha(opacity:0);}
+	.upZy_submit{ display: block; width: 100px; height:30px; margin:20px auto; display: block; border:1px solid #ff5500; border-radius: 4px; background-color: #ff5500; color:#FFF;}
+</style>
+<div id="upLoad_zy">
+	<div class="title">
+		<h1>批量导入</h1>
+	</div>
+	<form action="123.php" method="post" enctype="multipart/form-data">
+		<p>第一步：<a href="">下载excel模板</a></p>
+		<p>第二部：
+			<em>
+				<span>选择文件</span>
+				<input id="upLoadFile" name="upLoadFile" type="file">
+			</em>
+			<input name="clear" type="checkbox">是否清空原有现货
+			<i id="hasUpLoadTip">已选择资源</i>
+		</p>
+		<input class="upZy_submit" type="submit" value="上传文件">
+	</form>
+</div>
+<script>
+var fileInput = document.getElementById('upLoadFile');
+fileInput.onchange=function(){
+	if(fileInput.value != ''){
+		document.getElementById('hasUpLoadTip').style.display = 'inline';
+	}
+}	
+</script>

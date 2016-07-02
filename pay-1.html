@@ -1,0 +1,335 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>方块网</title>
+	<link rel="stylesheet" href="css/user_header&footer.css"><!--头部&底部样式-->
+</head>
+<body onselectstart="return false">
+
+<div class="header">
+	<!-- 顶部开始 -->
+	<div class="user">
+		<p class="fl">你好，<span>胡江塞</span>（<span>15643237856</span>）[<a href="#">退出</a>]</p>
+		<ul class="fr">
+			<li><a href="javascript:void(0)">我的方块网</a>|</li>
+			<li id="my_dng_btn" style="position:relative; ">
+			<ul id="my_dng">
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+				<li><a href="javascript:void(0)">我的订单</a></li>
+			</ul>
+			<a href="javascript:void(0)"><span class="fl">我的订单</span><i style="width:10px;height:10px; background-position:-2px -26px;top:10px; left:8px;"></i></a>|</li>
+			<li><a href="javascript:void(0)">积分商城</a>|</li>
+			<li><a href="javascript:void(0)"><i style="width:17px;height:17px; background-position:0px 0px; top:5px; left:-4px;"></i><span class="fl">在线客服</span></a>|</li>
+			<li><a href="javascript:void(0)">工作时间：工作日8:00-16:00</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<!-- 顶部结束 -->
+	<div style="width:100%; border-top:1px solid #ccc;"></div>
+	<!-- 导航开始 -->
+	<div class="nav">
+		<div class="nav_contain">
+			<img style="float:left; margin-top:14px;" src="images/logo.png" alt="">
+			<h1><a href="">我的会员中心 </a></h1><span style="float:left; color:#FFF; font-size:20px; line-height:72px;">|</span>
+			<ul>
+				<li><a href="">方块首页</a></li>
+				<li><a href="shopping_buxiugang.html">现货商城</a></li>
+				<!--<li><a href="">完善采购信息</a></li>-->
+			</ul>
+		</div>
+	</div>
+	<!-- 导航结束 -->
+</div>
+<div class="main">
+	<!-- 左侧开始 -->
+	<div class="user_left">
+		<h1>会员中心</h1>
+		<div id="sideNav">
+			<h2 class="bg1"><strong>我的交易</strong> <i></i></h2>
+			<ul>
+				<li><a href="">采购的订单</a></li>
+				<li><a href="">销售的订单</a></li>
+				<li><a href="">发票查询</a></li>
+				<li><a href="">我的购物车</a></li>
+			</ul>
+			<h2 class="bg2"><strong>我的资源</strong><i></i></h2>
+			<ul>
+				<li><a href="">我的资源单</a></li>
+				<li><a href="">我的关注</a></li>
+			</ul>
+			<h2 class="bg3"><strong>账户中心</strong><i></i></h2>
+			<ul>
+				<li><a href="">个人信息</a></li>
+				<li><a href="">企业信息</a></li>
+				<li><a href="">我的积分</a></li>
+				<li><a href="">账户安全</a></li>
+			</ul>
+			<h2 class="bg4"><strong>我的发布</strong><i></i></h2>
+			<ul>
+				<li><a href="">发布求购</a></li>
+				<li><a href="">发布现货</a></li>
+				<li><a href="">发布促销</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 左侧结束 -->
+	<div class="dingdan_right">
+		<!-- 局部样式 -->
+		<link rel="stylesheet" href="css/user_gouwuche.css">
+		<!-- 局部样式 结束 -->
+		<!-- 购物状态条 开始 -->
+		<ul id="shoppingBar">
+			<li>
+				<span class="active"><i>1</i></span>
+				<a>下订单</a>
+			</li>
+			<li>
+				<span><i>2</i></span>
+				<a>订单付款</a>
+			</li>
+			<li>
+				<span><i>3</i></span>
+				<a>提货</a>
+			</li>
+			<li>
+				<span><i>4</i></span>
+				<a>订单结算</a>
+			</li>
+		</ul>
+		<!-- 购物状态条 结束 -->
+		<div id="position" style="">填写核对信息</div>
+		<div class="makeSureInfo">
+			<h1>提货信息<a class="none" href="">修改</a></h1>
+			<!-- 确认后才会显示修改按钮，默认是隐藏的。 -->
+			<form action="" method="post">
+				<ul>
+					<li>
+						<label for="method">提货方式：</label>
+						<input type="radio" name="method" id="method1">
+						<span>顾客自提<i>（免运费）</i></span>
+						<input type="radio" name="method" id="method2">
+						<span>配送</span>
+					</li>
+					<li>
+						<label for=""><i style="opacity:0">空</i>配送至：</label>
+						<input type="radio" name="address" id="address">
+						<span>132747477747 河南 郑州 金水区 金水区花园北路55号</span>
+						<a href="javascript:void(0)">修改</a>
+						<a href="javascript:void(0)">删除</a>
+					</li>
+					<li>
+						<label for="" style="opacity:0">添加地址：</label>
+						<input type="radio" name="address" id="addressNew">
+						<span>添加新地址</span>
+					</li>
+					<li><input type="submit" class="oSubBtn" value="确认提货信息"></li>
+				</ul>
+			</form>
+			<h1>支付方式<a class="none" href="">修改</a></h1>
+			<!-- 确认后才会显示修改按钮，默认是隐藏的。 -->
+			<form action="" method="post">
+				<ul class="payMethod">
+					<li>
+						<label for="" style="opacity:0">空空空空：</label>
+						<input type="radio" name="payMethod" id="payMethod">
+						<span>在线支付</span>
+						<p>中钢网担保交易，及时到账，先付款至本交易中心中信银行监管结算账户，再由银行银行监管划付给卖方</p>
+						<a href="">详情</a>
+					</li>
+					<li>
+						<label for="" style="opacity:0">空空空空：</label>
+						<input type="radio" name="address" id="address">
+						<span>其他交易方式</span>
+					</li>
+					
+					<li><input type="submit" class="oSubBtn" value="确认支付方式"></li>
+				</ul>
+			</form>
+			<h1>发票信息<a class="none" href="">修改</a></h1>
+			<!-- 确认后才会显示修改按钮，默认是隐藏的。 -->
+			<form action="" method="post">
+				<ul>
+					<li>
+						<label for="">发票类型：</label>
+						<input type="radio" name="invoice" id="invoice1">
+						<span>普通发票</span>
+						<input type="radio" name="invoice" id="invoice2">
+						<span>增值发票</span>
+					</li>
+					<li>
+						<label for="">发票抬头：</label>
+						<input type="text" placeholder="姓名，单位名称" name="invoiceTitle" id="invoiceTitle">
+						
+					</li>
+					
+					<li><input type="submit" class="oSubBtn" value="确认发票信息"></li>
+				</ul>
+			</form>
+			<h1>确认订单信息 <a href="">返回购物车修改</a></h1>
+			<form action="" method="post">
+				<ul class="orderInfo">
+					<li class="title">
+						<span class="first">货物信息</span>
+						<span>单价</span>
+						<span>重量</span>
+						<span>金额合计</span>
+					</li>
+					<li class="item">
+						<div class="info">
+							<span>铝材</span>
+							<span>规格：1000牌号：产地/品牌：测试</span>
+						</div>
+						<div>1</div>
+						<div>1吨</div>
+						<div>￥1.00</div>
+					</li>
+					<li class="item">
+						<div class="info">
+							<span>铝材</span>
+							<span>规格：1000牌号：产地/品牌：测试</span>
+						</div>
+						<div>1</div>
+						<div>1吨</div>
+						<div>￥1.00</div>
+					</li>
+					
+					<li class="sarmery">
+						<div>店铺合计：<span>￥2.00</span></div>
+					</li>
+				</ul>
+				<ul class="orderInfo no-border">
+					<li class="money">
+						<div>￥2.00</div>
+						<div>商品总价：</div>
+					</li>
+					<li class="money">
+						<div>2</div>
+						<div>重量计算：</div>
+					</li>
+					<li class="money borderTop">
+						<div class="allMoney">￥2.00</div>
+						<div>实付款：</div>
+					</li>
+					<li class="money">
+						<!-- none类名用于控制显隐样式 去掉显示 增加隐藏 -->
+						<div class="sure">
+							你需先<a href="">确认提货信息</a>，再提交订单
+						</div>
+						<!-- <div class="sure none">
+							你需先<a href="">确认提货信息</a>，再提交订单
+						</div> -->
+					</li>
+					<li class="money">
+						<div>
+							<!-- 提交按钮 不可用状态 -->
+							<input type="submit"class="sureBtn disable" value="提交订单">
+							<!-- 提交按钮 可用状态 -->
+							<!-- 
+							<input type="submit"class="sureBtn" value="提交订单"> -->
+						</div>
+						<div><a href="">返回购物车修改</a></div>
+					</li>
+				</ul>
+			</form>
+		</div>
+		
+
+		
+	</div>
+</div>
+<!-- footer开始 -->
+<div class="footer">
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px 0px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">买方</a></li>
+			<li class="item"><a href="">下订单</a></li>
+			<li class="item"><a href="">找货</a></li>
+			<li class="item"><a href="">采购流程</a></li>
+			<li class="item"><a href="">采购招标</a></li>
+			<li class="item"><a href="">如何支付</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px -40px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">卖方</a></li>
+			<li class="item"><a href="">发布现货</a></li>
+			<li class="item"><a href="">交易流程</a></li>
+			<li class="item"><a href="">如何给买家报价</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px -80px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">账号服务</a></li>
+			<li class="item"><a href="">用户注册</a></li>
+			<li class="item"><a href="">找回密码</a></li>
+			<li class="item"><a href="">账户确认</a></li>
+			<li class="item"><a href="">多用户登录</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item">
+		<div class="icon" style="background-position:0px -120px;"></div>
+		<ul  class="fl">
+			<li class="title"><a href="javascript:void(0)">常见问题</a></li>
+			<li class="item"><a href="">无法注册</a></li>
+			<li class="item"><a href="">什么是担保交易</a></li>
+			<li class="item"><a href="">交易纠纷处理</a></li>
+			<li class="item"><a href="">联系客服</a></li>
+			<li class="item"><a href="">进入帮助中心</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_item" style="width:156px; padding-left:45px; line-height:2em;">
+		<a href=""><img src="images/buy_gangcai.jpg" alt=""></a>
+		<h1 style="font-size:14px; color:#666;">服务热线：100-100-520</h1>
+		<img style="margin-left:16px;" src="images/erweima.jpg" alt="">
+		<div><a href="">加方块网为微信好友</a></div>
+	</div>
+	<div class="clear"></div>
+</div>
+<!-- footer结束 -->
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	$(function(){
+		(function(){//侧边栏sideNave
+			var sideTab = $('#sideNav').find('h2');
+			var sideContent = $('#sideNav').find('ul');
+			
+
+			sideTab.each(function(index){
+				var flag = true;
+				$(this).on('click',function(){
+					sideContent.eq(index).toggle();
+					if(flag){
+						$(this).find('i').css('background-position','0px -16px');
+						flag = false;
+					}else{
+						$(this).find('i').css('background-position','0px 0px');
+						flag = true;
+					}
+				});
+			});
+		})()
+		
+		//我的订单
+		$('#my_dng_btn').on('mouseover',function(){
+			$('#my_dng').show();
+		}).on('mouseout',function(){
+			$('#my_dng').hide();
+		});
+		
+	});
+</script>
+</body>
+</html>
